@@ -1,0 +1,25 @@
+﻿[
+	["Case insensitive", "(?i)"],
+	
+	[],
+
+	["Integer", "^-{0,1}\\d+"],
+	["Positive integers", "^\\d+"],
+	["Negative integers", "^-\\d+"],
+	["Year (1900-2099)", "((19|20)\\d{2})"],
+
+	[],
+
+	["AVI (*.avi)", "\\.avi"],	
+	["JPEG (*.jpg;*.jpeg)", "\\.(jpg|jpeg)"],
+	["MKV (*.mkv)", "\\.mkv"],
+	["MP4 (*.mp4)", "\\.mp4"],	
+	["PNG (*.png)", "\\.png"],
+	["SRT (*.srt)", "\\.srt"],
+
+	[],
+
+	["Do not contain SUBSTRING", "^((?!SUBSTRING).)*$"],
+	["Whitespace", "\\s"]
+	
+]

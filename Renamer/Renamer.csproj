@@ -71,6 +71,8 @@
     </Compile>
     <Compile Include="Common\Comparers\Descending.cs" />
     <Compile Include="Common\Comparers\Natual.cs" />
+    <Compile Include="Common\ProfileManager.cs" />
+    <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\StringFunctions.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -101,6 +103,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RegexHelper.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dialogs\" />
