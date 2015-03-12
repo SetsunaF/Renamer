@@ -1,6 +1,6 @@
-﻿namespace Renamer.Dialogs
+﻿namespace Renamer.Windows
 {
-    partial class ErrorList
+    partial class Errors
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "ErrorList";
+            this.Text = "Errors";
         }
 
         #endregion

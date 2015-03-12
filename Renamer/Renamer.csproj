@@ -68,12 +68,6 @@
     <Compile Include="Common\ProfileManager.cs" />
     <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\StringFunctions.cs" />
-    <Compile Include="Dialogs\ErrorList.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\ErrorList.Designer.cs">
-      <DependentUpon>ErrorList.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialogs\Number.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +114,12 @@
     </Compile>
     <Compile Include="Windows\About.Designer.cs">
       <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Errors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Errors.Designer.cs">
+      <DependentUpon>Errors.cs</DependentUpon>
     </Compile>
     <Compile Include="Windows\Progress.cs">
       <SubType>Form</SubType>

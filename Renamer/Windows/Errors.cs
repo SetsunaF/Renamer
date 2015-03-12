@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Renamer.Dialogs
+namespace Renamer.Windows
 {
-    public partial class ErrorList : Form
+    public partial class Errors : Form
     {
-        public ErrorList()
+        public Errors()
         {
             InitializeComponent();
         }
