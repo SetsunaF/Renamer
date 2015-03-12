@@ -1,6 +1,6 @@
 ﻿namespace Renamer.Dialogs
 {
-    partial class Number
+    partial class BaseDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,45 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelNumber = new MetroFramework.Controls.MetroLabel();
-            this.inputNumber = new System.Windows.Forms.NumericUpDown();
             this.buttonCancel = new DropdownButton.FlatButton();
             this.buttonOK = new DropdownButton.FlatButton();
-            ((System.ComponentModel.ISupportInitialize)(this.inputNumber)).BeginInit();
             this.SuspendLayout();
-            // 
-            // labelNumber
-            // 
-            this.labelNumber.AutoSize = true;
-            this.labelNumber.Location = new System.Drawing.Point(13, 10);
-            this.labelNumber.Name = "labelNumber";
-            this.labelNumber.Size = new System.Drawing.Size(42, 14);
-            this.labelNumber.Style = MetroFramework.MetroColorStyle.Blue;
-            this.labelNumber.TabIndex = 0;
-            this.labelNumber.Text = "Value";
-            this.labelNumber.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // inputNumber
-            // 
-            this.inputNumber.Location = new System.Drawing.Point(16, 31);
-            this.inputNumber.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.inputNumber.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
-            this.inputNumber.Name = "inputNumber";
-            this.inputNumber.Size = new System.Drawing.Size(120, 20);
-            this.inputNumber.TabIndex = 1;
-            this.inputNumber.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            -2147483648});
             // 
             // buttonCancel
             // 
@@ -101,7 +65,7 @@
             this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // Number
+            // BaseDialog
             // 
             this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -109,22 +73,17 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(208, 104);
-            this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.inputNumber);
-            this.Controls.Add(this.labelNumber);
+            this.Controls.Add(this.buttonCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Number";
+            this.Name = "BaseDialog";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Number";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Number_FormClosing);
-            this.Load += new System.EventHandler(this.Number_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.inputNumber)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BaseDialog_FormClosing);
+            this.Load += new System.EventHandler(this.BaseDialog_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,7 +91,5 @@
 
         private DropdownButton.FlatButton buttonOK;
         private DropdownButton.FlatButton buttonCancel;
-        private MetroFramework.Controls.MetroLabel labelNumber;
-        public System.Windows.Forms.NumericUpDown inputNumber;
     }
 }

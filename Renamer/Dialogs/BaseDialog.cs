@@ -9,20 +9,11 @@ using System.Windows.Forms;
 
 namespace Renamer.Dialogs
 {
-    public partial class Number : Form
+    public partial class BaseDialog : Form
     {
-        public Number()
+        public BaseDialog()
         {
             InitializeComponent();
-        }
-
-        public Number(string title, string prompt, Form parent)
-        {
-            InitializeComponent();
-            this.Text = title;
-            labelNumber.Text = prompt;
-
-            this.Owner = parent;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
@@ -37,7 +28,7 @@ namespace Renamer.Dialogs
             this.Close();
         }
 
-        private void Number_Load(object sender, EventArgs e)
+        private void BaseDialog_Load(object sender, EventArgs e)
         {
             if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
             else this.Top = this.Owner.Top + 10;
@@ -45,7 +36,7 @@ namespace Renamer.Dialogs
             this.Owner.Opacity = .9;
         }
 
-        private void Number_FormClosing(object sender, FormClosingEventArgs e)
+        private void BaseDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
             this.Owner.Opacity = 1;
         }

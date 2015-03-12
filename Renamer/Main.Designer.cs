@@ -905,7 +905,7 @@
             this.buttonRevert.FlatAppearance.BorderSize = 0;
             this.buttonRevert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRevert.ForeColor = System.Drawing.Color.White;
-            this.buttonRevert.Location = new System.Drawing.Point(604, 13);
+            this.buttonRevert.Location = new System.Drawing.Point(604, 9);
             this.buttonRevert.Name = "buttonRevert";
             this.buttonRevert.Size = new System.Drawing.Size(85, 27);
             this.buttonRevert.Style = DropdownButton.Styles.Default;
@@ -922,7 +922,7 @@
             this.buttonRename.FlatAppearance.BorderSize = 0;
             this.buttonRename.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRename.ForeColor = System.Drawing.Color.White;
-            this.buttonRename.Location = new System.Drawing.Point(513, 13);
+            this.buttonRename.Location = new System.Drawing.Point(513, 9);
             this.buttonRename.Name = "buttonRename";
             this.buttonRename.Size = new System.Drawing.Size(85, 27);
             this.buttonRename.Style = DropdownButton.Styles.Primary;
@@ -943,13 +943,13 @@
             this.olvColumn2});
             this.olvPreview.FullRowSelect = true;
             this.olvPreview.GridLines = true;
-            this.olvPreview.Location = new System.Drawing.Point(15, 232);
+            this.olvPreview.Location = new System.Drawing.Point(15, 236);
             this.olvPreview.Name = "olvPreview";
             this.olvPreview.SelectColumnsOnRightClick = false;
             this.olvPreview.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             this.olvPreview.ShowFilterMenuOnRightClick = false;
             this.olvPreview.ShowGroups = false;
-            this.olvPreview.Size = new System.Drawing.Size(674, 152);
+            this.olvPreview.Size = new System.Drawing.Size(674, 155);
             this.olvPreview.TabIndex = 1;
             this.olvPreview.UseCompatibleStateImageBehavior = false;
             this.olvPreview.View = System.Windows.Forms.View.Details;
@@ -981,7 +981,7 @@
             this.buttonOptions.ForeColor = System.Drawing.Color.White;
             this.buttonOptions.HideArrow = true;
             this.buttonOptions.Image = global::Renamer.Properties.Resources.menu;
-            this.buttonOptions.Location = new System.Drawing.Point(15, 13);
+            this.buttonOptions.Location = new System.Drawing.Point(15, 9);
             this.buttonOptions.Menu = this.contextMenuOptions;
             this.buttonOptions.Name = "buttonOptions";
             this.buttonOptions.Size = new System.Drawing.Size(27, 27);
@@ -997,26 +997,26 @@
             this.settingsToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(153, 92);
+            this.contextMenuOptions.Size = new System.Drawing.Size(117, 70);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Visible = false;
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.helpToolStripMenuItem.Text = "Help";
             this.helpToolStripMenuItem.Visible = false;
             // 
@@ -1027,9 +1027,9 @@
             this.panel1.Controls.Add(this.buttonRename);
             this.panel1.Controls.Add(this.buttonRevert);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 390);
+            this.panel1.Location = new System.Drawing.Point(0, 397);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(704, 52);
+            this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 6;
             // 
             // Main
