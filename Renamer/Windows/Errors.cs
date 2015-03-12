@@ -15,5 +15,35 @@ namespace Renamer.Windows
         {
             InitializeComponent();
         }
+
+        public Errors(string title, string prompt, List<string[]> messages)
+        {
+            InitializeComponent();
+
+            this.Text = title;
+            labelError.Text = prompt;
+            textMessage.Text = FormatMessages(messages);
+        }
+
+        //format list of arrays, each array contains [file name, error message]
+        private string FormatMessages(List<string[]> messages)
+        {
+            string m = "";
+
+            foreach(var message in messages)
+                m = m + message[0] + "\r\n" + message[1] + "\r\n\r\n";
+
+            return m;
+        }
+
+        private void ErrorList_Load(object sender, EventArgs e)
+        {
+            this.MinimumSize = this.Size;
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
