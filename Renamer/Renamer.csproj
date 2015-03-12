@@ -63,17 +63,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutWindow.Designer.cs">
-      <DependentUpon>AboutWindow.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\Comparers\Descending.cs" />
     <Compile Include="Common\Comparers\Natual.cs" />
     <Compile Include="Common\ProfileManager.cs" />
     <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\StringFunctions.cs" />
+    <Compile Include="Dialogs\ErrorList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ErrorList.Designer.cs">
+      <DependentUpon>ErrorList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\Number.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\Number.Designer.cs">
+      <DependentUpon>Number.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NumberFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NumberFile.Designer.cs">
+      <DependentUpon>NumberFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NumberString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NumberString.Designer.cs">
+      <DependentUpon>NumberString.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\String.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\String.Designer.cs">
+      <DependentUpon>String.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\StringString.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\StringString.Designer.cs">
+      <DependentUpon>StringString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,9 +137,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Dialogs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

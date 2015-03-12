@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Renamer
 {
-    public partial class AboutWindow : Form
+    public partial class Main : Form
     {
-        public AboutWindow()
+        public Main()
         {
             InitializeComponent();
         }
