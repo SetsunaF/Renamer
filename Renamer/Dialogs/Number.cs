@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Renamer.Dialogs
 {
-    public partial class Number : Form
+    public partial class Number : BaseDialog
     {
-        public Number()
+        public Number() : base()
         {
             InitializeComponent();
         }
@@ -25,29 +25,29 @@ namespace Renamer.Dialogs
             this.Owner = parent;
         }
 
-        private void buttonOK_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
+        //private void buttonOK_Click(object sender, EventArgs e)
+        //{
+        //    this.DialogResult = DialogResult.OK;
+        //    this.Close();
+        //}
 
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        //private void buttonCancel_Click(object sender, EventArgs e)
+        //{
+        //    this.DialogResult = DialogResult.Cancel;
+        //    this.Close();
+        //}
 
-        private void Number_Load(object sender, EventArgs e)
-        {
-            if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
-            else this.Top = this.Owner.Top + 10;
+        //private void Number_Load(object sender, EventArgs e)
+        //{
+        //    if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
+        //    else this.Top = this.Owner.Top + 10;
 
-            this.Owner.Opacity = .9;
-        }
+        //    this.Owner.Opacity = .9;
+        //}
 
-        private void Number_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.Owner.Opacity = 1;
-        }
+        //private void Number_FormClosing(object sender, FormClosingEventArgs e)
+        //{
+        //    this.Owner.Opacity = 1;
+        //}
     }
 }

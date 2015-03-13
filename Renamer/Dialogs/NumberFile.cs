@@ -61,11 +61,21 @@ namespace Renamer.Dialogs
 
             if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
             else this.Top = this.Owner.Top + 10;
+
+
+
+
+            this.MaximumSize = new Size(int.MaxValue, this.Height);
         }
 
         private void NumberFile_Resize(object sender, EventArgs e)
         {
-            this.Height = initialHeight;
+            //this.Height = initialHeight;
+        }
+
+        private void NumberFile_ResizeBegin(object sender, EventArgs e)
+        {
+            
         }
     }
 }

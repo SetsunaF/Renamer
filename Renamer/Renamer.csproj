@@ -107,12 +107,6 @@
     <Compile Include="Dialogs\StringString.Designer.cs">
       <DependentUpon>StringString.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\Test.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\Test.Designer.cs">
-      <DependentUpon>Test.cs</DependentUpon>
-    </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,8 +148,8 @@
     <EmbeddedResource Include="Dialogs\Number.resx">
       <DependentUpon>Number.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\Test.resx">
-      <DependentUpon>Test.cs</DependentUpon>
+    <EmbeddedResource Include="Dialogs\NumberFile.resx">
+      <DependentUpon>NumberFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
