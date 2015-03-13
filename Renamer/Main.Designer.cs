@@ -104,7 +104,7 @@
             this.alphanumericalSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphanumericalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
-            this.previewResultToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipProvider = new System.Windows.Forms.ToolTip(this.components);
             this.buttonRevert = new DropdownButton.FlatButton();
             this.buttonRename = new DropdownButton.FlatButton();
@@ -850,9 +850,9 @@
             this.alphanumericalSortToolStripMenuItem,
             this.alphanumericalDescendingSortToolStripMenuItem,
             this.toolStripMenuItem8,
-            this.previewResultToolStripMenuItem});
+            this.copyAllToolStripMenuItem});
             this.contextMenuSort.Name = "contextMenuSort";
-            this.contextMenuSort.Size = new System.Drawing.Size(248, 120);
+            this.contextMenuSort.Size = new System.Drawing.Size(248, 142);
             // 
             // naturalSortToolStripMenuItem
             // 
@@ -887,14 +887,12 @@
             this.toolStripMenuItem8.Name = "toolStripMenuItem8";
             this.toolStripMenuItem8.Size = new System.Drawing.Size(244, 6);
             // 
-            // previewResultToolStripMenuItem
+            // copyAllToolStripMenuItem
             // 
-            this.previewResultToolStripMenuItem.Checked = true;
-            this.previewResultToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.previewResultToolStripMenuItem.Name = "previewResultToolStripMenuItem";
-            this.previewResultToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.previewResultToolStripMenuItem.Text = "Preview Result";
-            this.previewResultToolStripMenuItem.Click += new System.EventHandler(this.previewResultToolStripMenuItem_Click);
+            this.copyAllToolStripMenuItem.Name = "copyAllToolStripMenuItem";
+            this.copyAllToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.copyAllToolStripMenuItem.Text = "Copy All";
+            this.copyAllToolStripMenuItem.Click += new System.EventHandler(this.copyAllToolStripMenuItem_Click);
             // 
             // buttonRevert
             // 
@@ -909,7 +907,7 @@
             this.buttonRevert.Name = "buttonRevert";
             this.buttonRevert.Size = new System.Drawing.Size(85, 27);
             this.buttonRevert.Style = DropdownButton.Styles.Default;
-            this.buttonRevert.TabIndex = 4;
+            this.buttonRevert.TabIndex = 2;
             this.buttonRevert.Text = "Revert";
             this.buttonRevert.UseVisualStyleBackColor = false;
             this.buttonRevert.Click += new System.EventHandler(this.buttonRevert_Click);
@@ -926,7 +924,7 @@
             this.buttonRename.Name = "buttonRename";
             this.buttonRename.Size = new System.Drawing.Size(85, 27);
             this.buttonRename.Style = DropdownButton.Styles.Primary;
-            this.buttonRename.TabIndex = 3;
+            this.buttonRename.TabIndex = 1;
             this.buttonRename.Text = "Rename";
             this.buttonRename.UseVisualStyleBackColor = false;
             this.buttonRename.Click += new System.EventHandler(this.buttonRename_Click);
@@ -986,7 +984,7 @@
             this.buttonOptions.Name = "buttonOptions";
             this.buttonOptions.Size = new System.Drawing.Size(27, 27);
             this.buttonOptions.Style = DropdownButton.Styles.Default;
-            this.buttonOptions.TabIndex = 5;
+            this.buttonOptions.TabIndex = 0;
             this.buttonOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonOptions.UseVisualStyleBackColor = false;
             // 
@@ -1030,7 +1028,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 397);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 45);
-            this.panel1.TabIndex = 6;
+            this.panel1.TabIndex = 2;
             // 
             // Main
             // 
@@ -1142,7 +1140,6 @@
         private System.Windows.Forms.ToolStripMenuItem alphanumericalSortToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alphanumericalDescendingSortToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
-        private System.Windows.Forms.ToolStripMenuItem previewResultToolStripMenuItem;
         private MetroFramework.Controls.MetroLabel filesFound;
         private MetroFramework.Controls.MetroLabel totalFiles;
         private System.Windows.Forms.PictureBox refreshButton;
@@ -1156,5 +1153,6 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
     }
 }

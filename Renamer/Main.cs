@@ -861,31 +861,7 @@ namespace Renamer
         {
             OnSortMenuItemClick(sender, 3);
         }
-
-        private void previewResultToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            var thisItem = (ToolStripMenuItem)sender;
-
-            if (thisItem.Checked)
-            {
-                olvPreview.AllColumns[0].FillsFreeSpace = true;
-                olvPreview.AllColumns[1].IsVisible = false;
-                thisItem.Checked = false;
-
-                olvPreview.RebuildColumns();
-            }
-            else
-            {
-                olvPreview.AllColumns[0].FillsFreeSpace = false;
-                olvPreview.AllColumns[1].IsVisible = true;
-                thisItem.Checked = true;
-
-                olvPreview.RebuildColumns();
-
-                this.Main_Resize(null, null);
-            }
-        }
-
+        
         private void refreshButton_Click(object sender, EventArgs e)
         {
             textBoxFilter_TextChanged(null, null);
@@ -906,6 +882,18 @@ namespace Renamer
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Windows.About().ShowDialog();
+        }
+
+        private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string data = "";
+
+            foreach (var row in olvPreview.Objects)
+            {
+                data += (row as FileName).Original + "\r\n";
+            }
+
+            Clipboard.SetText(data);
         }
 
         //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
