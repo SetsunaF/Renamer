@@ -40,7 +40,7 @@
             this.labelYear = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainToolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.flatButton1 = new DropdownButton.FlatButton();
+            this.buttonOK = new DropdownButton.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -157,31 +157,31 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-            // flatButton1
+            // buttonOK
             // 
-            this.flatButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.flatButton1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.flatButton1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.flatButton1.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.flatButton1.FlatAppearance.BorderSize = 0;
-            this.flatButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.flatButton1.ForeColor = System.Drawing.Color.White;
-            this.flatButton1.Location = new System.Drawing.Point(295, 207);
-            this.flatButton1.Name = "flatButton1";
-            this.flatButton1.Size = new System.Drawing.Size(85, 27);
-            this.flatButton1.Style = DropdownButton.Styles.Primary;
-            this.flatButton1.TabIndex = 2;
-            this.flatButton1.Text = "OK";
-            this.flatButton1.UseVisualStyleBackColor = false;
-            this.flatButton1.Click += new System.EventHandler(this.flatButton1_Click);
+            this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonOK.BackColor = System.Drawing.Color.DodgerBlue;
+            this.buttonOK.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.buttonOK.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.buttonOK.FlatAppearance.BorderSize = 0;
+            this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonOK.ForeColor = System.Drawing.Color.White;
+            this.buttonOK.Location = new System.Drawing.Point(295, 187);
+            this.buttonOK.Name = "buttonOK";
+            this.buttonOK.Size = new System.Drawing.Size(85, 27);
+            this.buttonOK.Style = DropdownButton.Styles.Primary;
+            this.buttonOK.TabIndex = 2;
+            this.buttonOK.Text = "OK";
+            this.buttonOK.UseVisualStyleBackColor = false;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
-            // AboutWindow
+            // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.flatButton1;
-            this.ClientSize = new System.Drawing.Size(392, 246);
+            this.CancelButton = this.buttonOK;
+            this.ClientSize = new System.Drawing.Size(392, 226);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -191,12 +191,12 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.flatButton1);
+            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.metroLabel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AboutWindow";
+            this.Name = "About";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
@@ -210,7 +210,7 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private DropdownButton.FlatButton flatButton1;
+        private DropdownButton.FlatButton buttonOK;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label label3;

@@ -117,53 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextMenuRegex.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="mainToolTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="toolTipProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>774, 17</value>
-  </metadata>
-  <metadata name="contextMenuDelete.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>174, 17</value>
-  </metadata>
-  <metadata name="contextMenuAdd.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>333, 17</value>
-  </metadata>
-  <metadata name="contextMenuSave.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>479, 17</value>
-  </metadata>
-  <metadata name="contextMenuSort.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>628, 17</value>
-  </metadata>
-  <metadata name="folderBrowser.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>909, 17</value>
-  </metadata>
-  <metadata name="contextMenuOptions.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>1036, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAA
-        AAAAAAAA7HYA0+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2
-        AMcAAAAAAAAAAOx2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2
-        AP/sdgD/AAAAAAAAAADsdgD/7HYA///Llv//y5b//8uW///Llv//y5b//8uW///Llv//y5b//8uW///L
-        lv/sdgD/7HYA/wAAAAAAAAAA7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP8AAAAAAAAAAOx2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/AAAAAAAAAADsdgD/7HYA///Llv//y5b//8uW///Llv//y5b//8uW///L
-        lv//y5b//8uW///Llv/sdgD/7HYA/wAAAAAAAAAA7HYA/+x2AP/udwD/7ncA/+53AP/udwD/7ncA/+53
-        AP/udwD/7ncA/+53AP/udwD/7HYA/+x2AP8AAAAAAAAAAOx2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/AAAAAAAAAADsdgD/7HYA///Llv//y5b//8uW///L
-        lv//y5b//8uW///Llv//y5b//8uW///Llv/sdgD/7HYA/wAAAAAAAAAA7HYA/+x2AP/sdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP8AAAAAAAAAAOx2AP/sdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/AAAAAAAAAADsdgD/7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP//y5b//8uW///Llv//y5b//8uW/wAAAAAAAAAA7HYA/+x2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD//8uW///Llv//y5b//8aN3AAAAAAAAAAAAAAAAOx2
-        AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA///Llv//y5b//8aN3AAAAAAAAAAAAAAAAAAA
-        AADsdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP//y5b//8WL1AAAAAAAAAAAAAAAAAAA
-        AAAAAAAA7HYAyex2AP/sdgD/7HYA/+x2AP/sdgD/7HYA/+x2AP/sdgD//8uW/wAAAAAAAAAAAAAAAAAA
-        AAAAAAAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAMAAIAH
-        AACADwAAgB8AAA==
-</value>
-  </data>
 </root>

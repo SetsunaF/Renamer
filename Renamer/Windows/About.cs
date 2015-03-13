@@ -64,7 +64,7 @@ namespace Renamer.Windows
             if(url!="") System.Diagnostics.Process.Start(url);
         }
 
-        private void flatButton1_Click(object sender, EventArgs e)
+        private void buttonOK_Click(object sender, EventArgs e)
         {
             this.Close();
         }

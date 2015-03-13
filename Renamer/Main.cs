@@ -889,9 +889,7 @@ namespace Renamer
             string data = "";
 
             foreach (var row in olvPreview.Objects)
-            {
-                data += (row as FileName).Original + "\r\n";
-            }
+                data += (row as FileName).Original + "\r\n";            
 
             Clipboard.SetText(data);
         }
