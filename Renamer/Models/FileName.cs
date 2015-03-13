@@ -67,5 +67,10 @@ namespace Renamer.Models
             if (parent == "") return parts[0];          //if this.Directory is C:\ (only a drive), parent will be "", so return the drive
             return parent;                              //else return the directory name
         }
+
+        public string FullPath()
+        {
+            return this.Directory + this.Original;
+        }
     }
 }

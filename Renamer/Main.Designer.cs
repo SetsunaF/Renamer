@@ -111,6 +111,11 @@
             this.olvPreview = new BrightIdeasSoftware.FastObjectListView();
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn2 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.contextMenuProperties = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
+            this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser();
             this.buttonOptions = new DropdownButton.DropdownButton();
             this.contextMenuOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -127,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.olvFilters)).BeginInit();
             this.contextMenuSort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvPreview)).BeginInit();
+            this.contextMenuProperties.SuspendLayout();
             this.contextMenuOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -938,9 +944,11 @@
             this.olvPreview.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvColumn1,
             this.olvColumn2});
+            this.olvPreview.ContextMenuStrip = this.contextMenuProperties;
             this.olvPreview.FullRowSelect = true;
             this.olvPreview.GridLines = true;
             this.olvPreview.Location = new System.Drawing.Point(15, 236);
+            this.olvPreview.MultiSelect = false;
             this.olvPreview.Name = "olvPreview";
             this.olvPreview.SelectColumnsOnRightClick = false;
             this.olvPreview.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
@@ -968,6 +976,43 @@
             this.olvColumn2.Sortable = false;
             this.olvColumn2.Text = "After";
             // 
+            // contextMenuProperties
+            // 
+            this.contextMenuProperties.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.copyToolStripMenuItem,
+            this.toolStripMenuItem9,
+            this.propertiesToolStripMenuItem});
+            this.contextMenuProperties.Name = "contextMenuProperties";
+            this.contextMenuProperties.Size = new System.Drawing.Size(153, 98);
+            this.contextMenuProperties.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuProperties_Opening);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
+            // 
+            // copyToolStripMenuItem
+            // 
+            this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Text = "Copy";
+            this.copyToolStripMenuItem.Click += new System.EventHandler(this.copyToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem9
+            // 
+            this.toolStripMenuItem9.Name = "toolStripMenuItem9";
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(149, 6);
+            // 
+            // propertiesToolStripMenuItem
+            // 
+            this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.propertiesToolStripMenuItem.Text = "Properties";
+            this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
+            // 
             // buttonOptions
             // 
             this.buttonOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -993,12 +1038,12 @@
             this.aboutToolStripMenuItem,
             this.settingsToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuOptions.Size = new System.Drawing.Size(117, 48);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1006,7 +1051,7 @@
             // 
             this.settingsToolStripMenuItem.Enabled = false;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Visible = false;
             // 
@@ -1050,6 +1095,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.olvFilters)).EndInit();
             this.contextMenuSort.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.olvPreview)).EndInit();
+            this.contextMenuProperties.ResumeLayout(false);
             this.contextMenuOptions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1145,5 +1191,10 @@
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ToolStripMenuItem copyAllToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip contextMenuProperties;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
+        private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
     }
 }

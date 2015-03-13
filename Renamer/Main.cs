@@ -874,7 +874,7 @@ namespace Renamer
         }
 
         private void olvPreview_DoubleClick(object sender, EventArgs e)
-        {
+        {            
             var fn = (FileName)olvPreview.SelectedObject;
             EvalDialog_Str_Str("Replace String", "Search String:", "Replace String:", FilterType.ReplaceString, fn.Modified);
         }
@@ -893,6 +893,30 @@ namespace Renamer
 
             Clipboard.SetText(data);
         }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            olvPreview_DoubleClick(null, null);
+        }
+
+        private void copyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fn = (FileName)olvPreview.SelectedObject;
+            Clipboard.SetText(fn.Original + "\t" + fn.Modified);
+        }
+
+        private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var fn = (FileName)olvPreview.SelectedObject;
+            MessageBox.Show(fn.FullPath());
+        }        
+
+        private void contextMenuProperties_Opening(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (olvPreview.Items.Count == 0 || olvPreview.SelectedObjects.Count==0) e.Cancel=true;
+        }
+
+        
 
         //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         //{

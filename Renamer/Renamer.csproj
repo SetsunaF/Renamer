@@ -36,23 +36,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DropdownButton">
-      <HintPath>..\..\DropdownButton\DropdownButton\bin\Release\DropdownButton.dll</HintPath>
+      <HintPath>..\Resources\References\DropdownButton.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework">
-      <HintPath>..\..\MetroFramework\MetroFramework\bin\Release\MetroFramework.dll</HintPath>
+      <HintPath>..\Resources\References\MetroFramework.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework.Design">
-      <HintPath>..\..\MetroFramework\MetroFramework.Design\bin\Release\MetroFramework.Design.dll</HintPath>
+      <HintPath>..\Resources\References\MetroFramework.Design.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="ModernFolderBrowserDialog">
-      <HintPath>..\..\ModernFolderBrowserDialog\ModernFolderBrowserDialog\bin\Release\ModernFolderBrowserDialog.dll</HintPath>
+      <HintPath>..\Resources\References\ModernFolderBrowserDialog.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\NewtonsoftJson\Bin\Net40\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\Resources\References\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="ObjectListView">
-      <HintPath>..\..\ObjectListView\ObjectListView\bin\Release\ObjectListView.dll</HintPath>
+      <HintPath>..\Resources\References\ObjectListView.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
