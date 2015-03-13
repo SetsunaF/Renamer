@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Renamer.Dialogs
 {
-    public partial class NumberFile : Form
+    public partial class NumberFile : BaseDialog
     {
         public NumberFile()
         {
@@ -19,30 +19,13 @@ namespace Renamer.Dialogs
         public NumberFile(string title, string prompt1, string prompt2, Form parent)
         {
             InitializeComponent();
+
             this.Text = title;
             labelNumber.Text = prompt1;
             labelFile.Text = prompt2;
 
             this.Owner = parent;
-        }
-
-        private void buttonOK_Click(object sender, EventArgs e)
-        {
-            if (inputFile.Text == "")
-            {
-                MessageBox.Show("Please choose a file before continue.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            this.DialogResult = DialogResult.OK;
-            this.Close();
-        }
-
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
-        }
+        }        
 
         private void buttonFile_Click(object sender, EventArgs e)
         {
@@ -50,32 +33,6 @@ namespace Renamer.Dialogs
             {
                 inputFile.Text = fileDialog.FileName;
             }
-        }
-
-        private int initialHeight;
-
-        private void NumberFile_Load(object sender, EventArgs e)
-        {
-            this.MinimumSize = this.Size;
-            initialHeight = this.Height;
-
-            if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
-            else this.Top = this.Owner.Top + 10;
-
-
-
-
-            this.MaximumSize = new Size(int.MaxValue, this.Height);
-        }
-
-        private void NumberFile_Resize(object sender, EventArgs e)
-        {
-            //this.Height = initialHeight;
-        }
-
-        private void NumberFile_ResizeBegin(object sender, EventArgs e)
-        {
-            
-        }
+        }      
     }
 }

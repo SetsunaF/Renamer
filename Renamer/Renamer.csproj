@@ -151,6 +151,15 @@
     <EmbeddedResource Include="Dialogs\NumberFile.resx">
       <DependentUpon>NumberFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NumberString.resx">
+      <DependentUpon>NumberString.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\String.resx">
+      <DependentUpon>String.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\StringString.resx">
+      <DependentUpon>StringString.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>

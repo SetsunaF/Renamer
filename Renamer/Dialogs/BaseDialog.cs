@@ -30,10 +30,15 @@ namespace Renamer.Dialogs
 
         private void BaseDialog_Load(object sender, EventArgs e)
         {
+            if (DesignMode) return;
+
+            this.MinimumSize = this.Size;
+            this.MaximumSize = new Size(int.MaxValue, this.Height);
+
             if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
             else this.Top = this.Owner.Top + 10;
 
-            this.Owner.Opacity = .9;
+            this.Owner.Opacity = .9;            
         }
 
         private void BaseDialog_FormClosing(object sender, FormClosingEventArgs e)

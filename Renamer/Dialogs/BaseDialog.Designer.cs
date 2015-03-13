@@ -44,7 +44,7 @@
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(85, 27);
             this.buttonCancel.Style = DropdownButton.Styles.Default;
-            this.buttonCancel.TabIndex = 3;
+            this.buttonCancel.TabIndex = 30;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
@@ -60,7 +60,7 @@
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
-            this.buttonOK.TabIndex = 2;
+            this.buttonOK.TabIndex = 20;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -89,7 +89,7 @@
 
         #endregion
 
-        private DropdownButton.FlatButton buttonOK;
-        private DropdownButton.FlatButton buttonCancel;
+        protected DropdownButton.FlatButton buttonOK;
+        protected DropdownButton.FlatButton buttonCancel;
     }
 }

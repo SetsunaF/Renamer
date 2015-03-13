@@ -75,12 +75,10 @@
             this.Controls.Add(this.inputNumber);
             this.Controls.Add(this.labelNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "Number";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Number";
+            this.Controls.SetChildIndex(this.labelNumber, 0);
+            this.Controls.SetChildIndex(this.inputNumber, 0);
             ((System.ComponentModel.ISupportInitialize)(this.inputNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

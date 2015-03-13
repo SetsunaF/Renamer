@@ -28,49 +28,28 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonCancel = new DropdownButton.FlatButton();
-            this.buttonOK = new DropdownButton.FlatButton();
             this.inputText1 = new System.Windows.Forms.TextBox();
             this.labelText1 = new MetroFramework.Controls.MetroLabel();
             this.inputText2 = new System.Windows.Forms.TextBox();
             this.labelText2 = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
-            // buttonCancel
-            // 
-            this.buttonCancel.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonCancel.FlatAppearance.BorderSize = 0;
-            this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(107, 116);
-            this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(85, 27);
-            this.buttonCancel.Style = DropdownButton.Styles.Default;
-            this.buttonCancel.TabIndex = 5;
-            this.buttonCancel.Text = "Cancel";
-            this.buttonCancel.UseVisualStyleBackColor = false;
-            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
             // buttonOK
             // 
-            this.buttonOK.BackColor = System.Drawing.Color.DodgerBlue;
             this.buttonOK.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.buttonOK.FlatAppearance.BorderSize = 0;
-            this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonOK.ForeColor = System.Drawing.Color.White;
             this.buttonOK.Location = new System.Drawing.Point(16, 116);
-            this.buttonOK.Name = "buttonOK";
-            this.buttonOK.Size = new System.Drawing.Size(85, 27);
-            this.buttonOK.Style = DropdownButton.Styles.Primary;
-            this.buttonOK.TabIndex = 4;
-            this.buttonOK.Text = "OK";
-            this.buttonOK.UseVisualStyleBackColor = false;
-            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
+            // 
+            // buttonCancel
+            // 
+            this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonCancel.FlatAppearance.BorderSize = 0;
+            this.buttonCancel.Location = new System.Drawing.Point(107, 116);
             // 
             // inputText1
             // 
+            this.inputText1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputText1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputText1.Location = new System.Drawing.Point(16, 31);
             this.inputText1.Name = "inputText1";
@@ -90,6 +69,8 @@
             // 
             // inputText2
             // 
+            this.inputText2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.inputText2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.inputText2.Location = new System.Drawing.Point(16, 83);
             this.inputText2.Name = "inputText2";
@@ -109,27 +90,23 @@
             // 
             // StringString
             // 
-            this.AcceptButton = this.buttonOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.CancelButton = this.buttonCancel;
             this.ClientSize = new System.Drawing.Size(206, 154);
             this.Controls.Add(this.inputText2);
             this.Controls.Add(this.labelText2);
-            this.Controls.Add(this.buttonCancel);
-            this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.inputText1);
             this.Controls.Add(this.labelText1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "StringString";
-            this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "StringString";
-            this.Load += new System.EventHandler(this.StringString_Load);
             this.Shown += new System.EventHandler(this.StringString_Shown);
+            this.Controls.SetChildIndex(this.labelText1, 0);
+            this.Controls.SetChildIndex(this.inputText1, 0);
+            this.Controls.SetChildIndex(this.labelText2, 0);
+            this.Controls.SetChildIndex(this.inputText2, 0);
+            this.Controls.SetChildIndex(this.buttonCancel, 0);
+            this.Controls.SetChildIndex(this.buttonOK, 0);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,8 +114,6 @@
 
         #endregion
 
-        private DropdownButton.FlatButton buttonCancel;
-        private DropdownButton.FlatButton buttonOK;
         public System.Windows.Forms.TextBox inputText1;
         private MetroFramework.Controls.MetroLabel labelText1;
         public System.Windows.Forms.TextBox inputText2;

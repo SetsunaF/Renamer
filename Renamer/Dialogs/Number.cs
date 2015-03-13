@@ -11,7 +11,7 @@ namespace Renamer.Dialogs
 {
     public partial class Number : BaseDialog
     {
-        public Number() : base()
+        public Number()
         {
             InitializeComponent();
         }
@@ -19,35 +19,11 @@ namespace Renamer.Dialogs
         public Number(string title, string prompt, Form parent)
         {
             InitializeComponent();
+
             this.Text = title;
             labelNumber.Text = prompt;
 
             this.Owner = parent;
-        }
-
-        //private void buttonOK_Click(object sender, EventArgs e)
-        //{
-        //    this.DialogResult = DialogResult.OK;
-        //    this.Close();
-        //}
-
-        //private void buttonCancel_Click(object sender, EventArgs e)
-        //{
-        //    this.DialogResult = DialogResult.Cancel;
-        //    this.Close();
-        //}
-
-        //private void Number_Load(object sender, EventArgs e)
-        //{
-        //    if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
-        //    else this.Top = this.Owner.Top + 10;
-
-        //    this.Owner.Opacity = .9;
-        //}
-
-        //private void Number_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    this.Owner.Opacity = 1;
-        //}
+        }   
     }
 }
