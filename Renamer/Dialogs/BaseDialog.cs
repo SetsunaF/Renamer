@@ -33,7 +33,7 @@ namespace Renamer.Dialogs
             if (DesignMode) return;
 
             this.MinimumSize = this.Size;
-            this.MaximumSize = new Size(int.MaxValue, this.Height);
+            this.MaximumSize = new Size(SystemInformation.VirtualScreen.Width, this.Height); //new Size(int.MaxValue, this.Height);
 
             if (this.Owner != null)
             {
