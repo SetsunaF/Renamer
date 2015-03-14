@@ -691,7 +691,13 @@ namespace Renamer
                 });
 
                 //if input and output directories are the same, reload files
-                if (textBoxInputDir.Text == textBoxOutput.Text) LoadFiles();
+                if (textBoxInputDir.Text == textBoxOutput.Text)
+                {                    
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        LoadFiles();
+                    });
+                }
             };
 
             dlg.bgWorker.RunWorkerAsync();

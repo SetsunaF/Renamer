@@ -14,9 +14,11 @@ namespace Renamer.Models
         //{
         //}
 
+        //directory name should not end with \
+        
         public FileName(string directory, string original, string modified)
         {
-            Directory = directory;
+            Directory = directory.TrimEnd('\\'); 
 
             Original = original;
             Modified = modified;
@@ -24,7 +26,7 @@ namespace Renamer.Models
 
         public FileName(FileName name, bool swap = false)
         {
-            Directory = name.Directory;
+            Directory = name.Directory.TrimEnd('\\');
 
             Original = name.Original;
             Modified = name.Modified;
@@ -62,10 +64,12 @@ namespace Renamer.Models
         public string ParentDirectory()
         {
             var parts = this.Directory.Split('\\');
-            var parent = parts[parts.Length - 1];
+            return parts[parts.Length - 1];
+            //var parts = this.Directory.Split('\\');
+            //var parent = parts[parts.Length - 1];
 
-            if (parent == "") return parts[0];          //if this.Directory is C:\ (only a drive), parent will be "", so return the drive
-            return parent;                              //else return the directory name
+            //if (parent == "") return parts[0];          //if this.Directory is C:\ (only a drive), parent will be "", so return the drive
+            //return parent;                              //else return the directory name
         }
 
         public string FullPath()

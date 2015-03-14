@@ -31,9 +31,9 @@ namespace Renamer.Windows
             string m = "";
 
             foreach(var message in messages)
-                m = m + message[0] + "\r\n" + message[1] + "\r\n\r\n";
+                m += message[0] + "\r\n" + message[1] + "\r\n\r\n";
 
-            return m;
+            return m.Substring(0, m.Length-4);
         }
 
         private void ErrorList_Load(object sender, EventArgs e)
