@@ -35,15 +35,11 @@ namespace Renamer.Dialogs
             this.MinimumSize = this.Size;
             this.MaximumSize = new Size(int.MaxValue, this.Height);
 
-            if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
-            else this.Top = this.Owner.Top + 10;
-
-            //this.Owner.Opacity = .9;            
-        }
-
-        private void BaseDialog_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //this.Owner.Opacity = 1;
+            if (this.Owner != null)
+            {
+                if (this.Owner.WindowState == FormWindowState.Maximized) this.Top = 10;
+                else this.Top = this.Owner.Top + 10;
+            }
         }
     }
 }
