@@ -9,6 +9,10 @@ Supported platforms
 * Windows 7
 * Windows 8
 
+Requirements
+------------
+* .NET Framework 4.0 and above.
+
 Screenshots
 -----------
 ![Renamer](http://i.imgur.com/EWGHVt8.png)
