@@ -41,6 +41,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.buttonOK = new DropdownButton.FlatButton();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.Location = new System.Drawing.Point(71, 22);
+            this.metroLabel1.Location = new System.Drawing.Point(71, 12);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(75, 18);
             this.metroLabel1.Style = MetroFramework.MetroColorStyle.Blue;
@@ -61,7 +62,7 @@
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVersion.ForeColor = System.Drawing.Color.Gray;
-            this.labelVersion.Location = new System.Drawing.Point(115, 45);
+            this.labelVersion.Location = new System.Drawing.Point(115, 35);
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(11, 14);
             this.labelVersion.TabIndex = 5;
@@ -72,7 +73,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(72, 45);
+            this.label3.Location = new System.Drawing.Point(72, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 14);
             this.label3.TabIndex = 6;
@@ -142,7 +143,7 @@
             this.labelYear.AutoSize = true;
             this.labelYear.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelYear.ForeColor = System.Drawing.Color.Gray;
-            this.labelYear.Location = new System.Drawing.Point(162, 45);
+            this.labelYear.Location = new System.Drawing.Point(162, 35);
             this.labelYear.Name = "labelYear";
             this.labelYear.Size = new System.Drawing.Size(30, 14);
             this.labelYear.TabIndex = 12;
@@ -175,6 +176,17 @@
             this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Gray;
+            this.label1.Location = new System.Drawing.Point(72, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(187, 14);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "https://github.com/SetsunaF/Renamer";
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +194,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonOK;
             this.ClientSize = new System.Drawing.Size(392, 226);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -221,5 +234,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.ToolTip mainToolTip;
+        private System.Windows.Forms.Label label1;
     }
 }

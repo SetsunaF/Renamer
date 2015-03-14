@@ -542,13 +542,7 @@ namespace Renamer
                     olvFilters.SelectedIndex = index;
                 }
             }
-        }
-
-        private void Main_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //var result = MessageBox.Show("Are you sure you want to exit?", "Exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //if (result == DialogResult.No) e.Cancel = true;
-        }
+        }               
 
         #endregion
 
@@ -697,11 +691,8 @@ namespace Renamer
 
                 //if input and output directories are the same, reload files
                 if (textBoxInputDir.Text == textBoxOutput.Text)
-                {                    
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        LoadFiles();
-                    });
+                {
+                    this.Invoke((MethodInvoker)LoadFiles);
                 }
             };
 
@@ -734,6 +725,12 @@ namespace Renamer
                 if (!allNamesAreUnique)
                 {
                     var result = MessageBox.Show("The file names must be unique, are you sure you want to continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (result == DialogResult.No) return;
+                }
+
+                if (textBoxInputDir.Text != textBoxOutput.Text)
+                {
+                    var result=MessageBox.Show("Since the input and output directories are different, this operation could take several minutes. Are you sure you want to continue?", "Different Directories", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (result == DialogResult.No) return;
                 }
 
