@@ -33,9 +33,14 @@ namespace Renamer
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {
+        {            
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
+
+            olvPreview.CellPadding = new Rectangle(
+                new Point(2, 0),
+                new Size(0, 0)
+            );
 
             //dropDownSort.SelectedIndex = 0;
 

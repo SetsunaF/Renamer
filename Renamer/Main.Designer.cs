@@ -951,6 +951,7 @@
             this.olvPreview.MultiSelect = false;
             this.olvPreview.Name = "olvPreview";
             this.olvPreview.OwnerDraw = true;
+            this.olvPreview.RowHeight = 24;
             this.olvPreview.SelectColumnsOnRightClick = false;
             this.olvPreview.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             this.olvPreview.ShowFilterMenuOnRightClick = false;
