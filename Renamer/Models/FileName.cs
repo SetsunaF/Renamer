@@ -72,5 +72,20 @@ namespace Renamer.Models
         {
             return this.Directory + "\\" + this.Original;
         }
+
+        public string FullPathModified()
+        {
+            return this.Directory + "\\" + this.Modified;
+        }
+
+        public System.Drawing.Bitmap GetIcon()
+        {
+            return Common.ShellIcon.GetIcon(this.FullPath()).ToBitmap();
+        }
+
+        public System.Drawing.Bitmap GetIconModified()
+        {
+            return Common.ShellIcon.GetIcon(this.FullPathModified()).ToBitmap();
+        }
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="Common\FileProperties.cs" />
     <Compile Include="Common\ProfileManager.cs" />
     <Compile Include="Common\RegexHelper.cs" />
+    <Compile Include="Common\ShellIcon.cs" />
     <Compile Include="Common\StringFunctions.cs" />
     <Compile Include="Dialogs\BaseDialog.cs">
       <SubType>Form</SubType>
