@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Common\Comparers\Descending.cs" />
     <Compile Include="Common\Comparers\Natual.cs" />
+    <Compile Include="Common\FileProperties.cs" />
     <Compile Include="Common\ProfileManager.cs" />
     <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\StringFunctions.cs" />

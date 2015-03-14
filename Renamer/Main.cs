@@ -34,9 +34,6 @@ namespace Renamer
 
         private void Main_Load(object sender, EventArgs e)
         {
-
-
-
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
 
@@ -908,15 +905,13 @@ namespace Renamer
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var fn = (FileName)olvPreview.SelectedObject;
-            MessageBox.Show(fn.FullPath());
+            FileProperties.Show(fn.FullPath());
         }        
 
         private void contextMenuProperties_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (olvPreview.Items.Count == 0 || olvPreview.SelectedObjects.Count==0) e.Cancel=true;
-        }
-
-        
+        }              
 
         //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         //{

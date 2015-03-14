@@ -70,7 +70,7 @@ namespace Renamer.Models
 
         public string FullPath()
         {
-            return this.Directory + this.Original;
+            return this.Directory + "\\" + this.Original;
         }
     }
 }
