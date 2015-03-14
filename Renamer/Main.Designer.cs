@@ -37,7 +37,7 @@
             this.refreshButton = new System.Windows.Forms.PictureBox();
             this.filesFound = new MetroFramework.Controls.MetroLabel();
             this.totalFiles = new MetroFramework.Controls.MetroLabel();
-            this.checkBoxSame = new MetroFramework.Controls.MetroCheckBox();
+            this.checkBoxSame = new System.Windows.Forms.CheckBox();
             this.buttonBrowseOutput = new DropdownButton.FlatButton();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -245,14 +245,12 @@
             this.checkBoxSame.AutoSize = true;
             this.checkBoxSame.Checked = true;
             this.checkBoxSame.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxSame.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxSame.Location = new System.Drawing.Point(10, 190);
             this.checkBoxSame.Name = "checkBoxSame";
-            this.checkBoxSame.Size = new System.Drawing.Size(172, 14);
-            this.checkBoxSame.Style = MetroFramework.MetroColorStyle.Blue;
+            this.checkBoxSame.Size = new System.Drawing.Size(136, 17);
             this.checkBoxSame.TabIndex = 11;
             this.checkBoxSame.Text = "Same as input directory";
-            this.checkBoxSame.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.checkBoxSame.UseSelectable = true;
             this.checkBoxSame.CheckedChanged += new System.EventHandler(this.checkBoxSame_CheckedChanged);
             // 
             // buttonBrowseOutput
@@ -1113,7 +1111,7 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.TextBox textBoxInputDir;
         private DropdownButton.FlatButton buttonBrowseInput;
-        private MetroFramework.Controls.MetroCheckBox checkBoxSame;
+        private System.Windows.Forms.CheckBox checkBoxSame;
         private DropdownButton.FlatButton buttonBrowseOutput;
         private System.Windows.Forms.TextBox textBoxOutput;
         private MetroFramework.Controls.MetroLabel metroLabel3;

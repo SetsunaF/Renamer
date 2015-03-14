@@ -110,7 +110,7 @@ namespace Renamer
 
         private void checkBoxSame_CheckedChanged(object sender, EventArgs e)
         {
-            if (((MetroCheckBox)sender).Checked)
+            if (((CheckBox)sender).Checked)
             {
                 textBoxOutput.Text = textBoxInputDir.Text;
                 buttonBrowseOutput.Enabled = false;
