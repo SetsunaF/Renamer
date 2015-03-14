@@ -15,7 +15,7 @@ Requirements
 
 Screenshots
 -----------
-![Renamer](http://i.imgur.com/EWGHVt8.png)
+![Renamer](http://i.imgur.com/qKPr3nl.png)
 
 License
 -------
