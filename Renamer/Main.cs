@@ -975,18 +975,24 @@ namespace Renamer
             if (textBoxInputDir.Text == "") return;            
             buttonRevert.Enabled = false;
             LoadFiles();            
-        }        
-
-        private void olvPreview_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
-        {
-            var obj = (FileName)olvPreview.GetItem(e.Item.Index).RowObject;
-            e.Item.ToolTipText = obj.ParentDirectory() + @"\" + obj.Original;
-           
         }
 
         private void olvPreview_Scroll(object sender, ScrollEventArgs e)
         {
             contextMenuProperties.Close();
+        }
+
+        //For some reason this event is working better than ItemMouseHover
+        private void olvPreview_MouseMove(object sender, MouseEventArgs e)
+        {
+            var item = olvPreview.GetItemAt(e.X, e.Y);
+            var info = olvPreview.HitTest(e.X, e.Y);
+
+            if ((item != null) && (info.SubItem != null))
+            {                
+                var obj = (FileName)olvPreview.GetItem(item.Index).RowObject;
+                item.ToolTipText = obj.ParentDirectory() + @"\" + obj.Original;
+            }
         }
 
                    

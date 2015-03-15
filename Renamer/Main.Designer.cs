@@ -982,9 +982,9 @@
             this.olvPreview.ColumnRightClick += new BrightIdeasSoftware.ColumnRightClickEventHandler(this.olvPreview_ColumnRightClick);
             this.olvPreview.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.olvPreview_FormatRow);
             this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
-            this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
-            this.olvPreview.ItemMouseHover += new System.Windows.Forms.ListViewItemMouseHoverEventHandler(this.olvPreview_ItemMouseHover);
+            this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);            
             this.olvPreview.DoubleClick += new System.EventHandler(this.olvPreview_DoubleClick);
+            this.olvPreview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.olvPreview_MouseMove);
             // 
             // olvColumn1
             // 
