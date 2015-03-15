@@ -77,8 +77,9 @@ namespace Renamer.Models
             return this.Directory + "\\" + this.Original;
         }
 
-        public string FullPathModified()
+        public string FullPathModified(string newDirectory = null)
         {
+            if (newDirectory != null) return newDirectory + "\\" + this.Modified;
             return this.Directory + "\\" + this.Modified;
         }
 

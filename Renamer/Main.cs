@@ -631,16 +631,12 @@ namespace Renamer
 
         void FileRename(FileName name)
         {
-            //calculate source and destination files
-            string src = textBoxInputDir.Text + "\\" + name.Original;
-            string dst = textBoxOutput.Text + "\\" + name.Modified;
-
             try
             {
                 //move here
-                if (textBoxInputDir.Text == textBoxOutput.Text) File.Move(src, dst);
+                if (textBoxInputDir.Text == textBoxOutput.Text) File.Move(name.FullPath(), name.FullPathModified());
                 //copy if directories are different
-                else File.Copy(src, dst);
+                else File.Copy(name.FullPath(), name.FullPathModified(textBoxOutput.Text));
             }
             catch (Exception ex)
             {

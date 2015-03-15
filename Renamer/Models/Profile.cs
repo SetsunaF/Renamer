@@ -69,7 +69,7 @@ namespace Renamer.Models
             }
             catch (Exception exception)
             {
-                Console.WriteLine(exception.Message);
+                //Console.WriteLine(exception.Message);
                 message = exception.Message;
                 return false;
             }
