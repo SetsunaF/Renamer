@@ -363,6 +363,7 @@
             this.textBoxInputDir.ShortcutsEnabled = false;
             this.textBoxInputDir.Size = new System.Drawing.Size(250, 23);
             this.textBoxInputDir.TabIndex = 2;
+            this.textBoxInputDir.TextChanged += new System.EventHandler(this.textBoxInputDir_TextChanged);
             this.textBoxInputDir.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxInputDir_DragDrop);
             this.textBoxInputDir.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBox_DragEnter);
             // 

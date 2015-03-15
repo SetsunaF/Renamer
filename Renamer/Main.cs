@@ -84,16 +84,7 @@ namespace Renamer
         {
             if (folderBrowser.ShowDialog() != DialogResult.OK) return;
             textBoxInputDir.Text = folderBrowser.SelectedPath;
-
-            OnInputDirChange();
-        }
-
-        private void OnInputDirChange()
-        {
-            buttonRevert.Enabled = false;
-            if (checkBoxSame.Checked) textBoxOutput.Text = textBoxInputDir.Text;
-            LoadFiles();
-        }
+        }        
 
         private void buttonBrowseOutput_Click(object sender, EventArgs e)
         {
@@ -764,13 +755,7 @@ namespace Renamer
         private void textBoxInputDir_DragDrop(object sender, DragEventArgs e)
         {            
             string path = GetFirstPath(e);
-
-            if (path != "")
-            {
-                textBoxInputDir.Text = path;
-
-                OnInputDirChange();
-            }
+            if (path != "") textBoxInputDir.Text = path;            
         }
 
         private void textBoxOutput_DragDrop(object sender, DragEventArgs e)
@@ -928,6 +913,13 @@ namespace Renamer
         private void Main_DragEnter(object sender, DragEventArgs e)
         {
             this.Activate();
+        }
+
+        private void textBoxInputDir_TextChanged(object sender, EventArgs e)
+        {
+            buttonRevert.Enabled = false;
+            if (checkBoxSame.Checked) textBoxOutput.Text = textBoxInputDir.Text;
+            LoadFiles();
         }
 
                    
