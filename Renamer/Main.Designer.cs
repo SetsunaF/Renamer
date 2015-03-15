@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxRecursive = new System.Windows.Forms.CheckBox();
             this.buttonRegex = new DropdownButton.DropdownButton();
             this.contextMenuRegex = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.refreshButton = new System.Windows.Forms.PictureBox();
@@ -122,7 +123,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -158,7 +158,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.checkBoxRecursive);
             this.groupBox1.Controls.Add(this.buttonRegex);
             this.groupBox1.Controls.Add(this.refreshButton);
             this.groupBox1.Controls.Add(this.filesFound);
@@ -177,6 +177,17 @@
             this.groupBox1.Size = new System.Drawing.Size(334, 218);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
+            // 
+            // checkBoxRecursive
+            // 
+            this.checkBoxRecursive.AutoSize = true;
+            this.checkBoxRecursive.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxRecursive.Location = new System.Drawing.Point(200, 190);
+            this.checkBoxRecursive.Name = "checkBoxRecursive";
+            this.checkBoxRecursive.Size = new System.Drawing.Size(125, 17);
+            this.checkBoxRecursive.TabIndex = 14;
+            this.checkBoxRecursive.Text = "Recursive file search";
+            this.checkBoxRecursive.UseVisualStyleBackColor = true;
             // 
             // buttonRegex
             // 
@@ -250,9 +261,9 @@
             this.checkBoxSame.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxSame.Location = new System.Drawing.Point(10, 190);
             this.checkBoxSame.Name = "checkBoxSame";
-            this.checkBoxSame.Size = new System.Drawing.Size(136, 17);
+            this.checkBoxSame.Size = new System.Drawing.Size(184, 17);
             this.checkBoxSame.TabIndex = 11;
-            this.checkBoxSame.Text = "Same as input directory";
+            this.checkBoxSame.Text = "Same input and output directories";
             this.checkBoxSame.CheckedChanged += new System.EventHandler(this.checkBoxSame_CheckedChanged);
             // 
             // buttonBrowseOutput
@@ -285,6 +296,7 @@
             this.textBoxOutput.ShortcutsEnabled = false;
             this.textBoxOutput.Size = new System.Drawing.Size(250, 23);
             this.textBoxOutput.TabIndex = 9;
+            this.textBoxOutput.TextChanged += new System.EventHandler(this.textBoxOutput_TextChanged);
             this.textBoxOutput.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxOutput_DragDrop);
             this.textBoxOutput.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBox_DragEnter);
             // 
@@ -1071,18 +1083,9 @@
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(153, 190);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(80, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // Main
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -1095,6 +1098,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renamer";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Main_DragEnter);
             this.Resize += new System.EventHandler(this.Main_Resize);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
@@ -1209,6 +1213,6 @@
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBoxRecursive;
     }
 }

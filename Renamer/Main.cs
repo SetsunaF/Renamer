@@ -99,14 +99,7 @@ namespace Renamer
         {
             if (folderBrowser.ShowDialog() != DialogResult.OK) return;
             textBoxOutput.Text = folderBrowser.SelectedPath;
-
-            OnOutputDirChange();
-        }
-
-        private void OnOutputDirChange()
-        {
-            buttonRevert.Enabled = false;
-        }
+        }        
 
         private void checkBoxSame_CheckedChanged(object sender, EventArgs e)
         {
@@ -752,6 +745,8 @@ namespace Renamer
 
         private void textBox_DragEnter(object sender, DragEventArgs e)
         {
+            this.Activate();
+
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
                 e.Effect = DragDropEffects.All;
             else e.Effect = DragDropEffects.None;
@@ -767,7 +762,7 @@ namespace Renamer
         }
 
         private void textBoxInputDir_DragDrop(object sender, DragEventArgs e)
-        {
+        {            
             string path = GetFirstPath(e);
 
             if (path != "")
@@ -786,7 +781,7 @@ namespace Renamer
             {
                 textBoxOutput.Text = path;
 
-                OnOutputDirChange();
+                //OnOutputDirChange();
                 checkBoxSame.Checked = false;
             }
         }
@@ -811,9 +806,16 @@ namespace Renamer
         byte sortMethod = 0;
 
         private void olvPreview_ColumnClick(object sender, ColumnClickEventArgs e)
-        {
-            if (e.Column != 0) return;
-            contextMenuSort.Show(Cursor.Position);
+        {            
+            switch (e.Column)
+            {
+                case 0:
+                    contextMenuSort.Show(Cursor.Position);
+                    break;
+
+                case 1:
+                    break;
+            }
         }
 
         void UncheckSortMenuItems()
@@ -839,6 +841,7 @@ namespace Renamer
             if (fileList == null || fileNames.Count == 0) return;
 
             SortFileList();
+
             ApplyFileNameFilter();
             ApplyFiltersAndUpdate();
         }
@@ -915,7 +918,19 @@ namespace Renamer
         private void contextMenuProperties_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
             if (olvPreview.Items.Count == 0 || olvPreview.SelectedObjects.Count==0) e.Cancel=true;
-        }              
+        }
+
+        private void textBoxOutput_TextChanged(object sender, EventArgs e)
+        {
+            buttonRevert.Enabled = false;
+        }        
+
+        private void Main_DragEnter(object sender, DragEventArgs e)
+        {
+            this.Activate();
+        }
+
+                   
 
         //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         //{
