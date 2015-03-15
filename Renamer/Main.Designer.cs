@@ -973,6 +973,7 @@
             this.olvPreview.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
             this.olvPreview.ShowFilterMenuOnRightClick = false;
             this.olvPreview.ShowGroups = false;
+            this.olvPreview.ShowItemToolTips = true;
             this.olvPreview.Size = new System.Drawing.Size(674, 155);
             this.olvPreview.TabIndex = 1;
             this.olvPreview.UseCompatibleStateImageBehavior = false;
@@ -980,7 +981,9 @@
             this.olvPreview.VirtualMode = true;
             this.olvPreview.ColumnRightClick += new BrightIdeasSoftware.ColumnRightClickEventHandler(this.olvPreview_ColumnRightClick);
             this.olvPreview.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.olvPreview_FormatRow);
+            this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
             this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
+            this.olvPreview.ItemMouseHover += new System.Windows.Forms.ListViewItemMouseHoverEventHandler(this.olvPreview_ItemMouseHover);
             this.olvPreview.DoubleClick += new System.EventHandler(this.olvPreview_DoubleClick);
             // 
             // olvColumn1
@@ -990,6 +993,7 @@
             this.olvColumn1.ImageAspectName = "GetIcon";
             this.olvColumn1.Sortable = false;
             this.olvColumn1.Text = "Before";
+            this.olvColumn1.ToolTipText = "";
             // 
             // olvColumn2
             // 

@@ -150,14 +150,19 @@ namespace Renamer
 
             if (checkBoxRecursive.Checked)
             {
-                Console.WriteLine(new Random().Next() + " Recursive");
+                //Console.WriteLine(new Random().Next() + " Recursive");
 
                 var files = new List<string>();
                 var directories = Directory.GetDirectories(textBoxInputDir.Text);
 
                 foreach (var dir in directories)
                 {
-                    files.AddRange(Directory.GetFiles(dir));
+                    string[] list = null;
+
+                    try { list = Directory.GetFiles(dir); }
+                    catch { }
+
+                    if(list!=null) files.AddRange(list);
                 }
 
                 var tmp = new string[fileList.Length+files.Count];
@@ -245,7 +250,7 @@ namespace Renamer
             ScrollDownFilters();
 
             ApplyFilterList(filterList);
-            olvPreview.SetObjects(fileNames);
+            olvPreview.SetObjects(fileNames);        
         }
 
         //Make last element from filters preview visible
@@ -970,6 +975,18 @@ namespace Renamer
             if (textBoxInputDir.Text == "") return;            
             buttonRevert.Enabled = false;
             LoadFiles();            
+        }        
+
+        private void olvPreview_ItemMouseHover(object sender, ListViewItemMouseHoverEventArgs e)
+        {
+            var obj = (FileName)olvPreview.GetItem(e.Item.Index).RowObject;
+            e.Item.ToolTipText = obj.ParentDirectory() + @"\" + obj.Original;
+           
+        }
+
+        private void olvPreview_Scroll(object sender, ScrollEventArgs e)
+        {
+            contextMenuProperties.Close();
         }
 
                    
