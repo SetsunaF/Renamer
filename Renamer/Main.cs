@@ -32,6 +32,14 @@ namespace Renamer
             InitializeComponent();
         }
 
+        public Main(string defaultPath)
+        {
+            InitializeComponent();
+
+            if(Directory.Exists(defaultPath))
+                textBoxInputDir.Text = defaultPath;
+        }
+
         private void Main_Load(object sender, EventArgs e)
         {            
             this.MinimumSize = this.Size;

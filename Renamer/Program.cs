@@ -10,7 +10,7 @@ namespace Renamer
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
             //Enable multicore jit if available
             //http://blog.getpaint.net/2012/09/08/using-multi-core-jit-from-net-4-0-if-net-4-5-is-installed/
@@ -30,11 +30,13 @@ namespace Renamer
                     }
                     catch { }
                 }
-            }
+            }            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+
+            if (args.Length == 1) Application.Run(new Main(args[0]));
+            else Application.Run(new Main());
         }
     }
 }
