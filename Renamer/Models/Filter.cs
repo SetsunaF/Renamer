@@ -41,13 +41,9 @@ namespace Renamer.Models
         ReplaceString,
         ReplaceCaseInsensitive,
 
+        ParentDirectory,
         AddExtension,
-        RemoveExtension
-        
-        //will not work unless the application is able to read directories recursively
-        //but if the application can read directories recursively, the sort methods will also
-        //going to need to be modified
-        //ParentDirectory
+        RemoveExtension       
     }
 
     public class Filter
@@ -93,8 +89,8 @@ namespace Renamer.Models
 
             else if (filterType == FilterType.AddNumbering || filterType == FilterType.SwapOrder ||
                      filterType == FilterType.PreserveFromLeft || filterType == FilterType.PreserveFromRight ||
-                     filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight) 
-                     //filterType == FilterType.ParentDirectory)
+                     filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight ||
+                     filterType == FilterType.ParentDirectory)
             {
                 position = Convert.ToInt32(x);
             }
@@ -247,8 +243,8 @@ namespace Renamer.Models
                 case FilterType.RemoveExtension:
                     return fn.GetModifiedNameWithoutExtension();
 
-                //case FilterType.ParentDirectory:
-                //    return input.AppendAtPosition(fn.ParentDirectory(), position);
+                case FilterType.ParentDirectory:
+                    return input.AppendAtPosition(fn.ParentDirectory(), position);
 
                 default:
                     return string.Empty;

@@ -995,14 +995,12 @@ namespace Renamer
             }
         }
 
-                   
+        private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EvalDialog_Num("Parent Directory", "Position:", FilterType.ParentDirectory);
+        }
 
-        //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Parent Directory", "Position:", FilterType.ParentDirectory);
-        //}
-
-        
+                         
 
       
 

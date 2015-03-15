@@ -68,7 +68,7 @@ namespace Renamer.Common
                         textBox.SelectionLength = regex.Length;
 
                         //onTextChange is triggered automatically
-                        //onTextChange(null, null);
+                        //onTextChange(null, null);                        
                     };
 
                     menu.Items.Add(item);

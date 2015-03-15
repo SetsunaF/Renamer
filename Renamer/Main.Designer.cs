@@ -123,6 +123,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.parentDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -490,11 +491,12 @@
             this.replaceStringToolStripMenuItem,
             this.replaceStringCaseInsensitiveToolStripMenuItem,
             this.toolStripMenuItem7,
+            this.parentDirectoryToolStripMenuItem,
             this.addExtensionToolStripMenuItem,
             this.removeExtensionToolStripMenuItem});
             this.contextMenuAdd.Name = "contextMenuAdd";
             this.contextMenuAdd.ShowImageMargin = false;
-            this.contextMenuAdd.Size = new System.Drawing.Size(219, 574);
+            this.contextMenuAdd.Size = new System.Drawing.Size(219, 618);
             // 
             // clearToolStripMenuItem
             // 
@@ -982,7 +984,7 @@
             this.olvPreview.ColumnRightClick += new BrightIdeasSoftware.ColumnRightClickEventHandler(this.olvPreview_ColumnRightClick);
             this.olvPreview.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.olvPreview_FormatRow);
             this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
-            this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);            
+            this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
             this.olvPreview.DoubleClick += new System.EventHandler(this.olvPreview_DoubleClick);
             this.olvPreview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.olvPreview_MouseMove);
             // 
@@ -1091,6 +1093,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
+            // 
+            // parentDirectoryToolStripMenuItem
+            // 
+            this.parentDirectoryToolStripMenuItem.Name = "parentDirectoryToolStripMenuItem";
+            this.parentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";
+            this.parentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.parentDirectoryToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1223,5 +1232,6 @@
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private System.Windows.Forms.CheckBox checkBoxRecursive;
         private System.Windows.Forms.CheckBox checkBoxCopy;
+        private System.Windows.Forms.ToolStripMenuItem parentDirectoryToolStripMenuItem;
     }
 }
