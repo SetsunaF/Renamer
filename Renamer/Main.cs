@@ -144,6 +144,34 @@ namespace Renamer
             //Get files from specified path, it's necessary to sort them because GetFiles() returns an unsorted array on network drives            
             fileList = Directory.GetFiles(textBoxInputDir.Text);
 
+
+
+
+
+            if (checkBoxRecursive.Checked)
+            {
+                Console.WriteLine(new Random().Next() + " Recursive");
+
+                var files = new List<string>();
+                var directories = Directory.GetDirectories(textBoxInputDir.Text);
+
+                foreach (var dir in directories)
+                {
+                    files.AddRange(Directory.GetFiles(dir));
+                }
+
+                var tmp = new string[fileList.Length+files.Count];
+                fileList.CopyTo(tmp,0);
+                files.CopyTo(tmp, fileList.Length);
+
+                fileList = tmp;
+            }
+
+
+
+
+
+
             SortFileList();
             ApplyFileNameFilter();
             ApplyFiltersAndUpdate();
@@ -928,7 +956,20 @@ namespace Renamer
                 textBoxOutput.Text = textBoxInputDir.Text;
                 buttonBrowseOutput.Enabled = false;
             }
-            else buttonBrowseOutput.Enabled = true;
+            else
+            {                
+                buttonBrowseOutput.Enabled = true;
+                checkBoxRecursive.Checked = false;
+            }
+        }
+
+        private void checkBoxRecursive_CheckedChanged(object sender, EventArgs e)
+        {
+            if (((CheckBox)sender).Checked) checkBoxCopy.Checked = false;
+
+            if (textBoxInputDir.Text == "") return;            
+            buttonRevert.Enabled = false;
+            LoadFiles();            
         }
 
                    

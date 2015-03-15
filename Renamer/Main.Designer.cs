@@ -200,6 +200,7 @@
             this.checkBoxRecursive.TabIndex = 14;
             this.checkBoxRecursive.Text = "Recursive file search";
             this.checkBoxRecursive.UseVisualStyleBackColor = true;
+            this.checkBoxRecursive.CheckedChanged += new System.EventHandler(this.checkBoxRecursive_CheckedChanged);
             // 
             // buttonRegex
             // 
