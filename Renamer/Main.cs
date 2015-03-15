@@ -92,16 +92,6 @@ namespace Renamer
             textBoxOutput.Text = folderBrowser.SelectedPath;
         }        
 
-        private void checkBoxSame_CheckedChanged(object sender, EventArgs e)
-        {
-            if (((CheckBox)sender).Checked)
-            {
-                textBoxOutput.Text = textBoxInputDir.Text;
-                buttonBrowseOutput.Enabled = false;
-            }
-            else buttonBrowseOutput.Enabled = true;
-        }
-
         private void textBoxFilter_TextChanged(object sender, EventArgs e)
         {
             //if (!Directory.Exists(textBoxInputDir.Text)) return;
@@ -765,9 +755,7 @@ namespace Renamer
             if (path != "")
             {
                 textBoxOutput.Text = path;
-
-                //OnOutputDirChange();
-                checkBoxSame.Checked = false;
+                checkBoxCopy.Checked = true;
             }
         }
 
@@ -922,7 +910,7 @@ namespace Renamer
         private void textBoxInputDir_TextChanged(object sender, EventArgs e)
         {
             buttonRevert.Enabled = false;
-            if (checkBoxSame.Checked) textBoxOutput.Text = textBoxInputDir.Text;
+            if (!checkBoxCopy.Checked) textBoxOutput.Text = textBoxInputDir.Text;
             LoadFiles();
         }
 
@@ -931,6 +919,16 @@ namespace Renamer
         private void olvPreview_ColumnRightClick(object sender, ColumnClickEventArgs e)
         {
             showPropertiesMenu = false;
+        }
+
+        private void checkBoxCopy_CheckedChanged(object sender, EventArgs e)
+        {
+            if (!((CheckBox)sender).Checked)
+            {
+                textBoxOutput.Text = textBoxInputDir.Text;
+                buttonBrowseOutput.Enabled = false;
+            }
+            else buttonBrowseOutput.Enabled = true;
         }
 
                    

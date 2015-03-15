@@ -39,7 +39,6 @@
             this.refreshButton = new System.Windows.Forms.PictureBox();
             this.filesFound = new MetroFramework.Controls.MetroLabel();
             this.totalFiles = new MetroFramework.Controls.MetroLabel();
-            this.checkBoxSame = new System.Windows.Forms.CheckBox();
             this.buttonBrowseOutput = new DropdownButton.FlatButton();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
@@ -165,7 +164,6 @@
             this.groupBox1.Controls.Add(this.refreshButton);
             this.groupBox1.Controls.Add(this.filesFound);
             this.groupBox1.Controls.Add(this.totalFiles);
-            this.groupBox1.Controls.Add(this.checkBoxSame);
             this.groupBox1.Controls.Add(this.buttonBrowseOutput);
             this.groupBox1.Controls.Add(this.textBoxOutput);
             this.groupBox1.Controls.Add(this.metroLabel3);
@@ -184,18 +182,19 @@
             // 
             this.checkBoxCopy.AutoSize = true;
             this.checkBoxCopy.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxCopy.Location = new System.Drawing.Point(10, 167);
+            this.checkBoxCopy.Location = new System.Drawing.Point(10, 190);
             this.checkBoxCopy.Name = "checkBoxCopy";
             this.checkBoxCopy.Size = new System.Drawing.Size(128, 17);
-            this.checkBoxCopy.TabIndex = 15;
+            this.checkBoxCopy.TabIndex = 11;
             this.checkBoxCopy.Text = "Copy to new directory";
             this.checkBoxCopy.UseVisualStyleBackColor = true;
+            this.checkBoxCopy.CheckedChanged += new System.EventHandler(this.checkBoxCopy_CheckedChanged);
             // 
             // checkBoxRecursive
             // 
             this.checkBoxRecursive.AutoSize = true;
             this.checkBoxRecursive.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxRecursive.Location = new System.Drawing.Point(200, 190);
+            this.checkBoxRecursive.Location = new System.Drawing.Point(150, 190);
             this.checkBoxRecursive.Name = "checkBoxRecursive";
             this.checkBoxRecursive.Size = new System.Drawing.Size(125, 17);
             this.checkBoxRecursive.TabIndex = 14;
@@ -266,19 +265,6 @@
             this.totalFiles.Text = "0 Files";
             this.totalFiles.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.totalFiles.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // checkBoxSame
-            // 
-            this.checkBoxSame.AutoSize = true;
-            this.checkBoxSame.Checked = true;
-            this.checkBoxSame.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxSame.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxSame.Location = new System.Drawing.Point(10, 190);
-            this.checkBoxSame.Name = "checkBoxSame";
-            this.checkBoxSame.Size = new System.Drawing.Size(184, 17);
-            this.checkBoxSame.TabIndex = 11;
-            this.checkBoxSame.Text = "Same input and output directories";
-            this.checkBoxSame.CheckedChanged += new System.EventHandler(this.checkBoxSame_CheckedChanged);
             // 
             // buttonBrowseOutput
             // 
@@ -1145,7 +1131,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.TextBox textBoxInputDir;
         private DropdownButton.FlatButton buttonBrowseInput;
-        private System.Windows.Forms.CheckBox checkBoxSame;
         private DropdownButton.FlatButton buttonBrowseOutput;
         private System.Windows.Forms.TextBox textBoxOutput;
         private MetroFramework.Controls.MetroLabel metroLabel3;
