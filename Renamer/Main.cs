@@ -902,7 +902,11 @@ namespace Renamer
 
         private void contextMenuProperties_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (olvPreview.Items.Count == 0 || olvPreview.SelectedObjects.Count==0) e.Cancel=true;
+            if (olvPreview.Items.Count == 0 || olvPreview.SelectedObjects.Count == 0 || !showPropertiesMenu)
+            {
+                e.Cancel = true;
+                showPropertiesMenu = true;
+            }
         }
 
         private void textBoxOutput_TextChanged(object sender, EventArgs e)
@@ -920,6 +924,13 @@ namespace Renamer
             buttonRevert.Enabled = false;
             if (checkBoxSame.Checked) textBoxOutput.Text = textBoxInputDir.Text;
             LoadFiles();
+        }
+
+        private bool showPropertiesMenu = true;
+
+        private void olvPreview_ColumnRightClick(object sender, ColumnClickEventArgs e)
+        {
+            showPropertiesMenu = false;
         }
 
                    
