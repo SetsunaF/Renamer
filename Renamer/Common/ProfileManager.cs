@@ -95,7 +95,7 @@ namespace Renamer.Common
             SaveProfile(index, true);
         }
 
-        public bool AddProfile(Profile profile)
+        public bool AddProfile(Profile profile, bool populate = true)
         {
             ProfileList.Add(profile);
             int index = ProfileList.Count - 1;
@@ -106,8 +106,11 @@ namespace Renamer.Common
                 return false;
             }
 
-            PopulateProfiles();
-            comboBox.SelectedIndex = comboBox.Items.Count - 1;
+            if (populate)
+            {
+                PopulateProfiles();
+                comboBox.SelectedIndex = comboBox.Items.Count - 1;
+            }
 
             return true;
         }
@@ -140,6 +143,12 @@ namespace Renamer.Common
         {
             var name = "Last Profile";
             var index = FindProfile(name);
+
+            if (index == -1)
+            {
+                AddProfile(new Profile(name, filters), false);
+                return;
+            }
 
             ProfileList[index].Filters.Clear();
             ProfileList[index].Filters = new List<Filter>(filters);
