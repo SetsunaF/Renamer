@@ -296,15 +296,17 @@ namespace Renamer
         //Evaluate dialog for Filters with 1 numeric argument (the blue rows on the excel file)
         void EvalDialog_Num(string title, string prompt, FilterType filterType)
         {
-            var dlg = new Dialogs.Number(title, prompt, this);
-            dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(filterType, dlg.inputNumber.Value);
+            using (var dlg = new Dialogs.Number(title, prompt, this))
+            {
+                dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(filterType, dlg.inputNumber.Value);
 
-            ResetNumericUpDown(dlg.inputNumber);
+                ResetNumericUpDown(dlg.inputNumber);
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-                AddFilter(new Filter(filterType, dlg.inputNumber.Value));
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(filterType, dlg.inputNumber.Value));
 
-            ApplyFiltersAndUpdate();
+                ApplyFiltersAndUpdate();
+            }
         }
 
         //Evaluate dialog for Filters with 1 string argument (the purple rows on the excel file)
