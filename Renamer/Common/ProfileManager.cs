@@ -45,7 +45,20 @@ namespace Renamer.Common
 
             foreach (var file in files)
             {
-                ProfileList.Add(new Profile(file));
+                try
+                {
+                    ProfileList.Add(new Profile(file));
+                }
+                catch
+                {
+                    MessageBox.Show("Error loading profile: \"" + Path.GetFileNameWithoutExtension(file) +
+                        "\". The profile might have been ceated by an older version of the application or the profile file may be damaged.", 
+                        "Renamer", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    System.Diagnostics.Process.Start(profileDirectory);
+
+                    break;
+                }
             }
 
             ProfileList = new List<Profile>(ProfileList.OrderBy(o => o.Name));
