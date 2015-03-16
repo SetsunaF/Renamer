@@ -83,6 +83,7 @@
             this.replaceStringToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.replaceStringCaseInsensitiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
+            this.parentDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonDown = new DropdownButton.FlatButton();
@@ -123,7 +124,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.parentDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNumberingByDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -465,6 +466,7 @@
             this.clearToolStripMenuItem,
             this.toolStripMenuItem2,
             this.addNumberingToolStripMenuItem,
+            this.addNumberingByDirectoryToolStripMenuItem,
             this.swapOrderToolStripMenuItem,
             this.toolStripMenuItem1,
             this.appendBeforeToolStripMenuItem,
@@ -496,7 +498,7 @@
             this.removeExtensionToolStripMenuItem});
             this.contextMenuAdd.Name = "contextMenuAdd";
             this.contextMenuAdd.ShowImageMargin = false;
-            this.contextMenuAdd.Size = new System.Drawing.Size(219, 618);
+            this.contextMenuAdd.Size = new System.Drawing.Size(219, 640);
             // 
             // clearToolStripMenuItem
             // 
@@ -686,6 +688,13 @@
             // 
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
             this.toolStripMenuItem7.Size = new System.Drawing.Size(215, 6);
+            // 
+            // parentDirectoryToolStripMenuItem
+            // 
+            this.parentDirectoryToolStripMenuItem.Name = "parentDirectoryToolStripMenuItem";
+            this.parentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";
+            this.parentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.parentDirectoryToolStripMenuItem_Click);
             // 
             // addExtensionToolStripMenuItem
             // 
@@ -1094,12 +1103,12 @@
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
             // 
-            // parentDirectoryToolStripMenuItem
+            // addNumberingByDirectoryToolStripMenuItem
             // 
-            this.parentDirectoryToolStripMenuItem.Name = "parentDirectoryToolStripMenuItem";
-            this.parentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";
-            this.parentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.parentDirectoryToolStripMenuItem_Click);
+            this.addNumberingByDirectoryToolStripMenuItem.Name = "addNumberingByDirectoryToolStripMenuItem";
+            this.addNumberingByDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.addNumberingByDirectoryToolStripMenuItem.Text = "Add Numbering (By Directory)";
+            this.addNumberingByDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addNumberingByDirectoryToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1233,5 +1242,6 @@
         private System.Windows.Forms.CheckBox checkBoxRecursive;
         private System.Windows.Forms.CheckBox checkBoxCopy;
         private System.Windows.Forms.ToolStripMenuItem parentDirectoryToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addNumberingByDirectoryToolStripMenuItem;
     }
 }

@@ -483,10 +483,10 @@ namespace Renamer
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            //Duplicate last filter
+            //Duplicate selected filter
             if (filterList.Count > 0)
             {
-                AddFilter(filterList[filterList.Count - 1]);
+                AddFilter(filterList[olvFilters.SelectedIndex]);
                 ApplyFiltersAndUpdate();
             }
         }
@@ -1008,6 +1008,11 @@ namespace Renamer
         private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvalDialog_Num("Parent Directory", "Position:", FilterType.ParentDirectory);
+        }
+
+        private void addNumberingByDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EvalDialog_Num("Number By Directories", "Position:", FilterType.NumberByDirectories);
         }
 
                          

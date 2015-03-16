@@ -15,6 +15,7 @@ namespace Renamer.Models
         Clear,
 
         AddNumbering,
+        NumberByDirectories,
         SwapOrder,
 
         AppendBefore,
@@ -76,7 +77,7 @@ namespace Renamer.Models
             SecondArgument = (y == null ? "" : y.ToString());
 
             if (filterType == FilterType.AppendBefore || filterType == FilterType.AppendAfter || 
-                     filterType == FilterType.Regex)
+                filterType == FilterType.Regex)
             {
                 text1 = FirstArgument;
             }
@@ -87,7 +88,7 @@ namespace Renamer.Models
                 position = Convert.ToInt32(y);
             }
 
-            else if (filterType == FilterType.AddNumbering || filterType == FilterType.SwapOrder ||
+            else if (filterType == FilterType.AddNumbering || filterType==FilterType.NumberByDirectories || filterType == FilterType.SwapOrder ||
                      filterType == FilterType.PreserveFromLeft || filterType == FilterType.PreserveFromRight ||
                      filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight ||
                      filterType == FilterType.ParentDirectory)
@@ -140,6 +141,9 @@ namespace Renamer.Models
         //(base 0) index is only required for AddNumbering (and Swap Order) and AppendFromTextFile
         //max is the number of files, it's used to fill with zeros if FilterType is AddNumbering
         //original is only needed for AddExtension and ParentDirectory
+
+        private FileName previousFileName = null;   //previously used file name
+        private int fileCount = 0;                  //file count in the current directory
         
         //public string ApplyTo(string input, int index=0, int max=0, FileName fn=null)
         public string ApplyTo(FileName fn, int index = 0, int max = 0)
@@ -155,6 +159,14 @@ namespace Renamer.Models
                 case FilterType.AddNumbering:
                     var number = (index + 1).CompleteZeros(max);
                     return input.AppendAtPosition(number, position);
+
+                case FilterType.NumberByDirectories:
+                    if (previousFileName != null && previousFileName.ParentDirectory() != fn.ParentDirectory()) fileCount = 0;
+                    
+                    previousFileName = fn;  
+                    fileCount++;                                     
+
+                    return input.AppendAtPosition((fileCount).CompleteZeros(max), position);
 
                 case FilterType.SwapOrder:
                     var order = index;
