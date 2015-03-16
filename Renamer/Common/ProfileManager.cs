@@ -36,6 +36,8 @@ namespace Renamer.Common
             //comboBox.DataSource = null;
             //comboBox.DataSource = ProfileList;
             //comboBox.DisplayMember = "Name";
+
+            comboBox.Refresh();
         }
 
         private void ReloadProfiles()
@@ -118,7 +120,6 @@ namespace Renamer.Common
         public void DeleteSelected()
         {
             int index = comboBox.SelectedIndex;
-
             string message;
 
             if (!ProfileList[index].Delete(out message))
