@@ -613,7 +613,7 @@ namespace Renamer
             {
                 if (dlg.inputText.Text == "") return;
 
-                profileManager.DeleteSelected();
+                profileManager.DeleteSelected(); 
                 profileManager.AddProfile(new Profile(dlg.inputText.Text, filterList));
             }
         }
@@ -624,7 +624,7 @@ namespace Renamer
 
             var result = MessageBox.Show("Are you sure you want to delete the selected profile?", "Delete Profile", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
-                profileManager.DeleteSelected();
+                profileManager.DeleteSelected(); 
         }
 
         private void dropDownProfile_SelectedIndexChanged(object sender, EventArgs e)
@@ -1013,6 +1013,11 @@ namespace Renamer
         private void addNumberingByDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
         {
             EvalDialog_Num("Number By Directories", "Position:", FilterType.NumberByDirectories);
+        }
+
+        private void Main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            profileManager.SaveLastProfile(filterList);
         }
 
                          

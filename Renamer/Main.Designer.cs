@@ -57,6 +57,7 @@
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.addNumberingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addNumberingByDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.swapOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.appendBeforeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -124,7 +125,6 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.addNumberingByDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -498,7 +498,7 @@
             this.removeExtensionToolStripMenuItem});
             this.contextMenuAdd.Name = "contextMenuAdd";
             this.contextMenuAdd.ShowImageMargin = false;
-            this.contextMenuAdd.Size = new System.Drawing.Size(219, 640);
+            this.contextMenuAdd.Size = new System.Drawing.Size(219, 618);
             // 
             // clearToolStripMenuItem
             // 
@@ -518,6 +518,13 @@
             this.addNumberingToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.addNumberingToolStripMenuItem.Text = "Add Numbering";
             this.addNumberingToolStripMenuItem.Click += new System.EventHandler(this.addNumberingToolStripMenuItem_Click);
+            // 
+            // addNumberingByDirectoryToolStripMenuItem
+            // 
+            this.addNumberingByDirectoryToolStripMenuItem.Name = "addNumberingByDirectoryToolStripMenuItem";
+            this.addNumberingByDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.addNumberingByDirectoryToolStripMenuItem.Text = "Add Numbering (By Directory)";
+            this.addNumberingByDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addNumberingByDirectoryToolStripMenuItem_Click);
             // 
             // swapOrderToolStripMenuItem
             // 
@@ -1103,13 +1110,6 @@
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
             // 
-            // addNumberingByDirectoryToolStripMenuItem
-            // 
-            this.addNumberingByDirectoryToolStripMenuItem.Name = "addNumberingByDirectoryToolStripMenuItem";
-            this.addNumberingByDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.addNumberingByDirectoryToolStripMenuItem.Text = "Add Numbering (By Directory)";
-            this.addNumberingByDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addNumberingByDirectoryToolStripMenuItem_Click);
-            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -1124,6 +1124,7 @@
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Renamer";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Main_FormClosing);
             this.Load += new System.EventHandler(this.Main_Load);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Main_DragEnter);
             this.Resize += new System.EventHandler(this.Main_Resize);

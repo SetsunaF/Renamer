@@ -115,6 +115,7 @@ namespace Renamer.Common
         public void DeleteSelected()
         {
             int index = comboBox.SelectedIndex;
+
             string message;
 
             if (!ProfileList[index].Delete(out message))
@@ -124,6 +125,27 @@ namespace Renamer.Common
                 ProfileList.RemoveAt(index);
                 PopulateProfiles();
             }
+        }
+
+        private int FindProfile(string name)
+        {
+            for (int i = 0; i < ProfileList.Count; i++)
+            {
+                if (name == ProfileList[i].Name) return i;
+            }
+            return -1;
+        }
+
+        public void SaveLastProfile(List<Filter> filters)
+        {
+            var name = "Last Profile";
+            var index = FindProfile(name);
+
+            ProfileList[index].Filters.Clear();
+            ProfileList[index].Filters = new List<Filter>(filters);
+
+            string message;
+            ProfileList[index].Save(true, out message);
         }
 
         public void AssignProfile(out List<Filter> filterList)
