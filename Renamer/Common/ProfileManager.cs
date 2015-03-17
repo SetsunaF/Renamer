@@ -142,6 +142,8 @@ namespace Renamer.Common
 
         public void SaveLastProfile(List<Filter> filters)
         {
+            if (filters.Count == 0) return;
+
             var name = "Last Profile";
             var index = FindProfile(name);
 
