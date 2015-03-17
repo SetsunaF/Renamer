@@ -162,7 +162,8 @@ namespace Renamer.Common
 
         public void AssignProfile(out List<Filter> filterList)
         {
-            filterList=new List<Filter>(ProfileList[comboBox.SelectedIndex].Filters);
+            if (comboBox.SelectedIndex == -1) filterList = new List<Filter>();
+            else filterList=new List<Filter>(ProfileList[comboBox.SelectedIndex].Filters);
         }
 
 

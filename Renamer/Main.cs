@@ -628,7 +628,7 @@ namespace Renamer
         }
 
         private void dropDownProfile_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
             profileManager.AssignProfile(out filterList);
 
             olvFilters.SetObjects(filterList);
