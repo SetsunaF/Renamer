@@ -15,8 +15,9 @@ namespace Renamer.Common
 
         public ProfileManager(ComboBox combo)
         {
-            string appDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-            profileDirectory = appDirectory + "\\Profiles";
+            //string appDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            //profileDirectory = appDirectory + "\\Profiles";            
+            profileDirectory = Application.StartupPath + "\\Profiles";
 
             comboBox = combo;
 
