@@ -1020,6 +1020,11 @@ namespace Renamer
             profileManager.SaveLastProfile(filterList);
         }
 
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start((olvPreview.SelectedObject as FileName).FullPath());
+        }
+
                          
 
       
