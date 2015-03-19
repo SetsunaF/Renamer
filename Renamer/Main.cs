@@ -140,6 +140,8 @@ namespace Renamer
             //if (!Directory.Exists(textBoxInputDir.Text)) return;
             if (textBoxInputDir.Text == "")
             {
+                fileList=new string[0];
+
                 //these are the same three lines inside ApplyFileNameFilter()
                 //but they're never reached if the input dir is empty
                 textBoxFilter.BackColor = SystemColors.Window;
@@ -182,12 +184,12 @@ namespace Renamer
 
                 fileList = tmp;
             }
+            
+            RefreshUI();
+        }
 
-
-
-
-
-
+        void RefreshUI()
+        {
             SortFileList();
             ApplyFileNameFilter();
             ApplyFiltersAndUpdate();
@@ -1029,15 +1031,20 @@ namespace Renamer
         }
 
         private void newProjectToolStripMenuItem_Click(object sender, EventArgs e)
-        {
+        {            
             textBoxInputDir.Clear();
             textBoxFilter.Clear();  
           
             checkBoxCopy.Checked = false;
-            checkBoxRecursive.Checked = false;            
+            checkBoxRecursive.Checked = false;
 
+            profileManager.SaveLastProfile(filterList);
             dropDownProfile.SelectedIndex = -1;
+
+            RefreshUI();
         }
+
+        
 
                          
 

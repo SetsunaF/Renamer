@@ -124,11 +124,11 @@
             this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser();
             this.buttonOptions = new DropdownButton.DropdownButton();
             this.contextMenuOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem11 = new System.Windows.Forms.ToolStripSeparator();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
@@ -1102,21 +1102,33 @@
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(153, 98);
+            this.contextMenuOptions.Size = new System.Drawing.Size(139, 76);
             // 
-            // aboutToolStripMenuItem
+            // newProjectToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "About";
-            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.newProjectToolStripMenuItem.Text = "New Project";
+            this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.newProjectToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem11
+            // 
+            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(135, 6);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Enabled = false;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -1129,18 +1141,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
-            // 
-            // toolStripMenuItem11
-            // 
-            this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(149, 6);
-            // 
-            // newProjectToolStripMenuItem
-            // 
-            this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.newProjectToolStripMenuItem.Text = "New Project";
-            this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.newProjectToolStripMenuItem_Click);
             // 
             // Main
             // 
