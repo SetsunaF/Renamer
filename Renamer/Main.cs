@@ -102,18 +102,6 @@ namespace Renamer
 
         private void textBoxFilter_TextChanged(object sender, EventArgs e)
         {
-            //if (!Directory.Exists(textBoxInputDir.Text)) return;
-            if (textBoxInputDir.Text == "")
-            {
-                //these are the same three lines inside ApplyFileNameFilter()
-                //but they're never reached if the input dir is empty
-                textBoxFilter.BackColor = SystemColors.Window;
-                if (!StringFunctions.ValidPattern(textBoxFilter.Text))
-                    textBoxFilter.BackColor = Color.MistyRose;
-
-                return;
-            }
-
             buttonRevert.Enabled = false;
             LoadFiles();
         }
@@ -149,6 +137,21 @@ namespace Renamer
 
         void LoadFiles()
         {
+            //if (!Directory.Exists(textBoxInputDir.Text)) return;
+            if (textBoxInputDir.Text == "")
+            {
+                //these are the same three lines inside ApplyFileNameFilter()
+                //but they're never reached if the input dir is empty
+                textBoxFilter.BackColor = SystemColors.Window;
+                if (!StringFunctions.ValidPattern(textBoxFilter.Text))
+                    textBoxFilter.BackColor = Color.MistyRose;
+
+                return;
+            }
+
+
+
+
             //Get files from specified path, it's necessary to sort them because GetFiles() returns an unsorted array on network drives            
             fileList = Directory.GetFiles(textBoxInputDir.Text);
 
@@ -1023,6 +1026,17 @@ namespace Renamer
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start((olvPreview.SelectedObject as FileName).FullPath());
+        }
+
+        private void newProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            textBoxInputDir.Clear();
+            textBoxFilter.Clear();  
+          
+            checkBoxCopy.Checked = false;
+            checkBoxRecursive.Checked = false;            
+
+            dropDownProfile.SelectedIndex = -1;
         }
 
                          
