@@ -41,6 +41,7 @@ namespace Renamer.Models
 
         public bool IsValidName()
         {
+            if (Modified == "") return false;
             return (Modified.IndexOfAny(Path.GetInvalidFileNameChars()) == -1);
         }
 
