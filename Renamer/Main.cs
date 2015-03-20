@@ -15,7 +15,7 @@ namespace Renamer
 {
     public partial class Main : Form
     {
-        private string[] fileList;
+        private string[] fileList=new string[0];
 
         private List<FileName> fileNames = new List<FileName>();
         private List<FileName> previousNames = new List<FileName>();
