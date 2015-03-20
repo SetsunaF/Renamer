@@ -23,15 +23,7 @@ namespace Renamer.Windows
             this.Text = title;
             labelError.Text = prompt;
             textMessage.Text = FormatMessages(messages);
-        }
-
-        public static DialogResult ShowDialog(string title, string prompt, List<string[]> messages)
-        {
-            using (var dlg = new Windows.Errors(title, prompt, messages))
-            {
-                return dlg.ShowDialog();
-            }
-        }
+        }        
 
         //format list of arrays, each array contains [file name, error message]
         private string FormatMessages(List<string[]> messages)

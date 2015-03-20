@@ -129,6 +129,12 @@
     <Compile Include="Windows\Errors.Designer.cs">
       <DependentUpon>Errors.cs</DependentUpon>
     </Compile>
+    <Compile Include="Windows\MediaInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\MediaInfo.Designer.cs">
+      <DependentUpon>MediaInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Windows\Progress.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +180,9 @@
     </Compile>
     <EmbeddedResource Include="Windows\About.resx">
       <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\MediaInfo.resx">
+      <DependentUpon>MediaInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
