@@ -704,8 +704,9 @@ namespace Renamer
 
                     if (errorList.Count > 0)
                     {
-                        var errorDlg = new Windows.Errors("Error", "Cannot rename some files, please review the errors below", errorList);
-                        errorDlg.ShowDialog();
+                        //var errorDlg = new Windows.Errors("Error", "Cannot rename some files, please review the errors below", errorList);
+                        //errorDlg.ShowDialog();
+                        Windows.Errors.ShowDialog("Error", "Cannot rename some files, please review the errors below", errorList);
                     }
                 });
 
