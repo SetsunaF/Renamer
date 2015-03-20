@@ -41,11 +41,13 @@ namespace Renamer.Common
         public static bool Show(string fileName)
         {
             SHELLEXECUTEINFO info = new SHELLEXECUTEINFO();
+
             info.cbSize = System.Runtime.InteropServices.Marshal.SizeOf(info);
             info.lpVerb = "properties";
             info.lpFile = fileName;
             info.nShow = SW_SHOW;
-            info.fMask = SEE_MASK_INVOKEIDLIST;
+            info.fMask = SEE_MASK_INVOKEIDLIST;      
+            
             return ShellExecuteEx(ref info);
         }
     }

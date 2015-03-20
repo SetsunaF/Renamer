@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Runtime.InteropServices;
 
 namespace Renamer.Models
@@ -9,6 +10,8 @@ namespace Renamer.Models
 
         public string Original;
         public string Modified;
+
+        private FileInfo Info;
 
         //public FileName(string fullPath)
         //{
@@ -93,5 +96,50 @@ namespace Renamer.Models
         {
             return Common.ShellIcon.GetIcon(this.FullPathModified()).ToBitmap();
         }
+
+        private void LoadFileInfo()
+        {
+            if (Info == null)
+                Info = new FileInfo(this.FullPath());
+        }
+
+        public string CreationDate()
+        {
+            LoadFileInfo();
+
+            return Info.CreationTime.ToShortDateString() + " " + Info.CreationTime.ToShortTimeString();
+        }
+
+        public string LastWriteDate()
+        {
+            LoadFileInfo();
+
+            return Info.LastWriteTime.ToShortDateString() + " " + Info.LastWriteTime.ToShortTimeString();
+        }
+                
+        //trim file length to fit a unit
+        private double TrimSize(long length, int n = 0)
+        {
+            for (int i = 0; i < n; i++) length /= 1024;         //divide n times by 1024            
+            return Math.Round(Convert.ToDouble(length), 2);     //convert to double and round to 2 decimal places
+        }
+
+        public string ReadableFileSize()
+        {
+            LoadFileInfo();
+
+            long length = Info.Length;
+
+            if (length < Math.Pow(1024, 1)) return length + " B";               //lower than 1kb
+            if (length < Math.Pow(1024, 2)) return TrimSize(length, 1) + " KB"; //lower than 1mb
+            if (length < Math.Pow(1024, 3)) return TrimSize(length, 2) + " MB"; //lower than 1gb
+            if (length < Math.Pow(1024, 4)) return TrimSize(length, 3) + " GB"; //lower than 1tb
+            
+            return length + " TB";                                              //return size in tb    
+        }
+
+
+
+
     }
 }

@@ -196,6 +196,8 @@ namespace Renamer
 
             totalFiles.Text = fileList.Length + " Files";
             filesFound.Text = fileNames.Count + " Files";
+
+            panelDetails.Hide();
         }
 
         void ApplyFileNameFilter()
@@ -1042,6 +1044,26 @@ namespace Renamer
             dropDownProfile.SelectedIndex = -1;
 
             RefreshUI();
+        }        
+
+        private void olvPreview_SelectionChanged(object sender, EventArgs e)
+        {
+            var fn = olvPreview.SelectedObject as FileName;
+
+            if (fn != null)
+            {
+                dateCreated.Text = fn.CreationDate();
+                dateModified.Text = fn.LastWriteDate();
+                fileSize.Text = fn.ReadableFileSize();
+
+                panelDetails.Show();
+            }
+            else panelDetails.Hide();
+        }
+
+        private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         

@@ -129,10 +129,14 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelDetails = new System.Windows.Forms.Panel();
+            this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.buttonMediaInfo = new System.Windows.Forms.LinkLabel();
+            this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
-            this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -146,6 +150,7 @@
             this.contextMenuProperties.SuspendLayout();
             this.contextMenuOptions.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panelDetails.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -1007,6 +1012,7 @@
             this.olvPreview.VirtualMode = true;
             this.olvPreview.ColumnRightClick += new BrightIdeasSoftware.ColumnRightClickEventHandler(this.olvPreview_ColumnRightClick);
             this.olvPreview.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.olvPreview_FormatRow);
+            this.olvPreview.SelectionChanged += new System.EventHandler(this.olvPreview_SelectionChanged);
             this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
             this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
             this.olvPreview.DoubleClick += new System.EventHandler(this.olvPreview_DoubleClick);
@@ -1106,49 +1112,99 @@
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(139, 76);
+            this.contextMenuOptions.Size = new System.Drawing.Size(153, 98);
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.newProjectToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(135, 6);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(149, 6);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Enabled = false;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.buttonMediaInfo);
-            this.panel1.Controls.Add(this.dateCreated);
-            this.panel1.Controls.Add(this.dateModified);
-            this.panel1.Controls.Add(this.fileSize);
             this.panel1.Controls.Add(this.buttonOptions);
             this.panel1.Controls.Add(this.buttonRename);
             this.panel1.Controls.Add(this.buttonRevert);
+            this.panel1.Controls.Add(this.panelDetails);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 397);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
+            // 
+            // panelDetails
+            // 
+            this.panelDetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDetails.Controls.Add(this.metroLabel7);
+            this.panelDetails.Controls.Add(this.metroLabel6);
+            this.panelDetails.Controls.Add(this.metroLabel5);
+            this.panelDetails.Controls.Add(this.buttonMediaInfo);
+            this.panelDetails.Controls.Add(this.fileSize);
+            this.panelDetails.Controls.Add(this.dateCreated);
+            this.panelDetails.Controls.Add(this.dateModified);
+            this.panelDetails.Location = new System.Drawing.Point(48, 0);
+            this.panelDetails.Name = "panelDetails";
+            this.panelDetails.Size = new System.Drawing.Size(420, 45);
+            this.panelDetails.TabIndex = 8;
+            this.panelDetails.Visible = false;
+            // 
+            // metroLabel7
+            // 
+            this.metroLabel7.AutoSize = true;
+            this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel7.Location = new System.Drawing.Point(4, 22);
+            this.metroLabel7.Name = "metroLabel7";
+            this.metroLabel7.Size = new System.Drawing.Size(89, 12);
+            this.metroLabel7.TabIndex = 9;
+            this.metroLabel7.Text = "Date modified:";
+            this.metroLabel7.UseCustomBackColor = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel6.Location = new System.Drawing.Point(4, 11);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(81, 12);
+            this.metroLabel6.TabIndex = 8;
+            this.metroLabel6.Text = "Date created:";
+            this.metroLabel6.UseCustomBackColor = true;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.metroLabel5.Location = new System.Drawing.Point(240, 11);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(33, 12);
+            this.metroLabel5.TabIndex = 7;
+            this.metroLabel5.Text = "Size:";
+            this.metroLabel5.UseCustomBackColor = true;
             // 
             // buttonMediaInfo
             // 
@@ -1157,23 +1213,35 @@
             this.buttonMediaInfo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.buttonMediaInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonMediaInfo.Location = new System.Drawing.Point(280, 22);
+            this.buttonMediaInfo.Location = new System.Drawing.Point(240, 22);
             this.buttonMediaInfo.Name = "buttonMediaInfo";
-            this.buttonMediaInfo.Size = new System.Drawing.Size(73, 12);
+            this.buttonMediaInfo.Size = new System.Drawing.Size(138, 12);
             this.buttonMediaInfo.TabIndex = 1;
             this.buttonMediaInfo.TabStop = true;
-            this.buttonMediaInfo.Text = "MediaInfo...";
+            this.buttonMediaInfo.Text = "Advanced information...";
+            // 
+            // fileSize
+            // 
+            this.fileSize.AutoSize = true;
+            this.fileSize.BackColor = System.Drawing.Color.Transparent;
+            this.fileSize.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.fileSize.Location = new System.Drawing.Point(272, 11);
+            this.fileSize.Name = "fileSize";
+            this.fileSize.Size = new System.Drawing.Size(71, 12);
+            this.fileSize.TabIndex = 6;
+            this.fileSize.Text = "1023.31 MB";
+            this.fileSize.UseCustomBackColor = true;
             // 
             // dateCreated
             // 
             this.dateCreated.AutoSize = true;
             this.dateCreated.BackColor = System.Drawing.Color.Transparent;
             this.dateCreated.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.dateCreated.Location = new System.Drawing.Point(52, 22);
+            this.dateCreated.Location = new System.Drawing.Point(92, 11);
             this.dateCreated.Name = "dateCreated";
-            this.dateCreated.Size = new System.Drawing.Size(207, 12);
+            this.dateCreated.Size = new System.Drawing.Size(127, 12);
             this.dateCreated.TabIndex = 5;
-            this.dateCreated.Text = "Date created: 01/26/2015 12:45:12";
+            this.dateCreated.Text = "01/26/2015 12:45:12";
             this.dateCreated.UseCustomBackColor = true;
             // 
             // dateModified
@@ -1181,24 +1249,12 @@
             this.dateModified.AutoSize = true;
             this.dateModified.BackColor = System.Drawing.Color.Transparent;
             this.dateModified.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.dateModified.Location = new System.Drawing.Point(52, 11);
+            this.dateModified.Location = new System.Drawing.Point(92, 22);
             this.dateModified.Name = "dateModified";
-            this.dateModified.Size = new System.Drawing.Size(215, 12);
+            this.dateModified.Size = new System.Drawing.Size(127, 12);
             this.dateModified.TabIndex = 4;
-            this.dateModified.Text = "Date modified: 05/26/2015 10:18:02";
+            this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
-            // 
-            // fileSize
-            // 
-            this.fileSize.AutoSize = true;
-            this.fileSize.BackColor = System.Drawing.Color.Transparent;
-            this.fileSize.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.fileSize.Location = new System.Drawing.Point(280, 11);
-            this.fileSize.Name = "fileSize";
-            this.fileSize.Size = new System.Drawing.Size(76, 12);
-            this.fileSize.TabIndex = 6;
-            this.fileSize.Text = "Size: 382 KB";
-            this.fileSize.UseCustomBackColor = true;
             // 
             // Main
             // 
@@ -1233,7 +1289,8 @@
             this.contextMenuProperties.ResumeLayout(false);
             this.contextMenuOptions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelDetails.ResumeLayout(false);
+            this.panelDetails.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1343,5 +1400,9 @@
         private MetroFramework.Controls.MetroLabel dateModified;
         private MetroFramework.Controls.MetroLabel dateCreated;
         private System.Windows.Forms.LinkLabel buttonMediaInfo;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
+        private System.Windows.Forms.Panel panelDetails;
+        private MetroFramework.Controls.MetroLabel metroLabel7;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
