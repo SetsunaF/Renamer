@@ -887,7 +887,7 @@ namespace Renamer
             OnSortMenuItemClick(sender, 3);
         }
         
-        private void refreshButton_Click(object sender, EventArgs e)
+        private void buttonRefresh_Click(object sender, EventArgs e)
         {
             textBoxFilter_TextChanged(null, null);
         }
@@ -1043,6 +1043,11 @@ namespace Renamer
 
             RefreshUI();
         }
+
+        
+
+
+
 
         
 

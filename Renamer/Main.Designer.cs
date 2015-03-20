@@ -36,7 +36,7 @@
             this.checkBoxRecursive = new System.Windows.Forms.CheckBox();
             this.buttonRegex = new DropdownButton.DropdownButton();
             this.contextMenuRegex = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.refreshButton = new System.Windows.Forms.PictureBox();
+            this.buttonRefresh = new System.Windows.Forms.PictureBox();
             this.filesFound = new MetroFramework.Controls.MetroLabel();
             this.totalFiles = new MetroFramework.Controls.MetroLabel();
             this.buttonBrowseOutput = new DropdownButton.FlatButton();
@@ -129,9 +129,13 @@
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonMediaInfo = new System.Windows.Forms.LinkLabel();
+            this.dateCreated = new MetroFramework.Controls.MetroLabel();
+            this.dateModified = new MetroFramework.Controls.MetroLabel();
+            this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.contextMenuDelete.SuspendLayout();
             this.contextMenuAdd.SuspendLayout();
@@ -167,7 +171,7 @@
             this.groupBox1.Controls.Add(this.checkBoxCopy);
             this.groupBox1.Controls.Add(this.checkBoxRecursive);
             this.groupBox1.Controls.Add(this.buttonRegex);
-            this.groupBox1.Controls.Add(this.refreshButton);
+            this.groupBox1.Controls.Add(this.buttonRefresh);
             this.groupBox1.Controls.Add(this.filesFound);
             this.groupBox1.Controls.Add(this.totalFiles);
             this.groupBox1.Controls.Add(this.buttonBrowseOutput);
@@ -234,18 +238,18 @@
             this.contextMenuRegex.ShowImageMargin = false;
             this.contextMenuRegex.Size = new System.Drawing.Size(36, 4);
             // 
-            // refreshButton
+            // buttonRefresh
             // 
-            this.refreshButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refreshButton.Image = global::Renamer.Properties.Resources.refresh;
-            this.refreshButton.Location = new System.Drawing.Point(108, 19);
-            this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(16, 16);
-            this.refreshButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.refreshButton.TabIndex = 13;
-            this.refreshButton.TabStop = false;
-            this.toolTipProvider.SetToolTip(this.refreshButton, "Click to Reload");
-            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            this.buttonRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonRefresh.Image = global::Renamer.Properties.Resources.refresh;
+            this.buttonRefresh.Location = new System.Drawing.Point(108, 19);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(16, 16);
+            this.buttonRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.buttonRefresh.TabIndex = 13;
+            this.buttonRefresh.TabStop = false;
+            this.toolTipProvider.SetToolTip(this.buttonRefresh, "Click to Reload");
+            this.buttonRefresh.Click += new System.EventHandler(this.buttonRefresh_Click);
             // 
             // filesFound
             // 
@@ -951,7 +955,7 @@
             this.buttonRevert.Name = "buttonRevert";
             this.buttonRevert.Size = new System.Drawing.Size(85, 27);
             this.buttonRevert.Style = DropdownButton.Styles.Default;
-            this.buttonRevert.TabIndex = 2;
+            this.buttonRevert.TabIndex = 3;
             this.buttonRevert.Text = "Revert";
             this.buttonRevert.UseVisualStyleBackColor = false;
             this.buttonRevert.Click += new System.EventHandler(this.buttonRevert_Click);
@@ -968,7 +972,7 @@
             this.buttonRename.Name = "buttonRename";
             this.buttonRename.Size = new System.Drawing.Size(85, 27);
             this.buttonRename.Style = DropdownButton.Styles.Primary;
-            this.buttonRename.TabIndex = 1;
+            this.buttonRename.TabIndex = 2;
             this.buttonRename.Text = "Rename";
             this.buttonRename.UseVisualStyleBackColor = false;
             this.buttonRename.Click += new System.EventHandler(this.buttonRename_Click);
@@ -1133,6 +1137,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.buttonMediaInfo);
+            this.panel1.Controls.Add(this.dateCreated);
+            this.panel1.Controls.Add(this.dateModified);
+            this.panel1.Controls.Add(this.fileSize);
             this.panel1.Controls.Add(this.buttonOptions);
             this.panel1.Controls.Add(this.buttonRename);
             this.panel1.Controls.Add(this.buttonRevert);
@@ -1141,6 +1149,56 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(704, 45);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonMediaInfo
+            // 
+            this.buttonMediaInfo.ActiveLinkColor = System.Drawing.Color.Black;
+            this.buttonMediaInfo.AutoSize = true;
+            this.buttonMediaInfo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.buttonMediaInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonMediaInfo.Location = new System.Drawing.Point(280, 22);
+            this.buttonMediaInfo.Name = "buttonMediaInfo";
+            this.buttonMediaInfo.Size = new System.Drawing.Size(73, 12);
+            this.buttonMediaInfo.TabIndex = 1;
+            this.buttonMediaInfo.TabStop = true;
+            this.buttonMediaInfo.Text = "MediaInfo...";
+            // 
+            // dateCreated
+            // 
+            this.dateCreated.AutoSize = true;
+            this.dateCreated.BackColor = System.Drawing.Color.Transparent;
+            this.dateCreated.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.dateCreated.Location = new System.Drawing.Point(52, 22);
+            this.dateCreated.Name = "dateCreated";
+            this.dateCreated.Size = new System.Drawing.Size(207, 12);
+            this.dateCreated.TabIndex = 5;
+            this.dateCreated.Text = "Date created: 01/26/2015 12:45:12";
+            this.dateCreated.UseCustomBackColor = true;
+            // 
+            // dateModified
+            // 
+            this.dateModified.AutoSize = true;
+            this.dateModified.BackColor = System.Drawing.Color.Transparent;
+            this.dateModified.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.dateModified.Location = new System.Drawing.Point(52, 11);
+            this.dateModified.Name = "dateModified";
+            this.dateModified.Size = new System.Drawing.Size(215, 12);
+            this.dateModified.TabIndex = 4;
+            this.dateModified.Text = "Date modified: 05/26/2015 10:18:02";
+            this.dateModified.UseCustomBackColor = true;
+            // 
+            // fileSize
+            // 
+            this.fileSize.AutoSize = true;
+            this.fileSize.BackColor = System.Drawing.Color.Transparent;
+            this.fileSize.FontSize = MetroFramework.MetroLabelSize.Small;
+            this.fileSize.Location = new System.Drawing.Point(280, 11);
+            this.fileSize.Name = "fileSize";
+            this.fileSize.Size = new System.Drawing.Size(76, 12);
+            this.fileSize.TabIndex = 6;
+            this.fileSize.Text = "Size: 382 KB";
+            this.fileSize.UseCustomBackColor = true;
             // 
             // Main
             // 
@@ -1163,7 +1221,7 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.refreshButton)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.contextMenuDelete.ResumeLayout(false);
@@ -1175,6 +1233,7 @@
             this.contextMenuProperties.ResumeLayout(false);
             this.contextMenuOptions.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1256,7 +1315,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
         private MetroFramework.Controls.MetroLabel filesFound;
         private MetroFramework.Controls.MetroLabel totalFiles;
-        private System.Windows.Forms.PictureBox refreshButton;
+        private System.Windows.Forms.PictureBox buttonRefresh;
         private System.Windows.Forms.ToolTip toolTipProvider;
         private System.Windows.Forms.ToolStripMenuItem swapOrderToolStripMenuItem;
         private DropdownButton.DropdownButton buttonRegex;
@@ -1280,5 +1339,9 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem11;
         private System.Windows.Forms.ToolStripMenuItem newProjectToolStripMenuItem;
+        private MetroFramework.Controls.MetroLabel fileSize;
+        private MetroFramework.Controls.MetroLabel dateModified;
+        private MetroFramework.Controls.MetroLabel dateCreated;
+        private System.Windows.Forms.LinkLabel buttonMediaInfo;
     }
 }
