@@ -322,32 +322,36 @@ namespace Renamer
         //Evaluate dialog for Filters with 1 string argument (the purple rows on the excel file)
         void EvalDialog_Str(string title, string prompt, FilterType filterType)
         {
-            var dlg = new Dialogs.String(title, prompt, this);
-            dlg.inputText.TextChanged += (o, args) => PreviewFilter(filterType, dlg.inputText.Text);
+            using (var dlg = new Dialogs.String(title, prompt, this))
+            {
+                dlg.inputText.TextChanged += (o, args) => PreviewFilter(filterType, dlg.inputText.Text);
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-                AddFilter(new Filter(filterType, dlg.inputText.Text));
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(filterType, dlg.inputText.Text));
 
-            ApplyFiltersAndUpdate();
+                ApplyFiltersAndUpdate();
+            }
         }
 
         //Evaluate dialog for Filters with 2 string arguments (the cyan rows on the excel file)
         void EvalDialog_Str_Str(string title, string prompt1, string prompt2, FilterType filterType, string searchString = null)
         {
-            var dlg = new Dialogs.StringString(title, prompt1, prompt2, this);
-            dlg.inputText1.TextChanged += (sender, args) => PreviewFilter(filterType, dlg.inputText1.Text, dlg.inputText2.Text);
-            dlg.inputText2.TextChanged += (sender, args) => PreviewFilter(filterType, dlg.inputText1.Text, dlg.inputText2.Text);
-
-            if (searchString != null)
+            using (var dlg = new Dialogs.StringString(title, prompt1, prompt2, this))
             {
-                dlg.inputText1.Text = searchString;
-                dlg.inputText2.Text = searchString;
+                dlg.inputText1.TextChanged += (sender, args) => PreviewFilter(filterType, dlg.inputText1.Text, dlg.inputText2.Text);
+                dlg.inputText2.TextChanged += (sender, args) => PreviewFilter(filterType, dlg.inputText1.Text, dlg.inputText2.Text);
+
+                if (searchString != null)
+                {
+                    dlg.inputText1.Text = searchString;
+                    dlg.inputText2.Text = searchString;
+                }
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(filterType, dlg.inputText1.Text, dlg.inputText2.Text));
+
+                ApplyFiltersAndUpdate();
             }
-
-            if (dlg.ShowDialog() == DialogResult.OK)
-                AddFilter(new Filter(filterType, dlg.inputText1.Text, dlg.inputText2.Text));
-
-            ApplyFiltersAndUpdate();
         }
 
         #region Menu Items
