@@ -995,6 +995,7 @@
             this.olvPreview.ContextMenuStrip = this.contextMenuProperties;
             this.olvPreview.FullRowSelect = true;
             this.olvPreview.GridLines = true;
+            this.olvPreview.HideSelection = false;
             this.olvPreview.Location = new System.Drawing.Point(15, 236);
             this.olvPreview.MultiSelect = false;
             this.olvPreview.Name = "olvPreview";
@@ -1175,7 +1176,7 @@
             this.metroLabel7.AutoSize = true;
             this.metroLabel7.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel7.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel7.Location = new System.Drawing.Point(4, 22);
+            this.metroLabel7.Location = new System.Drawing.Point(8, 22);
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.Size = new System.Drawing.Size(89, 12);
             this.metroLabel7.TabIndex = 9;
@@ -1187,7 +1188,7 @@
             this.metroLabel6.AutoSize = true;
             this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel6.Location = new System.Drawing.Point(4, 11);
+            this.metroLabel6.Location = new System.Drawing.Point(8, 11);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(81, 12);
             this.metroLabel6.TabIndex = 8;
@@ -1199,7 +1200,7 @@
             this.metroLabel5.AutoSize = true;
             this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel5.Location = new System.Drawing.Point(240, 11);
+            this.metroLabel5.Location = new System.Drawing.Point(244, 11);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(33, 12);
             this.metroLabel5.TabIndex = 7;
@@ -1213,7 +1214,7 @@
             this.buttonMediaInfo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.buttonMediaInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonMediaInfo.Location = new System.Drawing.Point(240, 22);
+            this.buttonMediaInfo.Location = new System.Drawing.Point(244, 22);
             this.buttonMediaInfo.Name = "buttonMediaInfo";
             this.buttonMediaInfo.Size = new System.Drawing.Size(138, 12);
             this.buttonMediaInfo.TabIndex = 1;
@@ -1226,7 +1227,7 @@
             this.fileSize.AutoSize = true;
             this.fileSize.BackColor = System.Drawing.Color.Transparent;
             this.fileSize.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.fileSize.Location = new System.Drawing.Point(272, 11);
+            this.fileSize.Location = new System.Drawing.Point(276, 11);
             this.fileSize.Name = "fileSize";
             this.fileSize.Size = new System.Drawing.Size(71, 12);
             this.fileSize.TabIndex = 6;
@@ -1238,7 +1239,7 @@
             this.dateCreated.AutoSize = true;
             this.dateCreated.BackColor = System.Drawing.Color.Transparent;
             this.dateCreated.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.dateCreated.Location = new System.Drawing.Point(92, 11);
+            this.dateCreated.Location = new System.Drawing.Point(96, 11);
             this.dateCreated.Name = "dateCreated";
             this.dateCreated.Size = new System.Drawing.Size(127, 12);
             this.dateCreated.TabIndex = 5;
@@ -1250,7 +1251,7 @@
             this.dateModified.AutoSize = true;
             this.dateModified.BackColor = System.Drawing.Color.Transparent;
             this.dateModified.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.dateModified.Location = new System.Drawing.Point(92, 22);
+            this.dateModified.Location = new System.Drawing.Point(96, 22);
             this.dateModified.Name = "dateModified";
             this.dateModified.Size = new System.Drawing.Size(127, 12);
             this.dateModified.TabIndex = 4;

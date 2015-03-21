@@ -182,6 +182,9 @@
     <EmbeddedResource Include="Windows\About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Errors.resx">
+      <DependentUpon>Errors.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\MediaInfo.resx">
       <DependentUpon>MediaInfo.cs</DependentUpon>
     </EmbeddedResource>

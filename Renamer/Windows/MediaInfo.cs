@@ -17,9 +17,10 @@ namespace Renamer.Windows
             InitializeComponent();
         }
 
-        public MediaInfo(string filePath)
+        public MediaInfo(Models.FileName file)
         {
             InitializeComponent();
+            this.Text = file.Original;
 
             string result;
 
@@ -27,7 +28,7 @@ namespace Renamer.Windows
             {
                 var MI = new MediaInfoLib.MediaInfo();
 
-                MI.Open(filePath);
+                MI.Open(file.FullPath());
                 MI.Option("Complete");
                 result = MI.Inform();
                 MI.Close();                  
@@ -36,7 +37,7 @@ namespace Renamer.Windows
             {
                 var MI = new MediaInfoLib.MediaInfo64();
 
-                MI.Open(filePath);
+                MI.Open(file.FullPath());
                 MI.Option("Complete");
                 result = MI.Inform();
                 MI.Close();  
@@ -63,6 +64,16 @@ namespace Renamer.Windows
             }
 
             treeViewInfo.ExpandAll();
+        }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MediaInfo_Load(object sender, EventArgs e)
+        {
+            this.MinimumSize = this.Size;
         }
 
 

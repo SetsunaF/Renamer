@@ -1073,7 +1073,7 @@ namespace Renamer
             var fn = olvPreview.SelectedObject as FileName;
             if (fn == null) return;
 
-            using (var info = new Windows.MediaInfo(fn.FullPath()))
+            using (var info = new Windows.MediaInfo(fn))
             {
                 info.ShowDialog();
             }
