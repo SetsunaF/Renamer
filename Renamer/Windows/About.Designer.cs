@@ -42,6 +42,7 @@
             this.mainToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.buttonOK = new DropdownButton.FlatButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +168,7 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(295, 187);
+            this.buttonOK.Location = new System.Drawing.Point(353, 208);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
@@ -187,13 +188,26 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "https://github.com/SetsunaF/Renamer";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(32, 183);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(406, 14);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "This product uses MediaInfo library, Copyright (c) 2002-2015 MediaArea.net SARL.";
+            this.mainToolTip.SetToolTip(this.label9, "http://mediaarea.net/MediaInfo");
+            // 
             // About
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonOK;
-            this.ClientSize = new System.Drawing.Size(392, 226);
+            this.ClientSize = new System.Drawing.Size(450, 247);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelYear);
             this.Controls.Add(this.label7);
@@ -235,5 +249,6 @@
         private System.Windows.Forms.Label labelYear;
         private System.Windows.Forms.ToolTip mainToolTip;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
     }
 }

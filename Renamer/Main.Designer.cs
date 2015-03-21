@@ -1158,10 +1158,10 @@
             // panelDetails
             // 
             this.panelDetails.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelDetails.Controls.Add(this.buttonMediaInfo);
             this.panelDetails.Controls.Add(this.metroLabel7);
             this.panelDetails.Controls.Add(this.metroLabel6);
             this.panelDetails.Controls.Add(this.metroLabel5);
-            this.panelDetails.Controls.Add(this.buttonMediaInfo);
             this.panelDetails.Controls.Add(this.fileSize);
             this.panelDetails.Controls.Add(this.dateCreated);
             this.panelDetails.Controls.Add(this.dateModified);
