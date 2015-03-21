@@ -1068,6 +1068,17 @@ namespace Renamer
 
         }
 
+        private void buttonMediaInfo_Click(object sender, EventArgs e)
+        {
+            var fn = olvPreview.SelectedObject as FileName;
+            if (fn == null) return;
+
+            using (var info = new Windows.MediaInfo(fn.FullPath()))
+            {
+                info.ShowDialog();
+            }
+        }
+
         
 
 

@@ -66,6 +66,7 @@
     <Compile Include="Common\Comparers\Descending.cs" />
     <Compile Include="Common\Comparers\Natual.cs" />
     <Compile Include="Common\FileProperties.cs" />
+    <Compile Include="Common\MediaInfoWrapper.cs" />
     <Compile Include="Common\ProfileManager.cs" />
     <Compile Include="Common\RegexHelper.cs" />
     <Compile Include="Common\ShellIcon.cs" />
@@ -211,12 +212,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon-full.ico" />
-    <Content Include="MediaInfo.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="MediaInfo64.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <None Include="MediaInfo.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MediaInfo64.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
