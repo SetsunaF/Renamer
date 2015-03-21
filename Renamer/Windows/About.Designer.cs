@@ -168,7 +168,7 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(353, 208);
+            this.buttonOK.Location = new System.Drawing.Point(277, 208);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
@@ -195,9 +195,9 @@
             this.label9.ForeColor = System.Drawing.Color.Gray;
             this.label9.Location = new System.Drawing.Point(32, 183);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(406, 14);
+            this.label9.Size = new System.Drawing.Size(316, 14);
             this.label9.TabIndex = 15;
-            this.label9.Text = "This product uses MediaInfo library, Copyright (c) 2002-2015 MediaArea.net SARL.";
+            this.label9.Text = "MediaInfo library, Copyright (c) 2002-2015 MediaArea.net SARL.";
             this.mainToolTip.SetToolTip(this.label9, "http://mediaarea.net/MediaInfo");
             // 
             // About
@@ -206,7 +206,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonOK;
-            this.ClientSize = new System.Drawing.Size(450, 247);
+            this.ClientSize = new System.Drawing.Size(374, 247);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelYear);

@@ -118,9 +118,9 @@ namespace Renamer.Models
         }
                 
         //trim file length to fit a unit
-        private double TrimSize(long length, int n = 0)
+        private double TrimSize(double length, int n = 0)
         {
-            for (int i = 0; i < n; i++) length /= 1024;         //divide n times by 1024            
+            for (int i = 0; i < n; i++) length /= 1024.0;         //divide n times by 1024            
             return Math.Round(Convert.ToDouble(length), 2);     //convert to double and round to 2 decimal places
         }
 
