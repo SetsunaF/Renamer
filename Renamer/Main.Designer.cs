@@ -137,6 +137,7 @@
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
+            this.originalFilenameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -507,11 +508,12 @@
             this.replaceStringCaseInsensitiveToolStripMenuItem,
             this.toolStripMenuItem7,
             this.parentDirectoryToolStripMenuItem,
+            this.originalFilenameToolStripMenuItem,
             this.addExtensionToolStripMenuItem,
             this.removeExtensionToolStripMenuItem});
             this.contextMenuAdd.Name = "contextMenuAdd";
             this.contextMenuAdd.ShowImageMargin = false;
-            this.contextMenuAdd.Size = new System.Drawing.Size(219, 618);
+            this.contextMenuAdd.Size = new System.Drawing.Size(219, 662);
             // 
             // clearToolStripMenuItem
             // 
@@ -1113,31 +1115,31 @@
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(153, 98);
+            this.contextMenuOptions.Size = new System.Drawing.Size(139, 76);
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.newProjectToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(135, 6);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1256,6 +1258,13 @@
             this.dateModified.TabIndex = 4;
             this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
+            // 
+            // originalFilenameToolStripMenuItem
+            // 
+            this.originalFilenameToolStripMenuItem.Name = "originalFilenameToolStripMenuItem";
+            this.originalFilenameToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.originalFilenameToolStripMenuItem.Text = "Original Filename";
+            this.originalFilenameToolStripMenuItem.Click += new System.EventHandler(this.originalFilenameToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1405,5 +1414,6 @@
         private System.Windows.Forms.Panel panelDetails;
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        private System.Windows.Forms.ToolStripMenuItem originalFilenameToolStripMenuItem;
     }
 }

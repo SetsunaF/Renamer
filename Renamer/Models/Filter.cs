@@ -43,6 +43,7 @@ namespace Renamer.Models
         ReplaceCaseInsensitive,
 
         ParentDirectory,
+        OriginalFilename,
         AddExtension,
         RemoveExtension       
     }
@@ -91,7 +92,7 @@ namespace Renamer.Models
             else if (filterType == FilterType.AddNumbering || filterType==FilterType.NumberByDirectories || filterType == FilterType.SwapOrder ||
                      filterType == FilterType.PreserveFromLeft || filterType == FilterType.PreserveFromRight ||
                      filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight ||
-                     filterType == FilterType.ParentDirectory)
+                     filterType == FilterType.ParentDirectory || filterType==FilterType.OriginalFilename)
             {
                 position = Convert.ToInt32(x);
             }
@@ -139,8 +140,7 @@ namespace Renamer.Models
         }
 
         //(base 0) index is only required for AddNumbering (and Swap Order) and AppendFromTextFile
-        //max is the number of files, it's used to fill with zeros if FilterType is AddNumbering
-        //original is only needed for AddExtension and ParentDirectory
+        //max is the number of files, it's used to fill with zeros if FilterType is AddNumbering 
 
         private FileName previousFileName = null;   //previously used file name
         private int fileCount = 0;                  //file count in the current directory
@@ -257,6 +257,9 @@ namespace Renamer.Models
 
                 case FilterType.ParentDirectory:
                     return input.AppendAtPosition(fn.ParentDirectory(), position);
+
+                case FilterType.OriginalFilename:
+                    return input.AppendAtPosition(fn.Original, position);
 
                 default:
                     return string.Empty;

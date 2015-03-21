@@ -383,27 +383,31 @@ namespace Renamer
 
         private void appendAtPositionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dlg = new Dialogs.NumberString("Append at Position", "Position:", "Text:", this);
-            dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value);
-            dlg.inputText.TextChanged += (o, args) => PreviewFilter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value);
+            using (var dlg = new Dialogs.NumberString("Append at Position", "Position:", "Text:", this))
+            {
+                dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value);
+                dlg.inputText.TextChanged += (o, args) => PreviewFilter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value);
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-                AddFilter(new Filter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value));
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(FilterType.AppendAtPosition, dlg.inputText.Text, dlg.inputNumber.Value));
 
-            ApplyFiltersAndUpdate();
+                ApplyFiltersAndUpdate();
+            }
         }
 
         private void appendFromTextFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var dlg = new Dialogs.NumberFile("Append from Text File", "Position:", "Text File:", this);
-            dlg.fileDialog.Filter = @"Text Files (*.txt)|*.txt|All Files|*.*";
-            dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
-            dlg.inputFile.TextChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
+            using (var dlg = new Dialogs.NumberFile("Append from Text File", "Position:", "Text File:", this))
+            {
+                dlg.fileDialog.Filter = @"Text Files (*.txt)|*.txt|All Files|*.*";
+                dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
+                dlg.inputFile.TextChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
 
-            if (dlg.ShowDialog() == DialogResult.OK)
-                AddFilter(new Filter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value));
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value));
 
-            ApplyFiltersAndUpdate();
+                ApplyFiltersAndUpdate();
+            }
         }
 
         private void extractNumbersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1087,6 +1091,11 @@ namespace Renamer
             {
                 info.ShowDialog();
             }
+        }
+
+        private void originalFilenameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EvalDialog_Num("Original Filename", "Position:", FilterType.OriginalFilename);
         }
 
         
