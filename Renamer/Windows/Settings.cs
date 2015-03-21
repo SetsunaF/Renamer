@@ -15,5 +15,15 @@ namespace Renamer.Windows
         {
             InitializeComponent();
         }
+
+        private void buttonOK_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
