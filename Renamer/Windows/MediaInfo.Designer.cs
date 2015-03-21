@@ -39,7 +39,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.treeViewInfo.Location = new System.Drawing.Point(12, 12);
             this.treeViewInfo.Name = "treeViewInfo";
-            this.treeViewInfo.Size = new System.Drawing.Size(600, 225);
+            this.treeViewInfo.Size = new System.Drawing.Size(600, 505);
             this.treeViewInfo.TabIndex = 0;
             // 
             // buttonOK
@@ -51,7 +51,7 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(527, 243);
+            this.buttonOK.Location = new System.Drawing.Point(527, 523);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
@@ -67,7 +67,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonOK;
-            this.ClientSize = new System.Drawing.Size(624, 282);
+            this.ClientSize = new System.Drawing.Size(624, 562);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.treeViewInfo);
             this.MinimizeBox = false;

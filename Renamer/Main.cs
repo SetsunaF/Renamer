@@ -265,7 +265,10 @@ namespace Renamer
             ScrollDownFilters();
 
             ApplyFilterList(filterList);
-            olvPreview.SetObjects(fileNames);        
+            olvPreview.SetObjects(fileNames);
+
+            if(olvPreview.Items.Count>0)
+                olvPreview.SelectedIndex = 0;
         }
 
         //Make last element from filters preview visible
