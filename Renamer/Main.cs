@@ -1065,7 +1065,10 @@ namespace Renamer
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            using (var dlg = new Windows.Settings())
+            {
+                dlg.ShowDialog();
+            }
         }
 
         private void buttonMediaInfo_Click(object sender, EventArgs e)

@@ -130,10 +130,10 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelDetails = new System.Windows.Forms.Panel();
+            this.buttonMediaInfo = new System.Windows.Forms.LinkLabel();
             this.metroLabel7 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.buttonMediaInfo = new System.Windows.Forms.LinkLabel();
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
@@ -1113,32 +1113,31 @@
             this.settingsToolStripMenuItem,
             this.aboutToolStripMenuItem});
             this.contextMenuOptions.Name = "contextMenuOptions";
-            this.contextMenuOptions.Size = new System.Drawing.Size(139, 76);
+            this.contextMenuOptions.Size = new System.Drawing.Size(153, 98);
             // 
             // newProjectToolStripMenuItem
             // 
             this.newProjectToolStripMenuItem.Name = "newProjectToolStripMenuItem";
-            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.newProjectToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.newProjectToolStripMenuItem.Text = "New Project";
             this.newProjectToolStripMenuItem.Click += new System.EventHandler(this.newProjectToolStripMenuItem_Click);
             // 
             // toolStripMenuItem11
             // 
             this.toolStripMenuItem11.Name = "toolStripMenuItem11";
-            this.toolStripMenuItem11.Size = new System.Drawing.Size(135, 6);
+            this.toolStripMenuItem11.Size = new System.Drawing.Size(149, 6);
             // 
             // settingsToolStripMenuItem
             // 
-            this.settingsToolStripMenuItem.Enabled = false;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -1170,6 +1169,21 @@
             this.panelDetails.Size = new System.Drawing.Size(420, 45);
             this.panelDetails.TabIndex = 8;
             this.panelDetails.Visible = false;
+            // 
+            // buttonMediaInfo
+            // 
+            this.buttonMediaInfo.ActiveLinkColor = System.Drawing.Color.Black;
+            this.buttonMediaInfo.AutoSize = true;
+            this.buttonMediaInfo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.buttonMediaInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
+            this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
+            this.buttonMediaInfo.Location = new System.Drawing.Point(244, 22);
+            this.buttonMediaInfo.Name = "buttonMediaInfo";
+            this.buttonMediaInfo.Size = new System.Drawing.Size(138, 12);
+            this.buttonMediaInfo.TabIndex = 1;
+            this.buttonMediaInfo.TabStop = true;
+            this.buttonMediaInfo.Text = "Advanced information...";
+            this.buttonMediaInfo.Click += new System.EventHandler(this.buttonMediaInfo_Click);
             // 
             // metroLabel7
             // 
@@ -1206,21 +1220,6 @@
             this.metroLabel5.TabIndex = 7;
             this.metroLabel5.Text = "Size:";
             this.metroLabel5.UseCustomBackColor = true;
-            // 
-            // buttonMediaInfo
-            // 
-            this.buttonMediaInfo.ActiveLinkColor = System.Drawing.Color.Black;
-            this.buttonMediaInfo.AutoSize = true;
-            this.buttonMediaInfo.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.buttonMediaInfo.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
-            this.buttonMediaInfo.Location = new System.Drawing.Point(244, 22);
-            this.buttonMediaInfo.Name = "buttonMediaInfo";
-            this.buttonMediaInfo.Size = new System.Drawing.Size(138, 12);
-            this.buttonMediaInfo.TabIndex = 1;
-            this.buttonMediaInfo.TabStop = true;
-            this.buttonMediaInfo.Text = "Advanced information...";
-            this.buttonMediaInfo.Click += new System.EventHandler(this.buttonMediaInfo_Click);
             // 
             // fileSize
             // 

@@ -40,9 +40,9 @@
             this.labelYear = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainToolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.label9 = new System.Windows.Forms.Label();
             this.buttonOK = new DropdownButton.FlatButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +94,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(32, 99);
+            this.label2.Location = new System.Drawing.Point(32, 141);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(294, 14);
             this.label2.TabIndex = 8;
@@ -106,7 +106,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(32, 120);
+            this.label5.Location = new System.Drawing.Point(32, 183);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(260, 14);
             this.label5.TabIndex = 9;
@@ -118,7 +118,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Gray;
-            this.label6.Location = new System.Drawing.Point(32, 141);
+            this.label6.Location = new System.Drawing.Point(32, 99);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(282, 14);
             this.label6.TabIndex = 10;
@@ -159,6 +159,18 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Gray;
+            this.label9.Location = new System.Drawing.Point(32, 120);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(316, 14);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "MediaInfo library, Copyright (c) 2002-2015 MediaArea.net SARL.";
+            this.mainToolTip.SetToolTip(this.label9, "http://mediaarea.net/MediaInfo");
+            // 
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -187,18 +199,6 @@
             this.label1.Size = new System.Drawing.Size(187, 14);
             this.label1.TabIndex = 13;
             this.label1.Text = "https://github.com/SetsunaF/Renamer";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(32, 183);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(316, 14);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "MediaInfo library, Copyright (c) 2002-2015 MediaArea.net SARL.";
-            this.mainToolTip.SetToolTip(this.label9, "http://mediaarea.net/MediaInfo");
             // 
             // About
             // 
