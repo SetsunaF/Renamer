@@ -2,6 +2,18 @@ Renamer
 -------
 Easy to use massive file renamer.
 
+Features
+--------
+* Simple and powerful user interface.
+* Easily rename or copy thousands of files.
+* Filter files by extension or any regular expression.
+* Recursive file search.
+* Real-time preview.
+* Stackable parametric filters.
+* Undo renaming.
+* Detect invalid filenames.
+* Cross-platform using Wine.
+
 Supported platforms
 -------------------
 * Windows XP
