@@ -85,6 +85,7 @@
             this.replaceStringCaseInsensitiveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripSeparator();
             this.parentDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.originalFilenameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonDown = new DropdownButton.FlatButton();
@@ -137,7 +138,6 @@
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
-            this.originalFilenameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -513,7 +513,7 @@
             this.removeExtensionToolStripMenuItem});
             this.contextMenuAdd.Name = "contextMenuAdd";
             this.contextMenuAdd.ShowImageMargin = false;
-            this.contextMenuAdd.Size = new System.Drawing.Size(219, 662);
+            this.contextMenuAdd.Size = new System.Drawing.Size(219, 640);
             // 
             // clearToolStripMenuItem
             // 
@@ -717,6 +717,13 @@
             this.parentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";
             this.parentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.parentDirectoryToolStripMenuItem_Click);
+            // 
+            // originalFilenameToolStripMenuItem
+            // 
+            this.originalFilenameToolStripMenuItem.Name = "originalFilenameToolStripMenuItem";
+            this.originalFilenameToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
+            this.originalFilenameToolStripMenuItem.Text = "Original Filename";
+            this.originalFilenameToolStripMenuItem.Click += new System.EventHandler(this.originalFilenameToolStripMenuItem_Click);
             // 
             // addExtensionToolStripMenuItem
             // 
@@ -1258,13 +1265,6 @@
             this.dateModified.TabIndex = 4;
             this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
-            // 
-            // originalFilenameToolStripMenuItem
-            // 
-            this.originalFilenameToolStripMenuItem.Name = "originalFilenameToolStripMenuItem";
-            this.originalFilenameToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.originalFilenameToolStripMenuItem.Text = "Original Filename";
-            this.originalFilenameToolStripMenuItem.Click += new System.EventHandler(this.originalFilenameToolStripMenuItem_Click);
             // 
             // Main
             // 

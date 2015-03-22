@@ -33,6 +33,7 @@
             this.checkBoxSavePreviousFilenames = new System.Windows.Forms.CheckBox();
             this.buttonOK = new DropdownButton.FlatButton();
             this.buttonCancel = new DropdownButton.FlatButton();
+            this.checkBoxWarnBeforeRecursive = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // checkBoxSaveLastProfile
@@ -79,11 +80,11 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(106, 93);
+            this.buttonOK.Location = new System.Drawing.Point(106, 111);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
-            this.buttonOK.TabIndex = 3;
+            this.buttonOK.TabIndex = 4;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = false;
             this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
@@ -92,18 +93,31 @@
             // 
             this.buttonCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonCancel.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.buttonCancel.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonCancel.FlatAppearance.BorderSize = 0;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(197, 93);
+            this.buttonCancel.Location = new System.Drawing.Point(197, 111);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(85, 27);
             this.buttonCancel.Style = DropdownButton.Styles.Default;
-            this.buttonCancel.TabIndex = 4;
+            this.buttonCancel.TabIndex = 5;
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = false;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
+            // 
+            // checkBoxWarnBeforeRecursive
+            // 
+            this.checkBoxWarnBeforeRecursive.AutoSize = true;
+            this.checkBoxWarnBeforeRecursive.Enabled = false;
+            this.checkBoxWarnBeforeRecursive.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxWarnBeforeRecursive.Location = new System.Drawing.Point(13, 85);
+            this.checkBoxWarnBeforeRecursive.Name = "checkBoxWarnBeforeRecursive";
+            this.checkBoxWarnBeforeRecursive.Size = new System.Drawing.Size(169, 17);
+            this.checkBoxWarnBeforeRecursive.TabIndex = 3;
+            this.checkBoxWarnBeforeRecursive.Text = "Warn before recursive rename";
+            this.checkBoxWarnBeforeRecursive.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
@@ -112,7 +126,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(294, 132);
+            this.ClientSize = new System.Drawing.Size(294, 150);
+            this.Controls.Add(this.checkBoxWarnBeforeRecursive);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
             this.Controls.Add(this.checkBoxSavePreviousFilenames);
@@ -137,5 +152,6 @@
         private System.Windows.Forms.CheckBox checkBoxSavePreviousFilenames;
         private DropdownButton.FlatButton buttonOK;
         private DropdownButton.FlatButton buttonCancel;
+        private System.Windows.Forms.CheckBox checkBoxWarnBeforeRecursive;
     }
 }
