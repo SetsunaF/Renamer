@@ -279,8 +279,9 @@ namespace Renamer
         void ApplyFiltersAndUpdate()
         {
             ScrollDownFilters();
-
             ApplyFilterList(filterList);
+
+            olvIndex = olvPreview.SelectedIndex;
             olvPreview.SetObjects(fileNames);
 
             if (olvPreview.Items.Count > 0)
