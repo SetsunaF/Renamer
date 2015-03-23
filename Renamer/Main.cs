@@ -276,12 +276,14 @@ namespace Renamer
             olvPreview.SetObjects(fileNames);
         }
 
-        void ApplyFiltersAndUpdate()
+        void ApplyFiltersAndUpdate(bool preserveSelectedIndex=false)
         {
             ScrollDownFilters();
             ApplyFilterList(filterList);
 
-            olvIndex = olvPreview.SelectedIndex;
+            if (preserveSelectedIndex)
+                olvIndex = olvPreview.SelectedIndex;
+            
             olvPreview.SetObjects(fileNames);
 
             if (olvPreview.Items.Count > 0)
@@ -308,7 +310,7 @@ namespace Renamer
             filterList.Add(new Filter(filterType));
             olvFilters.SetObjects(filterList);
 
-            ApplyFiltersAndUpdate();
+            ApplyFiltersAndUpdate(true);
         }
 
         void AddFilter(Filter filter)
