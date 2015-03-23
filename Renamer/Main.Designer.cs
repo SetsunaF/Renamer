@@ -138,6 +138,7 @@
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
+            this.customSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -911,10 +912,11 @@
             this.naturalDescendingSortToolStripMenuItem,
             this.alphanumericalSortToolStripMenuItem,
             this.alphanumericalDescendingSortToolStripMenuItem,
+            this.customSortToolStripMenuItem,
             this.toolStripMenuItem8,
             this.copyAllToolStripMenuItem});
             this.contextMenuSort.Name = "contextMenuSort";
-            this.contextMenuSort.Size = new System.Drawing.Size(248, 120);
+            this.contextMenuSort.Size = new System.Drawing.Size(248, 164);
             // 
             // naturalSortToolStripMenuItem
             // 
@@ -1005,6 +1007,7 @@
             this.olvPreview.FullRowSelect = true;
             this.olvPreview.GridLines = true;
             this.olvPreview.HideSelection = false;
+            this.olvPreview.IsSimpleDragSource = true;
             this.olvPreview.Location = new System.Drawing.Point(15, 236);
             this.olvPreview.MultiSelect = false;
             this.olvPreview.Name = "olvPreview";
@@ -1022,6 +1025,8 @@
             this.olvPreview.VirtualMode = true;
             this.olvPreview.ColumnRightClick += new BrightIdeasSoftware.ColumnRightClickEventHandler(this.olvPreview_ColumnRightClick);
             this.olvPreview.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.olvPreview_FormatRow);
+            this.olvPreview.ModelCanDrop += new System.EventHandler<BrightIdeasSoftware.ModelDropEventArgs>(this.olvPreview_ModelCanDrop);
+            this.olvPreview.ModelDropped += new System.EventHandler<BrightIdeasSoftware.ModelDropEventArgs>(this.olvPreview_ModelDropped);
             this.olvPreview.SelectionChanged += new System.EventHandler(this.olvPreview_SelectionChanged);
             this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
             this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
@@ -1266,6 +1271,13 @@
             this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
             // 
+            // customSortToolStripMenuItem
+            // 
+            this.customSortToolStripMenuItem.Name = "customSortToolStripMenuItem";
+            this.customSortToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.customSortToolStripMenuItem.Text = "Custom Sort";
+            this.customSortToolStripMenuItem.Click += new System.EventHandler(this.customSortToolStripMenuItem_Click);
+            // 
             // Main
             // 
             this.AllowDrop = true;
@@ -1415,5 +1427,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel7;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private System.Windows.Forms.ToolStripMenuItem originalFilenameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem customSortToolStripMenuItem;
     }
 }
