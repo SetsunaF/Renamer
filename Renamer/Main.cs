@@ -1157,6 +1157,17 @@ namespace Renamer
             OnSortMenuItemClick(sender, 4);
         }
 
+        private void excludeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var tmp = new List<string>(fileList);
+
+            tmp.RemoveAt(olvPreview.SelectedIndex);
+            olvIndex=olvPreview.SelectedIndex;
+
+            fileList = tmp.ToArray();
+            customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null); 
+        }
+
         
 
 
