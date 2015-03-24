@@ -201,7 +201,9 @@ namespace Renamer
                 fileList = tmp;
             }
 
-            OnSortMenuItemClick(naturalSortToolStripMenuItem, 0, true);
+            if (customSortToolStripMenuItem.Checked)
+                OnSortMenuItemClick(naturalSortToolStripMenuItem, 0, true);
+            
             RefreshUI();
         }
 
