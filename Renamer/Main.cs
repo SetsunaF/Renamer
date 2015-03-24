@@ -863,20 +863,7 @@ namespace Renamer
          * 3: Alphanumerical Descending
          */
         byte sortMethod = 0;
-
-        private void olvPreview_ColumnClick(object sender, ColumnClickEventArgs e)
-        {            
-            switch (e.Column)
-            {
-                case 0:
-                    contextMenuSort.Show(Cursor.Position);
-                    break;
-
-                case 1:
-                    break;
-            }
-        }
-
+                
         void UncheckSortMenuItems()
         {
             naturalSortToolStripMenuItem.Checked = false;
@@ -1007,6 +994,7 @@ namespace Renamer
         private void olvPreview_ColumnRightClick(object sender, ColumnClickEventArgs e)
         {
             showPropertiesMenu = false;
+            if (e.Column == 0) contextMenuSort.Show(Cursor.Position);            
         }
 
         private void checkBoxCopy_CheckedChanged(object sender, EventArgs e)

@@ -107,6 +107,7 @@
             this.naturalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphanumericalSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphanumericalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripSeparator();
             this.copyAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipProvider = new System.Windows.Forms.ToolTip(this.components);
@@ -138,7 +139,6 @@
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
-            this.customSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -872,6 +872,7 @@
             this.olvColumn5});
             this.olvFilters.FullRowSelect = true;
             this.olvFilters.GridLines = true;
+            this.olvFilters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
             this.olvFilters.HideSelection = false;
             this.olvFilters.Location = new System.Drawing.Point(10, 75);
             this.olvFilters.MultiSelect = false;
@@ -916,7 +917,7 @@
             this.toolStripMenuItem8,
             this.copyAllToolStripMenuItem});
             this.contextMenuSort.Name = "contextMenuSort";
-            this.contextMenuSort.Size = new System.Drawing.Size(248, 164);
+            this.contextMenuSort.Size = new System.Drawing.Size(248, 142);
             // 
             // naturalSortToolStripMenuItem
             // 
@@ -945,6 +946,13 @@
             this.alphanumericalDescendingSortToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
             this.alphanumericalDescendingSortToolStripMenuItem.Text = "Alphanumerical Descending Sort";
             this.alphanumericalDescendingSortToolStripMenuItem.Click += new System.EventHandler(this.alphanumericalDescendingSortToolStripMenuItem_Click);
+            // 
+            // customSortToolStripMenuItem
+            // 
+            this.customSortToolStripMenuItem.Name = "customSortToolStripMenuItem";
+            this.customSortToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
+            this.customSortToolStripMenuItem.Text = "Custom Sort";
+            this.customSortToolStripMenuItem.Click += new System.EventHandler(this.customSortToolStripMenuItem_Click);
             // 
             // toolStripMenuItem8
             // 
@@ -1029,7 +1037,6 @@
             this.olvPreview.ModelDropped += new System.EventHandler<BrightIdeasSoftware.ModelDropEventArgs>(this.olvPreview_ModelDropped);
             this.olvPreview.SelectionChanged += new System.EventHandler(this.olvPreview_SelectionChanged);
             this.olvPreview.Scroll += new System.EventHandler<System.Windows.Forms.ScrollEventArgs>(this.olvPreview_Scroll);
-            this.olvPreview.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.olvPreview_ColumnClick);
             this.olvPreview.DoubleClick += new System.EventHandler(this.olvPreview_DoubleClick);
             this.olvPreview.MouseMove += new System.Windows.Forms.MouseEventHandler(this.olvPreview_MouseMove);
             // 
@@ -1270,13 +1277,6 @@
             this.dateModified.TabIndex = 4;
             this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
-            // 
-            // customSortToolStripMenuItem
-            // 
-            this.customSortToolStripMenuItem.Name = "customSortToolStripMenuItem";
-            this.customSortToolStripMenuItem.Size = new System.Drawing.Size(247, 22);
-            this.customSortToolStripMenuItem.Text = "Custom Sort";
-            this.customSortToolStripMenuItem.Click += new System.EventHandler(this.customSortToolStripMenuItem_Click);
             // 
             // Main
             // 
