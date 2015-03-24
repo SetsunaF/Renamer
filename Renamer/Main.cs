@@ -1165,7 +1165,9 @@ namespace Renamer
             olvIndex=olvPreview.SelectedIndex;
 
             fileList = tmp.ToArray();
-            customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null); 
+            customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null);
+
+            panelDetails.Hide();
         }
 
         
