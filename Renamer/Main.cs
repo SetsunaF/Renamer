@@ -1122,7 +1122,7 @@ namespace Renamer
 
         private void olvPreview_ModelDropped(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
         {
-            buttonRename.Text = e.DropTargetLocation.ToString();
+            //buttonRename.Text = e.DropTargetLocation.ToString();
 
             if (e.DropTargetIndex == -1) return;
             if (olvPreview.SelectedIndex == e.DropTargetIndex) return;
