@@ -200,7 +200,8 @@ namespace Renamer
 
                 fileList = tmp;
             }
-            
+
+            OnSortMenuItemClick(naturalSortToolStripMenuItem, 0, true);
             RefreshUI();
         }
 
@@ -889,7 +890,7 @@ namespace Renamer
          * sender: The menu item
          * method: Sort method, see above
          */
-        void OnSortMenuItemClick(object sender, byte method)
+        void OnSortMenuItemClick(object sender, byte method, bool reset=false)
         {
             UncheckSortMenuItems();
             var thisItem = sender as ToolStripMenuItem;
@@ -897,6 +898,7 @@ namespace Renamer
 
             sortMethod = method;
 
+            if (reset) return;
             if (fileList == null || fileNames.Count == 0) return;
 
             SortFileList();
