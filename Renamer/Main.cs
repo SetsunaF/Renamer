@@ -276,7 +276,7 @@ namespace Renamer
             olvPreview.SetObjects(fileNames);
         }
 
-        void ApplyFiltersAndUpdate(bool preserveSelectedIndex=false)
+        void ApplyFiltersAndUpdate(bool preserveSelectedIndex=true)
         {
             ScrollDownFilters();
             ApplyFilterList(filterList);
@@ -310,7 +310,7 @@ namespace Renamer
             filterList.Add(new Filter(filterType));
             olvFilters.SetObjects(filterList);
 
-            ApplyFiltersAndUpdate(true);
+            ApplyFiltersAndUpdate();
         }
 
         void AddFilter(Filter filter)
@@ -768,11 +768,6 @@ namespace Renamer
 
         private void buttonRename_Click(object sender, EventArgs e)
         {
-            //olvPreview.SelectedIndex = 20; return;
-            //MessageBox.Show(olvPreview.LowLevelScrollPosition.ToString());
-            //olvPreview.LowLevelScrollPosition = new Point(0,10);
-            //return;
-
             if (textBoxInputDir.Text == "" || textBoxOutput.Text == "") return;
             if (fileNames.Count == 0 || filterList.Count == 0) return;
 
@@ -907,7 +902,7 @@ namespace Renamer
             SortFileList();
 
             ApplyFileNameFilter();
-            ApplyFiltersAndUpdate();
+            ApplyFiltersAndUpdate(false);
         }
 
         private void naturalSortToolStripMenuItem_Click(object sender, EventArgs e)
