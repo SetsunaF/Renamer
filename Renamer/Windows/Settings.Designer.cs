@@ -30,7 +30,7 @@
         {
             this.checkBoxSaveLastProfile = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableContextMenu = new System.Windows.Forms.CheckBox();
-            this.checkBoxSavePreviousFilenames = new System.Windows.Forms.CheckBox();
+            this.checkBoxSavePreviousFileNames = new System.Windows.Forms.CheckBox();
             this.buttonOK = new DropdownButton.FlatButton();
             this.buttonCancel = new DropdownButton.FlatButton();
             this.checkBoxWarnBeforeRecursive = new System.Windows.Forms.CheckBox();
@@ -60,17 +60,17 @@
             this.checkBoxEnableContextMenu.Text = "Enable context menu on directories";
             this.checkBoxEnableContextMenu.UseVisualStyleBackColor = true;
             // 
-            // checkBoxSavePreviousFilenames
+            // checkBoxSavePreviousFileNames
             // 
-            this.checkBoxSavePreviousFilenames.AutoSize = true;
-            this.checkBoxSavePreviousFilenames.Enabled = false;
-            this.checkBoxSavePreviousFilenames.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxSavePreviousFilenames.Location = new System.Drawing.Point(13, 61);
-            this.checkBoxSavePreviousFilenames.Name = "checkBoxSavePreviousFilenames";
-            this.checkBoxSavePreviousFilenames.Size = new System.Drawing.Size(203, 17);
-            this.checkBoxSavePreviousFilenames.TabIndex = 2;
-            this.checkBoxSavePreviousFilenames.Text = "Save previous filenames after rename";
-            this.checkBoxSavePreviousFilenames.UseVisualStyleBackColor = true;
+            this.checkBoxSavePreviousFileNames.AutoSize = true;
+            this.checkBoxSavePreviousFileNames.Enabled = false;
+            this.checkBoxSavePreviousFileNames.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxSavePreviousFileNames.Location = new System.Drawing.Point(13, 61);
+            this.checkBoxSavePreviousFileNames.Name = "checkBoxSavePreviousFileNames";
+            this.checkBoxSavePreviousFileNames.Size = new System.Drawing.Size(206, 17);
+            this.checkBoxSavePreviousFileNames.TabIndex = 2;
+            this.checkBoxSavePreviousFileNames.Text = "Save previous file names after rename";
+            this.checkBoxSavePreviousFileNames.UseVisualStyleBackColor = true;
             // 
             // buttonOK
             // 
@@ -130,7 +130,7 @@
             this.Controls.Add(this.checkBoxWarnBeforeRecursive);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.checkBoxSavePreviousFilenames);
+            this.Controls.Add(this.checkBoxSavePreviousFileNames);
             this.Controls.Add(this.checkBoxEnableContextMenu);
             this.Controls.Add(this.checkBoxSaveLastProfile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -149,7 +149,7 @@
 
         private System.Windows.Forms.CheckBox checkBoxSaveLastProfile;
         private System.Windows.Forms.CheckBox checkBoxEnableContextMenu;
-        private System.Windows.Forms.CheckBox checkBoxSavePreviousFilenames;
+        private System.Windows.Forms.CheckBox checkBoxSavePreviousFileNames;
         private DropdownButton.FlatButton buttonOK;
         private DropdownButton.FlatButton buttonCancel;
         private System.Windows.Forms.CheckBox checkBoxWarnBeforeRecursive;

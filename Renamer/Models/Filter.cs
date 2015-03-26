@@ -43,7 +43,7 @@ namespace Renamer.Models
         ReplaceCaseInsensitive,
 
         ParentDirectory,
-        OriginalFilename,
+        OriginalFileName,
         AddExtension,
         RemoveExtension       
     }
@@ -92,7 +92,7 @@ namespace Renamer.Models
             else if (filterType == FilterType.AddNumbering || filterType==FilterType.NumberByDirectories || filterType == FilterType.SwapOrder ||
                      filterType == FilterType.PreserveFromLeft || filterType == FilterType.PreserveFromRight ||
                      filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight ||
-                     filterType == FilterType.ParentDirectory || filterType==FilterType.OriginalFilename)
+                     filterType == FilterType.ParentDirectory || filterType==FilterType.OriginalFileName)
             {
                 position = Convert.ToInt32(x);
             }
@@ -258,7 +258,7 @@ namespace Renamer.Models
                 case FilterType.ParentDirectory:
                     return input.AppendAtPosition(fn.ParentDirectory(), position);
 
-                case FilterType.OriginalFilename:
+                case FilterType.OriginalFileName:
                     return input.AppendAtPosition(fn.Original, position);
 
                 default:

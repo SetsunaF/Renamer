@@ -707,60 +707,61 @@ namespace Renamer
         void Rename()
         {
             errorList.Clear();
-            var dlg = new Windows.Progress("Rename in Progress...");
 
-            //CheckForIllegalCrossThreadCalls = false;
-            //stackoverflow.com/questions/661561/how-to-update-the-gui-from-another-thread-in-c?rq=1
-            //never use a loop inside a method invoker
-
-            dlg.bgWorker.DoWork += (o, args) =>
+            using (var dlg = new Windows.Progress("Rename in Progress..."))
             {
-                double step = 100.0 / fileNames.Count;
-                double sum = 0;
+                //stackoverflow.com/questions/661561/how-to-update-the-gui-from-another-thread-in-c?rq=1
+                //never use a loop inside a method invoker
 
-                foreach (var name in fileNames)
+                dlg.bgWorker.DoWork += (o, args) =>
                 {
-                    while (dlg.pauseWork)
-                    {
-                        System.Threading.Thread.Sleep(100);
-                    }
+                    double step = 100.0 / fileNames.Count;
+                    double sum = 0;
 
-                    if (dlg.wantToCancel) break;
+                    foreach (var name in fileNames)
+                    {
+                        while (dlg.pauseWork)
+                        {
+                            System.Threading.Thread.Sleep(100);
+                        }
+
+                        if (dlg.wantToCancel) break;
+
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            dlg.labelCurrent.Text = name.Modified;
+                            FileRename(name);
+
+                            sum += step;
+                            dlg.barProgress.Value = (int)sum;
+                        });
+                    }
 
                     this.Invoke((MethodInvoker)delegate
                     {
-                        dlg.labelCurrent.Text = name.Modified;
-                        FileRename(name);
+                        dlg.barProgress.Value = 100;
+                        dlg.wantToCancel = true;
+                        dlg.Close();
 
-                        sum += step;
-                        dlg.barProgress.Value = (int)sum;
-                    });
-                }
-
-                this.Invoke((MethodInvoker)delegate
-                {
-                    dlg.barProgress.Value = 100;
-                    dlg.wantToCancel = true;
-                    dlg.Close();
-
-                    if (errorList.Count > 0)
-                    {
-                        using (var errorDlg = new Windows.Errors("Error", "Cannot rename some files, please review the errors below", errorList))
+                        if (errorList.Count > 0)
                         {
-                            errorDlg.ShowDialog();
+                            using (var errorDlg = new Windows.Errors("Error", "Cannot rename some files, please review the errors below", errorList))
+                            {
+                                errorDlg.ShowDialog();
+                            }
                         }
+                    });
+
+                    //if input and output directories are the same, reload files
+                    if (textBoxInputDir.Text == textBoxOutput.Text)
+                    {
+                        this.Invoke((MethodInvoker)LoadFiles);
                     }
-                });
+                };
 
-                //if input and output directories are the same, reload files
-                if (textBoxInputDir.Text == textBoxOutput.Text)
-                {
-                    this.Invoke((MethodInvoker)LoadFiles);
-                }
-            };
-
-            dlg.bgWorker.RunWorkerAsync();
-            dlg.ShowDialog();
+                dlg.bgWorker.RunWorkerAsync();
+                dlg.ShowDialog();
+            }
         }
 
         void BackupFileNames()
@@ -1116,7 +1117,7 @@ namespace Renamer
 
         private void originalFilenameToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EvalDialog_Num("Original Filename", "Position:", FilterType.OriginalFilename);
+            EvalDialog_Num("Original Filename", "Position:", FilterType.OriginalFileName);
         }
 
         private void olvPreview_ModelCanDrop(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
