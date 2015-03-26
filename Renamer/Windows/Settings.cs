@@ -25,5 +25,10 @@ namespace Renamer.Windows
         {
             this.Close();
         }
+
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

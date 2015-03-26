@@ -167,20 +167,20 @@ namespace Renamer
                 return;
             }
 
-
-
-
             //Get files from specified path, it's necessary to sort them because GetFiles() returns an unsorted array on network drives            
-            fileList = Directory.GetFiles(textBoxInputDir.Text);
+            //Sometimes user deletes/renames the directory and after pressing the refresh button will give an error
+            try { fileList = Directory.GetFiles(textBoxInputDir.Text); }
+            catch (DirectoryNotFoundException e)
+            {
+                MessageBox.Show(e.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textBoxInputDir.Clear();
+                RefreshUI();
+                return;
+            }
 
-
-
-
-
+            //Get files recursively
             if (checkBoxRecursive.Checked)
             {
-                //Console.WriteLine(new Random().Next() + " Recursive");
-
                 var files = new List<string>();
                 var directories = Directory.GetDirectories(textBoxInputDir.Text);
 
