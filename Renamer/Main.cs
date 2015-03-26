@@ -720,6 +720,11 @@ namespace Renamer
 
                 foreach (var name in fileNames)
                 {
+                    while (dlg.pauseWork)
+                    {
+                        System.Threading.Thread.Sleep(100);
+                    }
+
                     if (dlg.wantToCancel) break;
 
                     this.Invoke((MethodInvoker)delegate
@@ -1117,7 +1122,7 @@ namespace Renamer
         private void olvPreview_ModelCanDrop(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
         {
             var fn = e.TargetModel as FileName;
-            if (fn != null) e.Effect = DragDropEffects.Move;
+            if (fn != null) e.Effect = DragDropEffects.Move;            
         }
 
         int olvIndex = 0;

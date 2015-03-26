@@ -23,16 +23,18 @@ namespace Renamer.Windows
         }
 
         public bool wantToCancel = false;
+        public volatile bool pauseWork = false;
 
         private void ProgressWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (wantToCancel) return;
+            pauseWork = true;
 
             var result = MessageBox.Show("Are you sure you want to cancel the current operation?", "Cancel Operation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            
-            if (result == DialogResult.Yes)
-                wantToCancel = true;
 
+            if (result == DialogResult.Yes) wantToCancel = true;
+
+            pauseWork = false;            
             if (wantToCancel) return;
 
             e.Cancel = true;
