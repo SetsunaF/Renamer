@@ -1,1 +1,4 @@
-{"SaveLastProfile":true,"SavePreviousFileNames":true,"WarnBeforeRecursiveRename":true}
+{
+	"SaveLastProfile":true,
+	"WarnBeforeRecursiveRename":true
+}

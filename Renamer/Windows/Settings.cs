@@ -22,7 +22,7 @@ namespace Renamer.Windows
             else Models.Settings.DisableContextMenu();
 
             Models.Settings.SaveLastProfile=checkBoxSaveLastProfile.Checked;
-            Models.Settings.SavePreviousFileNames=checkBoxSavePreviousFileNames.Checked;
+            //Models.Settings.SavePreviousFileNames=checkBoxSavePreviousFileNames.Checked;
             Models.Settings.WarnBeforeRecursiveRename = checkBoxWarnBeforeRecursive.Checked;
 
             Models.Settings.Save();
@@ -40,7 +40,7 @@ namespace Renamer.Windows
             Models.Settings.Load();
             
             checkBoxSaveLastProfile.Checked = Models.Settings.SaveLastProfile;
-            checkBoxSavePreviousFileNames.Checked = Models.Settings.SavePreviousFileNames;
+            //checkBoxSavePreviousFileNames.Checked = Models.Settings.SavePreviousFileNames;
             checkBoxWarnBeforeRecursive.Checked = Models.Settings.WarnBeforeRecursiveRename;
 
             checkBoxEnableContextMenu.Checked = Models.Settings.IsContextMenuEnabled();

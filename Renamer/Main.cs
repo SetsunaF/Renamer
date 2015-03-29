@@ -51,6 +51,7 @@ namespace Renamer
             );
 
             //dropDownSort.SelectedIndex = 0;
+            Settings.Load();
 
             profileManager = new ProfileManager(dropDownProfile);
             profileManager.PopulateProfiles();
@@ -798,6 +799,12 @@ namespace Renamer
                     if (result == DialogResult.No) return;
                 }
 
+                if (checkBoxRecursive.Checked && Settings.WarnBeforeRecursiveRename)
+                {
+                    var result = MessageBox.Show("Please make sure there are not additional files in the list, are you sure you want to continue?", "Recursive Rename", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (result == DialogResult.No) return;
+                }
+
                 BackupFileNames();
                 Rename();
             }
@@ -1058,7 +1065,8 @@ namespace Renamer
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
-            profileManager.SaveLastProfile(filterList);
+            if(Settings.SaveLastProfile)
+                profileManager.SaveLastProfile(filterList);
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)

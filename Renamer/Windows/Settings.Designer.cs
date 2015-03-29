@@ -30,7 +30,6 @@
         {
             this.checkBoxSaveLastProfile = new System.Windows.Forms.CheckBox();
             this.checkBoxEnableContextMenu = new System.Windows.Forms.CheckBox();
-            this.checkBoxSavePreviousFileNames = new System.Windows.Forms.CheckBox();
             this.buttonOK = new DropdownButton.FlatButton();
             this.buttonCancel = new DropdownButton.FlatButton();
             this.checkBoxWarnBeforeRecursive = new System.Windows.Forms.CheckBox();
@@ -58,17 +57,6 @@
             this.checkBoxEnableContextMenu.Text = "Enable context menu on directories";
             this.checkBoxEnableContextMenu.UseVisualStyleBackColor = true;
             // 
-            // checkBoxSavePreviousFileNames
-            // 
-            this.checkBoxSavePreviousFileNames.AutoSize = true;
-            this.checkBoxSavePreviousFileNames.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxSavePreviousFileNames.Location = new System.Drawing.Point(13, 61);
-            this.checkBoxSavePreviousFileNames.Name = "checkBoxSavePreviousFileNames";
-            this.checkBoxSavePreviousFileNames.Size = new System.Drawing.Size(206, 17);
-            this.checkBoxSavePreviousFileNames.TabIndex = 2;
-            this.checkBoxSavePreviousFileNames.Text = "Save previous file names after rename";
-            this.checkBoxSavePreviousFileNames.UseVisualStyleBackColor = true;
-            // 
             // buttonOK
             // 
             this.buttonOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -77,7 +65,7 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(106, 111);
+            this.buttonOK.Location = new System.Drawing.Point(106, 91);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
@@ -95,7 +83,7 @@
             this.buttonCancel.FlatAppearance.BorderSize = 0;
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(197, 111);
+            this.buttonCancel.Location = new System.Drawing.Point(197, 91);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(85, 27);
             this.buttonCancel.Style = DropdownButton.Styles.Default;
@@ -108,7 +96,7 @@
             // 
             this.checkBoxWarnBeforeRecursive.AutoSize = true;
             this.checkBoxWarnBeforeRecursive.ForeColor = System.Drawing.Color.DimGray;
-            this.checkBoxWarnBeforeRecursive.Location = new System.Drawing.Point(13, 85);
+            this.checkBoxWarnBeforeRecursive.Location = new System.Drawing.Point(13, 61);
             this.checkBoxWarnBeforeRecursive.Name = "checkBoxWarnBeforeRecursive";
             this.checkBoxWarnBeforeRecursive.Size = new System.Drawing.Size(169, 17);
             this.checkBoxWarnBeforeRecursive.TabIndex = 3;
@@ -122,11 +110,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonCancel;
-            this.ClientSize = new System.Drawing.Size(294, 150);
+            this.ClientSize = new System.Drawing.Size(294, 130);
             this.Controls.Add(this.checkBoxWarnBeforeRecursive);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.checkBoxSavePreviousFileNames);
             this.Controls.Add(this.checkBoxEnableContextMenu);
             this.Controls.Add(this.checkBoxSaveLastProfile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -146,7 +133,6 @@
 
         private System.Windows.Forms.CheckBox checkBoxSaveLastProfile;
         private System.Windows.Forms.CheckBox checkBoxEnableContextMenu;
-        private System.Windows.Forms.CheckBox checkBoxSavePreviousFileNames;
         private DropdownButton.FlatButton buttonOK;
         private DropdownButton.FlatButton buttonCancel;
         private System.Windows.Forms.CheckBox checkBoxWarnBeforeRecursive;

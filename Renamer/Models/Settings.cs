@@ -16,7 +16,7 @@ namespace Renamer.Models
         private static string SettingsFile = ApplicationDataPath + "\\Settings.json";
 
         public static bool SaveLastProfile;
-        public static bool SavePreviousFileNames;
+        //public static bool SavePreviousFileNames;
         public static bool WarnBeforeRecursiveRename;
 
         public static bool Load()
@@ -28,7 +28,7 @@ namespace Renamer.Models
             var definition = new
             {
                 SaveLastProfile = Settings.SaveLastProfile,
-                SavePreviousFileNames = Settings.SavePreviousFileNames,
+                //SavePreviousFileNames = Settings.SavePreviousFileNames,
                 WarnBeforeRecursiveRename = Settings.WarnBeforeRecursiveRename
             };
 
@@ -37,7 +37,7 @@ namespace Renamer.Models
                 var obj = JsonConvert.DeserializeAnonymousType(data, definition);
 
                 SaveLastProfile = obj.SaveLastProfile;
-                SavePreviousFileNames = obj.SavePreviousFileNames;
+                //SavePreviousFileNames = obj.SavePreviousFileNames;
                 WarnBeforeRecursiveRename = obj.WarnBeforeRecursiveRename;
             }
             catch (Exception e)
@@ -57,7 +57,7 @@ namespace Renamer.Models
             var data = JsonConvert.SerializeObject(new
             {
                 SaveLastProfile = Settings.SaveLastProfile,
-                SavePreviousFileNames = Settings.SavePreviousFileNames,
+                //SavePreviousFileNames = Settings.SavePreviousFileNames,
                 WarnBeforeRecursiveRename = Settings.WarnBeforeRecursiveRename
             });
 
@@ -124,6 +124,8 @@ namespace Renamer.Models
             }
             catch { return false; }
         }
+
+        
 
        
 
