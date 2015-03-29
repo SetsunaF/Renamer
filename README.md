@@ -12,6 +12,7 @@ Features
 * Stackable parametric filters.
 * Undo renaming.
 * Detect invalid filenames.
+* Advanced multimedia information
 * Cross-platform using Wine.
 
 Supported platforms
