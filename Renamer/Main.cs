@@ -1082,8 +1082,11 @@ namespace Renamer
 
         private void olvPreview_SelectionChanged(object sender, EventArgs e)
         {
-            var fn = olvPreview.SelectedObject as FileName;
+            ShowDetails(olvPreview.SelectedObject as FileName);
+        }
 
+        void ShowDetails(FileName fn)
+        {
             if (fn != null)
             {
                 dateCreated.Text = fn.CreationDate();
@@ -1123,7 +1126,9 @@ namespace Renamer
         private void olvPreview_ModelCanDrop(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
         {
             var fn = e.TargetModel as FileName;
-            if (fn != null) e.Effect = DragDropEffects.Move;            
+            if (fn != null) e.Effect = DragDropEffects.Move;
+            
+            ShowDetails(e.SourceModels[0] as FileName);
         }
 
         int olvIndex = 0;

@@ -1209,10 +1209,10 @@
             this.buttonMediaInfo.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(120)))), ((int)(((byte)(120)))), ((int)(((byte)(120)))));
             this.buttonMediaInfo.Location = new System.Drawing.Point(244, 22);
             this.buttonMediaInfo.Name = "buttonMediaInfo";
-            this.buttonMediaInfo.Size = new System.Drawing.Size(126, 12);
+            this.buttonMediaInfo.Size = new System.Drawing.Size(138, 12);
             this.buttonMediaInfo.TabIndex = 1;
             this.buttonMediaInfo.TabStop = true;
-            this.buttonMediaInfo.Text = "Advanced information";
+            this.buttonMediaInfo.Text = "Advanced information...";
             this.buttonMediaInfo.Click += new System.EventHandler(this.buttonMediaInfo_Click);
             // 
             // metroLabel7
