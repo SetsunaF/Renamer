@@ -25,7 +25,7 @@ namespace Renamer
                 {
                     try
                     {
-                        setProfileRootMethod.Invoke(null, new object[] { Application.StartupPath });
+                        setProfileRootMethod.Invoke(null, new object[] { Models.Settings.ApplicationDataPath });
                         startProfileMethod.Invoke(null, new object[] { "Startup.Profile" });
                     }
                     catch { }

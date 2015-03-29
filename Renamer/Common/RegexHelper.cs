@@ -18,7 +18,7 @@ namespace Renamer.Common
 
             try
             {
-                json = File.ReadAllText(Application.StartupPath + "\\RegexHelper.json");
+                json = File.ReadAllText(Models.Settings.ApplicationDataPath + "\\RegexHelper.json");
             }
             catch (FileNotFoundException e)
             {

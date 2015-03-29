@@ -34,8 +34,8 @@ namespace Renamer.Models
         {
             Name = name.Clean();
 
-            string appDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-            FileName = appDirectory + "\\Profiles\\" + Name + ".json";
+            //string appDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            FileName = Settings.ApplicationDataPath + "\\Profiles\\" + Name + ".json";
 
             Filters = new List<Filter>(list);
         }

@@ -116,6 +116,7 @@
     <Compile Include="Models\FileName.cs" />
     <Compile Include="Models\Filter.cs" />
     <Compile Include="Models\Profile.cs" />
+    <Compile Include="Models\Settings.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Windows\About.cs">

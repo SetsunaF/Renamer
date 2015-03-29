@@ -41,7 +41,10 @@ namespace Renamer
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {            
+        {
+            
+            
+            
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
 
@@ -1128,7 +1131,7 @@ namespace Renamer
             var fn = e.TargetModel as FileName;
             if (fn != null) e.Effect = DragDropEffects.Move;
             
-            ShowDetails(e.SourceModels[0] as FileName);
+            ShowDetails(e.SourceModels[0] as FileName);            
         }
 
         int olvIndex = 0;
