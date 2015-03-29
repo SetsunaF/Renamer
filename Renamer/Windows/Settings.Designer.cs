@@ -39,7 +39,6 @@
             // checkBoxSaveLastProfile
             // 
             this.checkBoxSaveLastProfile.AutoSize = true;
-            this.checkBoxSaveLastProfile.Enabled = false;
             this.checkBoxSaveLastProfile.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxSaveLastProfile.Location = new System.Drawing.Point(13, 13);
             this.checkBoxSaveLastProfile.Name = "checkBoxSaveLastProfile";
@@ -51,7 +50,6 @@
             // checkBoxEnableContextMenu
             // 
             this.checkBoxEnableContextMenu.AutoSize = true;
-            this.checkBoxEnableContextMenu.Enabled = false;
             this.checkBoxEnableContextMenu.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxEnableContextMenu.Location = new System.Drawing.Point(13, 37);
             this.checkBoxEnableContextMenu.Name = "checkBoxEnableContextMenu";
@@ -63,7 +61,6 @@
             // checkBoxSavePreviousFileNames
             // 
             this.checkBoxSavePreviousFileNames.AutoSize = true;
-            this.checkBoxSavePreviousFileNames.Enabled = false;
             this.checkBoxSavePreviousFileNames.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxSavePreviousFileNames.Location = new System.Drawing.Point(13, 61);
             this.checkBoxSavePreviousFileNames.Name = "checkBoxSavePreviousFileNames";
@@ -110,7 +107,6 @@
             // checkBoxWarnBeforeRecursive
             // 
             this.checkBoxWarnBeforeRecursive.AutoSize = true;
-            this.checkBoxWarnBeforeRecursive.Enabled = false;
             this.checkBoxWarnBeforeRecursive.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxWarnBeforeRecursive.Location = new System.Drawing.Point(13, 85);
             this.checkBoxWarnBeforeRecursive.Name = "checkBoxWarnBeforeRecursive";

@@ -41,10 +41,7 @@ namespace Renamer
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {
-            
-            
-            
+        {            
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
 
