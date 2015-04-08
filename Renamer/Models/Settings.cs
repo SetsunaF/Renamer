@@ -98,6 +98,7 @@ namespace Renamer.Models
                 {
                     key.SetValue(null, "&Renamer");
                     key.SetValue("Icon", exe);
+                    key.SetValue("Extended", "");
 
                     using (var subKey = Registry.ClassesRoot.CreateSubKey(subKeyName))
                     {
