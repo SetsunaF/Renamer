@@ -39,20 +39,17 @@ namespace Renamer.Dialogs
         private void inputFile_DragDrop(object sender, DragEventArgs e)
         {
             var paths = (string[])e.Data.GetData(DataFormats.FileDrop, false);
-            var attr = File.GetAttributes(paths[0]);
+            if (Path.GetExtension(paths[0]).ToLower() != ".txt") return;
 
-            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
-            {
-                if (Path.GetExtension(paths[0]).ToLower() == ".txt") inputFile.Text = paths[0];
-            }
+            var attr = File.GetAttributes(paths[0]);
+            if ((attr & FileAttributes.Directory) != FileAttributes.Directory) inputFile.Text = paths[0];            
         }
 
         private void inputFile_DragEnter(object sender, DragEventArgs e)
         {
             this.Activate();
 
-            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
-                e.Effect = DragDropEffects.All;
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false)) e.Effect = DragDropEffects.All;            
             else e.Effect = DragDropEffects.None;
         }
 
