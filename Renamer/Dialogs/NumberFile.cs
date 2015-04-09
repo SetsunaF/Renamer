@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -33,6 +34,33 @@ namespace Renamer.Dialogs
             {
                 inputFile.Text = fileDialog.FileName;
             }
-        }      
+        }
+
+        private void inputFile_DragDrop(object sender, DragEventArgs e)
+        {
+            var paths = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            var attr = File.GetAttributes(paths[0]);
+
+            if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
+            {
+                inputFile.Text = paths[0];
+            }
+        }
+
+        private void inputFile_DragEnter(object sender, DragEventArgs e)
+        {
+            this.Activate();
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
+                e.Effect = DragDropEffects.All;
+            else e.Effect = DragDropEffects.None;
+        }
+
+        private void NumberFile_DragEnter(object sender, DragEventArgs e)
+        {
+            this.Activate();
+        }
+
+            
     }
 }

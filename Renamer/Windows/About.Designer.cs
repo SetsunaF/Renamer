@@ -50,13 +50,13 @@
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.metroLabel1.Location = new System.Drawing.Point(71, 11);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(75, 18);
-            this.metroLabel1.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroLabel1.TabIndex = 1;
             this.metroLabel1.Text = "Renamer";
-            this.metroLabel1.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.metroLabel1.UseCustomForeColor = true;
             // 
             // labelVersion
             // 
@@ -83,6 +83,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.label4.Location = new System.Drawing.Point(16, 78);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(270, 13);
@@ -94,7 +95,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Gray;
-            this.label2.Location = new System.Drawing.Point(32, 141);
+            this.label2.Location = new System.Drawing.Point(32, 133);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(294, 14);
             this.label2.TabIndex = 8;
@@ -106,7 +107,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Gray;
-            this.label5.Location = new System.Drawing.Point(32, 183);
+            this.label5.Location = new System.Drawing.Point(32, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(260, 14);
             this.label5.TabIndex = 9;
@@ -131,7 +132,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Gray;
-            this.label7.Location = new System.Drawing.Point(32, 162);
+            this.label7.Location = new System.Drawing.Point(32, 150);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(331, 14);
             this.label7.TabIndex = 11;
@@ -164,7 +165,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Gray;
-            this.label9.Location = new System.Drawing.Point(32, 120);
+            this.label9.Location = new System.Drawing.Point(32, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(316, 14);
             this.label9.TabIndex = 15;
@@ -180,7 +181,7 @@
             this.buttonOK.FlatAppearance.BorderSize = 0;
             this.buttonOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOK.ForeColor = System.Drawing.Color.White;
-            this.buttonOK.Location = new System.Drawing.Point(277, 208);
+            this.buttonOK.Location = new System.Drawing.Point(277, 191);
             this.buttonOK.Name = "buttonOK";
             this.buttonOK.Size = new System.Drawing.Size(85, 27);
             this.buttonOK.Style = DropdownButton.Styles.Primary;
@@ -206,7 +207,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.buttonOK;
-            this.ClientSize = new System.Drawing.Size(374, 247);
+            this.ClientSize = new System.Drawing.Size(374, 230);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelYear);

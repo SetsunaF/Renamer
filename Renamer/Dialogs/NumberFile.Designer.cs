@@ -85,6 +85,7 @@
             // 
             // inputFile
             // 
+            this.inputFile.AllowDrop = true;
             this.inputFile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -94,6 +95,8 @@
             this.inputFile.ShortcutsEnabled = false;
             this.inputFile.Size = new System.Drawing.Size(240, 23);
             this.inputFile.TabIndex = 3;
+            this.inputFile.DragDrop += new System.Windows.Forms.DragEventHandler(this.inputFile_DragDrop);
+            this.inputFile.DragEnter += new System.Windows.Forms.DragEventHandler(this.inputFile_DragEnter);
             // 
             // buttonFile
             // 
@@ -114,6 +117,7 @@
             // 
             // NumberFile
             // 
+            this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
@@ -125,6 +129,7 @@
             this.Controls.Add(this.labelNumber);
             this.Name = "NumberFile";
             this.Text = "NumberFile";
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.NumberFile_DragEnter);
             this.Controls.SetChildIndex(this.labelNumber, 0);
             this.Controls.SetChildIndex(this.inputNumber, 0);
             this.Controls.SetChildIndex(this.labelFile, 0);
