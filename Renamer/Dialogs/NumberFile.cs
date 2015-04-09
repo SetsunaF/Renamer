@@ -43,7 +43,7 @@ namespace Renamer.Dialogs
 
             if ((attr & FileAttributes.Directory) != FileAttributes.Directory)
             {
-                inputFile.Text = paths[0];
+                if (Path.GetExtension(paths[0]).ToLower() == ".txt") inputFile.Text = paths[0];
             }
         }
 
