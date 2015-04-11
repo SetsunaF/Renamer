@@ -30,11 +30,13 @@ namespace Renamer
         public Main()
         {
             InitializeComponent();
+            this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser(Models.Settings.IsUnderWine);
         }
 
         public Main(string defaultPath)
         {
             InitializeComponent();
+            this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser(Models.Settings.IsUnderWine);
 
             if(Directory.Exists(defaultPath))
                 textBoxInputDir.Text = defaultPath;
@@ -951,15 +953,15 @@ namespace Renamer
             new Windows.About().ShowDialog();
         }
 
-        private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            string data = "";
+        //private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+        //    string data = "";
 
-            foreach (var row in olvPreview.Objects)
-                data += (row as FileName).Original + "\r\n";            
+        //    foreach (var row in olvPreview.Objects)
+        //        data += (row as FileName).Original + "\r\n";            
 
-            Clipboard.SetText(data);
-        }
+        //    Clipboard.SetText(data);
+        //}
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -974,7 +976,7 @@ namespace Renamer
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Settings.RunningUnderWine())
+            if (Settings.IsUnderWine)
             {
                 buttonMediaInfo_Click(null, null);
                 return;
@@ -1147,34 +1149,39 @@ namespace Renamer
 
         int olvIndex = 0;
 
-        private void olvPreview_ModelDropped(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
+        private void MoveSelected(int targetIndex, BrightIdeasSoftware.DropTargetLocation targetLocation)
         {
             //buttonRename.Text = e.DropTargetLocation.ToString();
 
-            if (e.DropTargetIndex == -1) return;
-            if (olvPreview.SelectedIndex == e.DropTargetIndex) return;
+            if (targetIndex == -1) return;
+            if (olvPreview.SelectedIndex == targetIndex) return;
 
             //olvPreview.LowLevelScroll(0, 20);
             var tmp = new List<string>(fileList);
 
-            if (olvPreview.SelectedIndex > e.DropTargetIndex)
+            if (olvPreview.SelectedIndex > targetIndex)
             {
                 tmp.RemoveAt(olvPreview.SelectedIndex);
-                tmp.Insert(e.DropTargetIndex, fileList[olvPreview.SelectedIndex]);
-                olvIndex = e.DropTargetIndex;
+                tmp.Insert(targetIndex, fileList[olvPreview.SelectedIndex]);
+                olvIndex = targetIndex;
             }
 
-            else if (olvPreview.SelectedIndex < e.DropTargetIndex)
+            else if (olvPreview.SelectedIndex < targetIndex)
             {
-                if (e.DropTargetLocation == BrightIdeasSoftware.DropTargetLocation.BelowItem) e.DropTargetIndex++;
-                
-                tmp.Insert(e.DropTargetIndex, fileList[olvPreview.SelectedIndex]);   
+                if (targetLocation == BrightIdeasSoftware.DropTargetLocation.BelowItem) targetIndex++;
+
+                tmp.Insert(targetIndex, fileList[olvPreview.SelectedIndex]);
                 tmp.RemoveAt(olvPreview.SelectedIndex);
-                olvIndex = e.DropTargetIndex-1;
+                olvIndex = targetIndex - 1;
             }
 
             fileList = tmp.ToArray();
-            customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null);          
+            customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null); 
+        }
+
+        private void olvPreview_ModelDropped(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
+        {
+            MoveSelected(e.DropTargetIndex, e.DropTargetLocation);                 
         }
 
         private void customSortToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1192,7 +1199,21 @@ namespace Renamer
             fileList = tmp.ToArray();
             customSortToolStripMenuItem_Click(customSortToolStripMenuItem, null);
 
+            filesFound.Text = fileNames.Count + " Files";
             panelDetails.Hide();
+        }
+
+        private void moveToTopToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveSelected(0, BrightIdeasSoftware.DropTargetLocation.AboveItem);
+            olvPreview.Items[0].EnsureVisible();
+        }
+
+        private void moveToBottomToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int index = fileList.Length - 1;
+            MoveSelected(index, BrightIdeasSoftware.DropTargetLocation.BelowItem);
+            olvPreview.Items[index].EnsureVisible();
         }
 
         

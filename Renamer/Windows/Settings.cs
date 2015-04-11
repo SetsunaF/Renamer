@@ -42,8 +42,9 @@ namespace Renamer.Windows
             checkBoxSaveLastProfile.Checked = Models.Settings.SaveLastProfile;
             //checkBoxSavePreviousFileNames.Checked = Models.Settings.SavePreviousFileNames;
 
-            checkBoxWarnBeforeRecursive.Checked = Models.Settings.WarnBeforeRecursiveRename;
-            if (Models.Settings.RunningUnderWine()) checkBoxEnableContextMenu.Enabled = false;
+            checkBoxWarnBeforeRecursive.Checked = Models.Settings.WarnBeforeRecursiveRename;            
+            if (!Models.Settings.IsElevated) checkBoxEnableContextMenu.Enabled = false;
+            if (Models.Settings.IsUnderWine) checkBoxEnableContextMenu.Enabled = false;
 
             checkBoxEnableContextMenu.Checked = Models.Settings.IsContextMenuEnabled();
         }

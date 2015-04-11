@@ -8,6 +8,9 @@ using System.Windows.Forms;
 using Microsoft.Win32; 
 using Newtonsoft.Json;
 
+using System.Security.Principal;
+//using System.Security.Permissions;
+
 namespace Renamer.Models
 {
     public static class Settings
@@ -87,7 +90,7 @@ namespace Renamer.Models
                 return key != null;
             }
         }
-
+                
         public static bool EnableContextMenu()
         {
             var exe = System.Reflection.Assembly.GetEntryAssembly().Location;
@@ -126,13 +129,30 @@ namespace Renamer.Models
             catch { return false; }
         }
 
-        public static bool RunningUnderWine()
+        //public static bool RunningUnderWine()
+        //{
+        //    int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
+        //    return count == 0;
+        //}
+
+        public static bool IsElevated
         {
-            int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
-            return count == 0;
+            get
+            {
+                return new WindowsPrincipal
+                    (WindowsIdentity.GetCurrent()).IsInRole
+                    (WindowsBuiltInRole.Administrator);
+            }
         }
 
-       
+        public static bool IsUnderWine
+        {
+            get
+            {
+                int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
+                return count == 0;
+            }
+        }
 
 
 
