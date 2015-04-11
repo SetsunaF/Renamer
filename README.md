@@ -12,7 +12,7 @@ Features
 * Stackable parametric filters.
 * Undo renaming.
 * Detect invalid filenames.
-* Advanced multimedia information
+* Advanced multimedia information.
 * Cross-platform using Wine.
 
 Supported platforms
@@ -29,6 +29,14 @@ Requirements
 Screenshots
 -----------
 ![Renamer](http://i.imgur.com/qKPr3nl.png)
+
+FAQ
+---
+* **Why is the "context menu option" disabled?** To enable/disable the context menu you must run the application as administrator.
+* **After excluding some files, how can I show all files again?** Press the refresh button.
+* **Is there a way to solve window resizing issues under Linux?** Yes, on Wine Configuration uncheck "Allow the window manager to control the windows" 
+
+![Wine](http://i.imgur.com/q4zd1j5.png)
 
 License
 -------
