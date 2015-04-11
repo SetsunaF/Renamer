@@ -974,6 +974,12 @@ namespace Renamer
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (RunningUnderWine())
+            {
+                buttonMediaInfo_Click(null, null);
+                return;
+            }
+
             var fn = (FileName)olvPreview.SelectedObject;
             FileProperties.Show(fn.FullPath());
         }        
@@ -1189,7 +1195,11 @@ namespace Renamer
             panelDetails.Hide();
         }
 
-        
+        private bool RunningUnderWine()
+        {
+            int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
+            return count == 0;
+        }
 
 
 
