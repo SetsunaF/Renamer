@@ -124,7 +124,7 @@
             this.excludeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripSeparator();
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser();
+            this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser(Models.Settings.RunningUnderWine());
             this.buttonOptions = new DropdownButton.DropdownButton();
             this.contextMenuOptions = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.newProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

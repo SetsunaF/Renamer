@@ -105,7 +105,7 @@ namespace Renamer
         }
 
         private void buttonBrowseInput_Click(object sender, EventArgs e)
-        {
+        {            
             if (folderBrowser.ShowDialog() != DialogResult.OK) return;
             textBoxInputDir.Text = folderBrowser.SelectedPath;
         }        
@@ -974,7 +974,7 @@ namespace Renamer
 
         private void propertiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (RunningUnderWine())
+            if (Settings.RunningUnderWine())
             {
                 buttonMediaInfo_Click(null, null);
                 return;
@@ -1195,11 +1195,7 @@ namespace Renamer
             panelDetails.Hide();
         }
 
-        private bool RunningUnderWine()
-        {
-            int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
-            return count == 0;
-        }
+        
 
 
 

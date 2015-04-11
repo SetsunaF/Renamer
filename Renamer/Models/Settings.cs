@@ -126,7 +126,11 @@ namespace Renamer.Models
             catch { return false; }
         }
 
-        
+        public static bool RunningUnderWine()
+        {
+            int count = System.Diagnostics.Process.GetProcessesByName("winlogon").Length;
+            return count == 0;
+        }
 
        
 
