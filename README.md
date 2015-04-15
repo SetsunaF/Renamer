@@ -35,9 +35,8 @@ FAQ
 * *Why is the "context menu option" disabled?* To enable/disable the context menu you must run the application as administrator.
 * *Why I can't see the Renamer option on context menu?* For security reasons you must press SHIFT + Right Click over a directory.
 * *After excluding some files, how can I show all files again?* Press the refresh button.
-* *Is there a way to solve window resizing issues under Linux?* Yes, on Wine Configuration uncheck "Allow the window manager to control the windows" 
-
-![Wine](http://i.imgur.com/MDPOlEX.jpg)
+* *Is there a way to solve window resizing issues under Linux?* Yes, on [Wine Configuration](http://i.imgur.com/MDPOlEX.jpg) uncheck "Allow the window manager to control the windows"
+* *I'm receiving the following error: "Error parsing C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config", how can I fix it?* Install .NET Framework 4 using *winetricks dotnet40*
 
 License
 -------
