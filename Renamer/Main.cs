@@ -107,8 +107,17 @@ namespace Renamer
         }
 
         private void buttonBrowseInput_Click(object sender, EventArgs e)
-        {            
-            if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+        {
+            while (true)
+            {
+                if (folderBrowser.ShowDialog() != DialogResult.OK) return;
+
+                if (folderBrowser.SelectedPath.StartsWith(Environment.GetEnvironmentVariable("windir")))
+                    MessageBox.Show("The selected path is not allowed, please choose a different one.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                else break;
+            }
+
             textBoxInputDir.Text = folderBrowser.SelectedPath;
         }        
 

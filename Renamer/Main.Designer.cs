@@ -1059,7 +1059,7 @@
             this.moveToTopToolStripMenuItem,
             this.moveToBottomToolStripMenuItem});
             this.contextMenuProperties.Name = "contextMenuProperties";
-            this.contextMenuProperties.Size = new System.Drawing.Size(162, 204);
+            this.contextMenuProperties.Size = new System.Drawing.Size(162, 182);
             this.contextMenuProperties.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuProperties_Opening);
             // 
             // openToolStripMenuItem
