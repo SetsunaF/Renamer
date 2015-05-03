@@ -53,6 +53,20 @@
             this.deleteSelectedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeAllToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonAdd = new DropdownButton.DropdownButton();
+            this.buttonDown = new DropdownButton.FlatButton();
+            this.buttonUp = new DropdownButton.FlatButton();
+            this.buttonSave = new DropdownButton.DropdownButton();
+            this.contextMenuSave = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dropDownProfile = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
+            this.olvFilters = new BrightIdeasSoftware.FastObjectListView();
+            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenuAdd = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
@@ -88,20 +102,6 @@
             this.originalFileNameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeExtensionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.buttonDown = new DropdownButton.FlatButton();
-            this.buttonUp = new DropdownButton.FlatButton();
-            this.buttonSave = new DropdownButton.DropdownButton();
-            this.contextMenuSave = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.renameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dropDownProfile = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.olvFilters = new BrightIdeasSoftware.FastObjectListView();
-            this.olvColumn3 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn4 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.olvColumn5 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.contextMenuSort = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.naturalSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.naturalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -146,9 +146,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.contextMenuDelete.SuspendLayout();
-            this.contextMenuAdd.SuspendLayout();
             this.contextMenuSave.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvFilters)).BeginInit();
+            this.contextMenuAdd.SuspendLayout();
             this.contextMenuSort.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.olvPreview)).BeginInit();
             this.contextMenuProperties.SuspendLayout();
@@ -225,6 +225,7 @@
             // 
             this.buttonRegex.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRegex.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonRegex.Dialog = null;
             this.buttonRegex.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonRegex.FlatAppearance.BorderSize = 0;
             this.buttonRegex.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -419,6 +420,7 @@
             // buttonDelete
             // 
             this.buttonDelete.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonDelete.Dialog = null;
             this.buttonDelete.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonDelete.FlatAppearance.BorderSize = 0;
             this.buttonDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -461,13 +463,14 @@
             // buttonAdd
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonAdd.Dialog = null;
             this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonAdd.FlatAppearance.BorderSize = 0;
             this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonAdd.ForeColor = System.Drawing.Color.White;
             this.buttonAdd.HideArrow = false;
             this.buttonAdd.Location = new System.Drawing.Point(10, 182);
-            this.buttonAdd.Menu = this.contextMenuAdd;
+            this.buttonAdd.Menu = null;
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(70, 27);
             this.buttonAdd.Style = DropdownButton.Styles.Default;
@@ -476,6 +479,173 @@
             this.buttonAdd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonAdd.UseVisualStyleBackColor = false;
             this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
+            // 
+            // buttonDown
+            // 
+            this.buttonDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDown.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonDown.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonDown.FlatAppearance.BorderSize = 0;
+            this.buttonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDown.ForeColor = System.Drawing.Color.White;
+            this.buttonDown.Location = new System.Drawing.Point(264, 182);
+            this.buttonDown.Name = "buttonDown";
+            this.buttonDown.Size = new System.Drawing.Size(60, 27);
+            this.buttonDown.Style = DropdownButton.Styles.Default;
+            this.buttonDown.TabIndex = 7;
+            this.buttonDown.Text = "Down";
+            this.buttonDown.UseVisualStyleBackColor = false;
+            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
+            // 
+            // buttonUp
+            // 
+            this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonUp.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonUp.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonUp.FlatAppearance.BorderSize = 0;
+            this.buttonUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUp.ForeColor = System.Drawing.Color.White;
+            this.buttonUp.Location = new System.Drawing.Point(198, 182);
+            this.buttonUp.Name = "buttonUp";
+            this.buttonUp.Size = new System.Drawing.Size(60, 27);
+            this.buttonUp.Style = DropdownButton.Styles.Default;
+            this.buttonUp.TabIndex = 6;
+            this.buttonUp.Text = "Up";
+            this.buttonUp.UseVisualStyleBackColor = false;
+            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonSave.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonSave.Dialog = null;
+            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
+            this.buttonSave.FlatAppearance.BorderSize = 0;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.HideArrow = false;
+            this.buttonSave.Location = new System.Drawing.Point(254, 40);
+            this.buttonSave.Menu = this.contextMenuSave;
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(70, 29);
+            this.buttonSave.Style = DropdownButton.Styles.Default;
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "Save";
+            this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // contextMenuSave
+            // 
+            this.contextMenuSave.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.saveToolStripMenuItem,
+            this.saveAsToolStripMenuItem,
+            this.renameToolStripMenuItem,
+            this.deleteToolStripMenuItem});
+            this.contextMenuSave.Name = "contextMenuSave";
+            this.contextMenuSave.ShowImageMargin = false;
+            this.contextMenuSave.Size = new System.Drawing.Size(93, 92);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.saveAsToolStripMenuItem.Text = "Save as";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            // 
+            // renameToolStripMenuItem
+            // 
+            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
+            this.renameToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.deleteToolStripMenuItem.Text = "Delete";
+            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
+            // 
+            // dropDownProfile
+            // 
+            this.dropDownProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dropDownProfile.FormattingEnabled = true;
+            this.dropDownProfile.ItemHeight = 23;
+            this.dropDownProfile.Location = new System.Drawing.Point(10, 40);
+            this.dropDownProfile.Name = "dropDownProfile";
+            this.dropDownProfile.Size = new System.Drawing.Size(238, 29);
+            this.dropDownProfile.Style = MetroFramework.MetroColorStyle.Blue;
+            this.dropDownProfile.TabIndex = 1;
+            this.dropDownProfile.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.dropDownProfile.UseSelectable = true;
+            this.dropDownProfile.SelectedIndexChanged += new System.EventHandler(this.dropDownProfile_SelectedIndexChanged);
+            // 
+            // metroLabel4
+            // 
+            this.metroLabel4.AutoSize = true;
+            this.metroLabel4.Location = new System.Drawing.Point(7, 19);
+            this.metroLabel4.Name = "metroLabel4";
+            this.metroLabel4.Size = new System.Drawing.Size(46, 14);
+            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Blue;
+            this.metroLabel4.TabIndex = 0;
+            this.metroLabel4.Text = "Profile";
+            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
+            // 
+            // olvFilters
+            // 
+            this.olvFilters.AllColumns.Add(this.olvColumn3);
+            this.olvFilters.AllColumns.Add(this.olvColumn4);
+            this.olvFilters.AllColumns.Add(this.olvColumn5);
+            this.olvFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.olvFilters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.olvColumn3,
+            this.olvColumn4,
+            this.olvColumn5});
+            this.olvFilters.FullRowSelect = true;
+            this.olvFilters.GridLines = true;
+            this.olvFilters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
+            this.olvFilters.HideSelection = false;
+            this.olvFilters.Location = new System.Drawing.Point(10, 75);
+            this.olvFilters.MultiSelect = false;
+            this.olvFilters.Name = "olvFilters";
+            this.olvFilters.SelectColumnsOnRightClick = false;
+            this.olvFilters.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
+            this.olvFilters.ShowFilterMenuOnRightClick = false;
+            this.olvFilters.ShowGroups = false;
+            this.olvFilters.Size = new System.Drawing.Size(314, 101);
+            this.olvFilters.TabIndex = 3;
+            this.olvFilters.UseCompatibleStateImageBehavior = false;
+            this.olvFilters.View = System.Windows.Forms.View.Details;
+            this.olvFilters.VirtualMode = true;
+            // 
+            // olvColumn3
+            // 
+            this.olvColumn3.AspectName = "GetFunctionName";
+            this.olvColumn3.Sortable = false;
+            this.olvColumn3.Text = "Filter";
+            this.olvColumn3.Width = 170;
+            // 
+            // olvColumn4
+            // 
+            this.olvColumn4.AspectName = "FirstArgument";
+            this.olvColumn4.Sortable = false;
+            this.olvColumn4.Text = "";
+            // 
+            // olvColumn5
+            // 
+            this.olvColumn5.AspectName = "SecondArgument";
+            this.olvColumn5.Sortable = false;
+            this.olvColumn5.Text = "";
             // 
             // contextMenuAdd
             // 
@@ -742,172 +912,6 @@
             this.removeExtensionToolStripMenuItem.Text = "Remove Extension";
             this.removeExtensionToolStripMenuItem.Click += new System.EventHandler(this.removeExtensionToolStripMenuItem_Click);
             // 
-            // buttonDown
-            // 
-            this.buttonDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDown.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonDown.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonDown.FlatAppearance.BorderSize = 0;
-            this.buttonDown.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonDown.ForeColor = System.Drawing.Color.White;
-            this.buttonDown.Location = new System.Drawing.Point(264, 182);
-            this.buttonDown.Name = "buttonDown";
-            this.buttonDown.Size = new System.Drawing.Size(60, 27);
-            this.buttonDown.Style = DropdownButton.Styles.Default;
-            this.buttonDown.TabIndex = 7;
-            this.buttonDown.Text = "Down";
-            this.buttonDown.UseVisualStyleBackColor = false;
-            this.buttonDown.Click += new System.EventHandler(this.buttonDown_Click);
-            // 
-            // buttonUp
-            // 
-            this.buttonUp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonUp.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonUp.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonUp.FlatAppearance.BorderSize = 0;
-            this.buttonUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonUp.ForeColor = System.Drawing.Color.White;
-            this.buttonUp.Location = new System.Drawing.Point(198, 182);
-            this.buttonUp.Name = "buttonUp";
-            this.buttonUp.Size = new System.Drawing.Size(60, 27);
-            this.buttonUp.Style = DropdownButton.Styles.Default;
-            this.buttonUp.TabIndex = 6;
-            this.buttonUp.Text = "Up";
-            this.buttonUp.UseVisualStyleBackColor = false;
-            this.buttonUp.Click += new System.EventHandler(this.buttonUp_Click);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonSave.BackColor = System.Drawing.Color.DarkGray;
-            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
-            this.buttonSave.FlatAppearance.BorderSize = 0;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.HideArrow = false;
-            this.buttonSave.Location = new System.Drawing.Point(254, 40);
-            this.buttonSave.Menu = this.contextMenuSave;
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(70, 29);
-            this.buttonSave.Style = DropdownButton.Styles.Default;
-            this.buttonSave.TabIndex = 2;
-            this.buttonSave.Text = "Save";
-            this.buttonSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // contextMenuSave
-            // 
-            this.contextMenuSave.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.saveToolStripMenuItem,
-            this.saveAsToolStripMenuItem,
-            this.renameToolStripMenuItem,
-            this.deleteToolStripMenuItem});
-            this.contextMenuSave.Name = "contextMenuSave";
-            this.contextMenuSave.ShowImageMargin = false;
-            this.contextMenuSave.Size = new System.Drawing.Size(93, 92);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.saveAsToolStripMenuItem.Text = "Save as";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
-            // 
-            // renameToolStripMenuItem
-            // 
-            this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
-            this.renameToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.renameToolStripMenuItem.Text = "Rename";
-            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
-            // 
-            // dropDownProfile
-            // 
-            this.dropDownProfile.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dropDownProfile.FormattingEnabled = true;
-            this.dropDownProfile.ItemHeight = 23;
-            this.dropDownProfile.Location = new System.Drawing.Point(10, 40);
-            this.dropDownProfile.Name = "dropDownProfile";
-            this.dropDownProfile.Size = new System.Drawing.Size(238, 29);
-            this.dropDownProfile.Style = MetroFramework.MetroColorStyle.Blue;
-            this.dropDownProfile.TabIndex = 1;
-            this.dropDownProfile.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.dropDownProfile.UseSelectable = true;
-            this.dropDownProfile.SelectedIndexChanged += new System.EventHandler(this.dropDownProfile_SelectedIndexChanged);
-            // 
-            // metroLabel4
-            // 
-            this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(7, 19);
-            this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(46, 14);
-            this.metroLabel4.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroLabel4.TabIndex = 0;
-            this.metroLabel4.Text = "Profile";
-            this.metroLabel4.Theme = MetroFramework.MetroThemeStyle.Light;
-            // 
-            // olvFilters
-            // 
-            this.olvFilters.AllColumns.Add(this.olvColumn3);
-            this.olvFilters.AllColumns.Add(this.olvColumn4);
-            this.olvFilters.AllColumns.Add(this.olvColumn5);
-            this.olvFilters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.olvFilters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.olvColumn3,
-            this.olvColumn4,
-            this.olvColumn5});
-            this.olvFilters.FullRowSelect = true;
-            this.olvFilters.GridLines = true;
-            this.olvFilters.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable;
-            this.olvFilters.HideSelection = false;
-            this.olvFilters.Location = new System.Drawing.Point(10, 75);
-            this.olvFilters.MultiSelect = false;
-            this.olvFilters.Name = "olvFilters";
-            this.olvFilters.SelectColumnsOnRightClick = false;
-            this.olvFilters.SelectColumnsOnRightClickBehaviour = BrightIdeasSoftware.ObjectListView.ColumnSelectBehaviour.None;
-            this.olvFilters.ShowFilterMenuOnRightClick = false;
-            this.olvFilters.ShowGroups = false;
-            this.olvFilters.Size = new System.Drawing.Size(314, 101);
-            this.olvFilters.TabIndex = 3;
-            this.olvFilters.UseCompatibleStateImageBehavior = false;
-            this.olvFilters.View = System.Windows.Forms.View.Details;
-            this.olvFilters.VirtualMode = true;
-            // 
-            // olvColumn3
-            // 
-            this.olvColumn3.AspectName = "GetFunctionName";
-            this.olvColumn3.Sortable = false;
-            this.olvColumn3.Text = "Filter";
-            this.olvColumn3.Width = 170;
-            // 
-            // olvColumn4
-            // 
-            this.olvColumn4.AspectName = "FirstArgument";
-            this.olvColumn4.Sortable = false;
-            this.olvColumn4.Text = "";
-            // 
-            // olvColumn5
-            // 
-            this.olvColumn5.AspectName = "SecondArgument";
-            this.olvColumn5.Sortable = false;
-            this.olvColumn5.Text = "";
-            // 
             // contextMenuSort
             // 
             this.contextMenuSort.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -1135,6 +1139,7 @@
             // 
             this.buttonOptions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOptions.BackColor = System.Drawing.Color.DarkGray;
+            this.buttonOptions.Dialog = null;
             this.buttonOptions.FlatAppearance.BorderColor = System.Drawing.Color.DarkGray;
             this.buttonOptions.FlatAppearance.BorderSize = 0;
             this.buttonOptions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -1327,9 +1332,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.contextMenuDelete.ResumeLayout(false);
-            this.contextMenuAdd.ResumeLayout(false);
             this.contextMenuSave.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.olvFilters)).EndInit();
+            this.contextMenuAdd.ResumeLayout(false);
             this.contextMenuSort.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.olvPreview)).EndInit();
             this.contextMenuProperties.ResumeLayout(false);

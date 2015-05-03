@@ -47,6 +47,8 @@ namespace Renamer
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
 
+            buttonAdd.Dialog = new Windows.FilterSelector(this);
+
             olvPreview.CellPadding = new Rectangle(
                 new Point(2, 0),
                 new Size(0, 0)
