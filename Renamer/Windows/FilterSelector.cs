@@ -32,17 +32,20 @@ namespace Renamer.Windows
 
 
 
-
+            foreach (Panel panel in panelContent.Controls) panel.Dock = DockStyle.Fill;            
             ResetTabControl();
 
             foreach (FlatButton button in panelTabs.Controls)
             {                
                 button.Click += (sd, ea) =>
-                {
+                {                    
                     ResetTabControl();
-
                     button.Style = Styles.Primary;
-                    (panelContent.Controls[button.Tag.ToString()] as Panel).Visible = true;
+
+                    string panelName = "panel"+button.Text.Replace(" ", string.Empty);
+                    if (button.Tag != null) panelName = button.Tag.ToString();
+
+                    (panelContent.Controls[panelName] as Panel).Visible = true;
                 };
             }
         }
