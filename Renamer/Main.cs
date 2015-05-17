@@ -343,7 +343,7 @@ namespace Renamer
         }
 
         //Evaluate dialog for Filters with 1 numeric argument (the blue rows on the excel file)
-        void EvalDialog_Num(string title, string prompt, FilterType filterType)
+        public void EvalDialog_Num(string title, string prompt, FilterType filterType)
         {
             using (var dlg = new Dialogs.Number(title, prompt, this))
             {
@@ -546,6 +546,7 @@ namespace Renamer
                 AddFilter(filterList[olvFilters.SelectedIndex]);
                 ApplyFiltersAndUpdate();
             }
+            else buttonAdd.Expand();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
