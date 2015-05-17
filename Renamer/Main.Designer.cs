@@ -693,7 +693,6 @@
             this.clearToolStripMenuItem.Name = "clearToolStripMenuItem";
             this.clearToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.clearToolStripMenuItem.Text = "Clear";
-            this.clearToolStripMenuItem.Click += new System.EventHandler(this.clearToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -705,21 +704,18 @@
             this.addNumberingToolStripMenuItem.Name = "addNumberingToolStripMenuItem";
             this.addNumberingToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.addNumberingToolStripMenuItem.Text = "Add Numbering";
-            this.addNumberingToolStripMenuItem.Click += new System.EventHandler(this.addNumberingToolStripMenuItem_Click);
             // 
             // addNumberingByDirectoryToolStripMenuItem
             // 
             this.addNumberingByDirectoryToolStripMenuItem.Name = "addNumberingByDirectoryToolStripMenuItem";
             this.addNumberingByDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.addNumberingByDirectoryToolStripMenuItem.Text = "Add Numbering (By Directory)";
-            this.addNumberingByDirectoryToolStripMenuItem.Click += new System.EventHandler(this.addNumberingByDirectoryToolStripMenuItem_Click);
+            this.addNumberingByDirectoryToolStripMenuItem.Text = "Add Numbering (By Directory)";            
             // 
             // swapOrderToolStripMenuItem
             // 
             this.swapOrderToolStripMenuItem.Name = "swapOrderToolStripMenuItem";
             this.swapOrderToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.swapOrderToolStripMenuItem.Text = "Add Numbering (Swap Order)";
-            this.swapOrderToolStripMenuItem.Click += new System.EventHandler(this.swapOrderToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -731,28 +727,24 @@
             this.appendBeforeToolStripMenuItem.Name = "appendBeforeToolStripMenuItem";
             this.appendBeforeToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.appendBeforeToolStripMenuItem.Text = "Append Before";
-            this.appendBeforeToolStripMenuItem.Click += new System.EventHandler(this.appendBeforeToolStripMenuItem_Click);
             // 
             // appendAfterToolStripMenuItem
             // 
             this.appendAfterToolStripMenuItem.Name = "appendAfterToolStripMenuItem";
             this.appendAfterToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.appendAfterToolStripMenuItem.Text = "Append After";
-            this.appendAfterToolStripMenuItem.Click += new System.EventHandler(this.appendAfterToolStripMenuItem_Click);
             // 
             // appendAtPositionToolStripMenuItem
             // 
             this.appendAtPositionToolStripMenuItem.Name = "appendAtPositionToolStripMenuItem";
             this.appendAtPositionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.appendAtPositionToolStripMenuItem.Text = "Append at Position";
-            this.appendAtPositionToolStripMenuItem.Click += new System.EventHandler(this.appendAtPositionToolStripMenuItem_Click);
+            this.appendAtPositionToolStripMenuItem.Text = "Append at Position";            
             // 
             // appendFromTextFileToolStripMenuItem
             // 
             this.appendFromTextFileToolStripMenuItem.Name = "appendFromTextFileToolStripMenuItem";
             this.appendFromTextFileToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.appendFromTextFileToolStripMenuItem.Text = "Append from Text File";
-            this.appendFromTextFileToolStripMenuItem.Click += new System.EventHandler(this.appendFromTextFileToolStripMenuItem_Click);
+            this.appendFromTextFileToolStripMenuItem.Text = "Append from Text File";            
             // 
             // toolStripMenuItem3
             // 
@@ -763,22 +755,19 @@
             // 
             this.extractNumbersToolStripMenuItem.Name = "extractNumbersToolStripMenuItem";
             this.extractNumbersToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.extractNumbersToolStripMenuItem.Text = "Keep Numeric Characters";
-            this.extractNumbersToolStripMenuItem.Click += new System.EventHandler(this.extractNumbersToolStripMenuItem_Click);
+            this.extractNumbersToolStripMenuItem.Text = "Keep Numeric Characters";            
             // 
             // keepAlphanumericCharactersToolStripMenuItem
             // 
             this.keepAlphanumericCharactersToolStripMenuItem.Name = "keepAlphanumericCharactersToolStripMenuItem";
             this.keepAlphanumericCharactersToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.keepAlphanumericCharactersToolStripMenuItem.Text = "Keep Alphanumeric Characters";
-            this.keepAlphanumericCharactersToolStripMenuItem.Click += new System.EventHandler(this.keepAlphanumericCharactersToolStripMenuItem_Click);
             // 
             // removeInvalidCharactersToolStripMenuItem
             // 
             this.removeInvalidCharactersToolStripMenuItem.Name = "removeInvalidCharactersToolStripMenuItem";
             this.removeInvalidCharactersToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.removeInvalidCharactersToolStripMenuItem.Text = "Remove Invalid Characters";
-            this.removeInvalidCharactersToolStripMenuItem.Click += new System.EventHandler(this.removeInvalidCharactersToolStripMenuItem_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -790,28 +779,24 @@
             this.preserveFromLeftToolStripMenuItem.Name = "preserveFromLeftToolStripMenuItem";
             this.preserveFromLeftToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.preserveFromLeftToolStripMenuItem.Text = "Preserve from Left";
-            this.preserveFromLeftToolStripMenuItem.Click += new System.EventHandler(this.preserveFromLeftToolStripMenuItem_Click);
             // 
             // preserveFromRightToolStripMenuItem
             // 
             this.preserveFromRightToolStripMenuItem.Name = "preserveFromRightToolStripMenuItem";
             this.preserveFromRightToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.preserveFromRightToolStripMenuItem.Text = "Preserve from Right";
-            this.preserveFromRightToolStripMenuItem.Click += new System.EventHandler(this.preserveFromRightToolStripMenuItem_Click);
             // 
             // trimFromLeftToolStripMenuItem
             // 
             this.trimFromLeftToolStripMenuItem.Name = "trimFromLeftToolStripMenuItem";
             this.trimFromLeftToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.trimFromLeftToolStripMenuItem.Text = "Trim from Left";
-            this.trimFromLeftToolStripMenuItem.Click += new System.EventHandler(this.trimFromLeftToolStripMenuItem_Click);
             // 
             // trimFromRightToolStripMenuItem
             // 
             this.trimFromRightToolStripMenuItem.Name = "trimFromRightToolStripMenuItem";
             this.trimFromRightToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.trimFromRightToolStripMenuItem.Text = "Trim from Right";
-            this.trimFromRightToolStripMenuItem.Click += new System.EventHandler(this.trimFromRightToolStripMenuItem_Click);
             // 
             // toolStripMenuItem5
             // 
@@ -823,28 +808,24 @@
             this.capitalizeEachWordToolStripMenuItem.Name = "capitalizeEachWordToolStripMenuItem";
             this.capitalizeEachWordToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.capitalizeEachWordToolStripMenuItem.Text = "Capitalize each Word";
-            this.capitalizeEachWordToolStripMenuItem.Click += new System.EventHandler(this.capitalizeEachWordToolStripMenuItem_Click);
             // 
             // toUppercaseToolStripMenuItem
             // 
             this.toUppercaseToolStripMenuItem.Name = "toUppercaseToolStripMenuItem";
             this.toUppercaseToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.toUppercaseToolStripMenuItem.Text = "Upper Case";
-            this.toUppercaseToolStripMenuItem.Click += new System.EventHandler(this.toUppercaseToolStripMenuItem_Click);
             // 
             // toLowercaseToolStripMenuItem
             // 
             this.toLowercaseToolStripMenuItem.Name = "toLowercaseToolStripMenuItem";
             this.toLowercaseToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.toLowercaseToolStripMenuItem.Text = "Lower Case";
-            this.toLowercaseToolStripMenuItem.Click += new System.EventHandler(this.toLowercaseToolStripMenuItem_Click);
             // 
             // toSentenceCaseToolStripMenuItem
             // 
             this.toSentenceCaseToolStripMenuItem.Name = "toSentenceCaseToolStripMenuItem";
             this.toSentenceCaseToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.toSentenceCaseToolStripMenuItem.Text = "Sentence Case";
-            this.toSentenceCaseToolStripMenuItem.Click += new System.EventHandler(this.toSentenceCaseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem6
             // 
@@ -856,28 +837,24 @@
             this.regularExpressionToolStripMenuItem.Name = "regularExpressionToolStripMenuItem";
             this.regularExpressionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.regularExpressionToolStripMenuItem.Text = "Regex Match";
-            this.regularExpressionToolStripMenuItem.Click += new System.EventHandler(this.regularExpressionToolStripMenuItem_Click);
             // 
             // regexReplaceToolStripMenuItem
             // 
             this.regexReplaceToolStripMenuItem.Name = "regexReplaceToolStripMenuItem";
             this.regexReplaceToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.regexReplaceToolStripMenuItem.Text = "Regex Replace";
-            this.regexReplaceToolStripMenuItem.Click += new System.EventHandler(this.regexReplaceToolStripMenuItem_Click);
             // 
             // replaceStringToolStripMenuItem
             // 
             this.replaceStringToolStripMenuItem.Name = "replaceStringToolStripMenuItem";
             this.replaceStringToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.replaceStringToolStripMenuItem.Text = "Replace String";
-            this.replaceStringToolStripMenuItem.Click += new System.EventHandler(this.replaceStringToolStripMenuItem_Click);
             // 
             // replaceStringCaseInsensitiveToolStripMenuItem
             // 
             this.replaceStringCaseInsensitiveToolStripMenuItem.Name = "replaceStringCaseInsensitiveToolStripMenuItem";
             this.replaceStringCaseInsensitiveToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.replaceStringCaseInsensitiveToolStripMenuItem.Text = "Replace String (Case Insensitive)";
-            this.replaceStringCaseInsensitiveToolStripMenuItem.Click += new System.EventHandler(this.replaceStringCaseInsensitiveToolStripMenuItem_Click);
             // 
             // toolStripMenuItem7
             // 
@@ -888,29 +865,25 @@
             // 
             this.parentDirectoryToolStripMenuItem.Name = "parentDirectoryToolStripMenuItem";
             this.parentDirectoryToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";
-            this.parentDirectoryToolStripMenuItem.Click += new System.EventHandler(this.parentDirectoryToolStripMenuItem_Click);
+            this.parentDirectoryToolStripMenuItem.Text = "Parent Directory";            
             // 
             // originalFileNameToolStripMenuItem
             // 
             this.originalFileNameToolStripMenuItem.Name = "originalFileNameToolStripMenuItem";
             this.originalFileNameToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
-            this.originalFileNameToolStripMenuItem.Text = "Original File Name";
-            this.originalFileNameToolStripMenuItem.Click += new System.EventHandler(this.originalFilenameToolStripMenuItem_Click);
+            this.originalFileNameToolStripMenuItem.Text = "Original File Name";            
             // 
             // addExtensionToolStripMenuItem
             // 
             this.addExtensionToolStripMenuItem.Name = "addExtensionToolStripMenuItem";
             this.addExtensionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.addExtensionToolStripMenuItem.Text = "Add Extension";
-            this.addExtensionToolStripMenuItem.Click += new System.EventHandler(this.addExtensionToolStripMenuItem_Click);
             // 
             // removeExtensionToolStripMenuItem
             // 
             this.removeExtensionToolStripMenuItem.Name = "removeExtensionToolStripMenuItem";
             this.removeExtensionToolStripMenuItem.Size = new System.Drawing.Size(218, 22);
             this.removeExtensionToolStripMenuItem.Text = "Remove Extension";
-            this.removeExtensionToolStripMenuItem.Click += new System.EventHandler(this.removeExtensionToolStripMenuItem_Click);
             // 
             // contextMenuSort
             // 
