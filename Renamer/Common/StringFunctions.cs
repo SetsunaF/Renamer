@@ -32,7 +32,9 @@ namespace Renamer.Common
 
         public static string ExtractNumeric(this string s)
         {
-            return Regex.Match(s, @"\d+").Value;
+            var result = "";
+            foreach (var match in Regex.Matches(s, @"\d+")) result += match;
+            return result;
         }
 
         public static string ExtractAlphanumeric(this string s)

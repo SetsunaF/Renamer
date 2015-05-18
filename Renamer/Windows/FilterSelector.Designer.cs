@@ -173,6 +173,7 @@
             this.olvSelectorMainColumn});
             this.olvSelector.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvSelector.FullRowSelect = true;
+            this.olvSelector.GridLines = true;
             this.olvSelector.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
             this.olvSelector.Location = new System.Drawing.Point(6, 6);
             this.olvSelector.MultiSelect = false;
@@ -184,10 +185,9 @@
             this.olvSelector.Size = new System.Drawing.Size(121, 97);
             this.olvSelector.TabIndex = 0;
             this.olvSelector.UseCompatibleStateImageBehavior = false;
-            this.olvSelector.UseHotItem = true;
-            this.olvSelector.UseTranslucentHotItem = true;
             this.olvSelector.View = System.Windows.Forms.View.Details;
             this.olvSelector.Click += new System.EventHandler(this.olvSelector_Click);
+            this.olvSelector.KeyDown += new System.Windows.Forms.KeyEventHandler(this.olvSelector_KeyDown);
             this.olvSelector.MouseEnter += new System.EventHandler(this.olvSelector_MouseEnter);
             // 
             // olvSelectorMainColumn

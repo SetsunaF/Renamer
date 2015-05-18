@@ -251,6 +251,14 @@ namespace Renamer.Windows
             }
 
             this.Close();
+        }                
+
+        private void olvSelector_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                olvSelector_Click(null, null);
+            }
         }
     }
 

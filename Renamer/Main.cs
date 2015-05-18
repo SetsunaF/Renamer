@@ -394,32 +394,7 @@ namespace Renamer
         }
 
         #region Menu Items
-
-        //private void clearToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.Clear);
-        //}
-
-        //private void addNumberingToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Add Numbering", "Position:", FilterType.AddNumbering);
-        //}
-
-        //private void swapOrderToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Swap Order", "Position:", FilterType.SwapOrder);
-        //}
-
-        //private void appendBeforeToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str("Append Before", "Text:", FilterType.AppendBefore);
-        //}
-
-        //private void appendAfterToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str("Append After", "Text:", FilterType.AppendAfter);
-        //}
-
+        
         public void appendAtPositionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new Dialogs.NumberString("Append at Position", "Position:", "Text:", this))
@@ -447,92 +422,7 @@ namespace Renamer
 
                 ApplyFiltersAndUpdate();
             }
-        }
-
-        //private void extractNumbersToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.KeepNumeric);
-        //}
-
-        //private void keepAlphanumericCharactersToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.KeepAlphanumeric);
-        //}
-
-        //private void removeInvalidCharactersToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.RemoveInvalidCharacters);
-        //}
-
-        //private void preserveFromLeftToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Preserve from Left", "Count:", FilterType.PreserveFromLeft);
-        //}
-
-        //private void preserveFromRightToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Preserve from Right", "Count:", FilterType.PreserveFromRight);
-        //}
-
-        //private void trimFromLeftToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Trim from Left", "Count:", FilterType.TrimFromLeft);
-        //}
-
-        //private void trimFromRightToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Trim from Right", "Count:", FilterType.TrimFromRight);
-        //}
-
-        //private void capitalizeEachWordToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.CapitalizeEachWord);
-        //}
-
-        //private void toUppercaseToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.UpperCase);
-        //}
-
-        //private void toLowercaseToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.LowerCase);
-        //}
-
-        //private void toSentenceCaseToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.SentenceCase);
-        //}
-
-        //private void regularExpressionToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str("Regular Expression", "Expression:", FilterType.Regex);
-        //}
-
-        //private void regexReplaceToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str_Str("Regex Replace", "Expression:", "Replace String:", FilterType.RegexReplace);
-        //}
-
-        //private void replaceStringToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str_Str("Replace String", "Search String:", "Replace String:", FilterType.ReplaceString);
-        //}
-
-        //private void replaceStringCaseInsensitiveToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Str_Str("Replace String (Case Insensitive)", "Search String:", "Replace String:", FilterType.ReplaceCaseInsensitive);
-        //}
-
-        //private void addExtensionToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.AddExtension);
-        //}
-
-        //private void removeExtensionToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    ApplySimpleFilter(FilterType.RemoveExtension);
-        //}
+        }        
 
         #endregion
 
@@ -1071,17 +961,7 @@ namespace Renamer
                 var obj = (FileName)olvPreview.GetItem(item.Index).RowObject;
                 item.ToolTipText = obj.ParentDirectory() + @"\" + obj.Original;
             }
-        }
-
-        //private void parentDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Parent Directory", "Position:", FilterType.ParentDirectory);
-        //}
-
-        //private void addNumberingByDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Number By Directories", "Position:", FilterType.NumberByDirectories);
-        //}
+        }        
 
         private void Main_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -1144,12 +1024,7 @@ namespace Renamer
             {
                 info.ShowDialog();
             }
-        }
-
-        //private void originalFilenameToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    EvalDialog_Num("Original Filename", "Position:", FilterType.OriginalFileName);
-        //}
+        }               
 
         private void olvPreview_ModelCanDrop(object sender, BrightIdeasSoftware.ModelDropEventArgs e)
         {
