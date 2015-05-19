@@ -25,6 +25,9 @@ namespace Renamer
 
         private List<string[]> errorList = new List<string[]>();
 
+        public FilterEvaluator filterEvaluator;
+        public FilterType selectedFilter;
+
         #region GUI
 
         public Main()
@@ -43,11 +46,13 @@ namespace Renamer
         }
 
         private void Main_Load(object sender, EventArgs e)
-        {            
+        {
             this.MinimumSize = this.Size;
             Main_Resize(null, null);
 
+            filterEvaluator = new FilterEvaluator(this);
             buttonAdd.Dialog = new Windows.FilterSelector(this);
+            buttonAdd.onDialogCloseEvent = () => filterEvaluator.Evaluate(selectedFilter);
 
             olvPreview.CellPadding = new Rectangle(
                 new Point(2, 0),

@@ -209,7 +209,7 @@
             this.Name = "FilterSelector";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Add Filter";
+            this.Text = "Add Filter";            
             this.Load += new System.EventHandler(this.FilterSelector_Load);
             this.Shown += new System.EventHandler(this.FilterSelector_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterSelector_KeyDown);

@@ -69,6 +69,8 @@ namespace Renamer.Windows
             this.Height = 340;
         }
 
+        //Size? initialSize = null;
+
         private void FilterSelector_Load(object sender, EventArgs e)
         {
             //Caculate window size
@@ -76,7 +78,8 @@ namespace Renamer.Windows
             int titleHeight = rectangle.Top - this.Top;
             this.Top = this.Owner.Top + titleHeight + 12;
 
-            //Set minimum size
+            //Set minimum size            
+            //if (initialSize == null) initialSize = this.Size;
             this.MinimumSize = this.Size;
 
             //Configure object list view selector
@@ -132,136 +135,24 @@ namespace Renamer.Windows
 
         private void FilterSelector_KeyDown(object sender, KeyEventArgs e)
         {
+            //msdn.microsoft.com/en-us/library/system.windows.forms.form.dialogresult(v=vs.110).aspx
+            //When form is closed by the X button the DialogResult automatically is set to cancel
+
             if (e.KeyCode == Keys.Escape)
             {
+                this.DialogResult = DialogResult.Cancel;
                 this.Close();
             }
-        }
+        }          
 
         private void olvSelector_Click(object sender, EventArgs e)
         {
             if (olvSelector.SelectedObjects.Count == 0) return;
-            this.Hide();
 
-            var mainForm = ((Main)this.Owner);
-            var filterType = (olvSelector.SelectedObject as FilterMenuItem).type;
+            var mainForm = (Main)this.Owner;
+            mainForm.selectedFilter = (olvSelector.SelectedObject as FilterMenuItem).type;
 
-            switch (filterType)
-            {
-                case FilterType.Clear:
-                    mainForm.ApplySimpleFilter(FilterType.Clear);
-                    break;
-
-                case FilterType.AddNumbering:
-                    mainForm.EvalDialog_Num("Add Numbering", "Position:", FilterType.AddNumbering);
-                    break;
-
-                case FilterType.NumberByDirectories:
-                    mainForm.EvalDialog_Num("Number By Directories", "Position:", FilterType.NumberByDirectories);
-                    break;
-
-                case FilterType.AddMultipleNumbering:
-                    mainForm.EvalDialog_Num_Num("Add Numbering (Multiple)", "Position:", "Numbers:", FilterType.AddMultipleNumbering);
-                    break;
-
-                case FilterType.SwapOrder:
-                    mainForm.EvalDialog_Num("Swap Order", "Position:", FilterType.SwapOrder);
-                    break;
-
-                case FilterType.AppendBefore:
-                    mainForm.EvalDialog_Str("Append Before", "Text:", FilterType.AppendBefore);
-                    break;
-
-                case FilterType.AppendAfter:
-                    mainForm.EvalDialog_Str("Append After", "Text:", FilterType.AppendAfter);
-                    break;
-
-                case FilterType.AppendAtPosition:
-                    mainForm.appendAtPositionToolStripMenuItem_Click(null, null);
-                    break;
-
-                case FilterType.AppendFromTextFile:
-                    mainForm.appendFromTextFileToolStripMenuItem_Click(null, null);
-                    break;
-
-                case FilterType.KeepNumeric:
-                    mainForm.ApplySimpleFilter(FilterType.KeepNumeric);
-                    break;
-
-                case FilterType.KeepAlphanumeric:
-                    mainForm.ApplySimpleFilter(FilterType.KeepAlphanumeric);
-                    break;
-
-                case FilterType.RemoveInvalidCharacters:
-                    mainForm.ApplySimpleFilter(FilterType.RemoveInvalidCharacters);
-                    break;
-
-                case FilterType.PreserveFromLeft:
-                    mainForm.EvalDialog_Num("Preserve from Left", "Count:", FilterType.PreserveFromLeft);
-                    break;
-
-                case FilterType.PreserveFromRight:
-                    mainForm.EvalDialog_Num("Preserve from Right", "Count:", FilterType.PreserveFromRight);
-                    break;
-
-                case FilterType.TrimFromLeft:
-                    mainForm.EvalDialog_Num("Trim from Left", "Count:", FilterType.TrimFromLeft);
-                    break;
-
-                case FilterType.TrimFromRight:
-                    mainForm.EvalDialog_Num("Trim from Right", "Count:", FilterType.TrimFromRight);
-                    break;
-
-                case FilterType.CapitalizeEachWord:
-                    mainForm.ApplySimpleFilter(FilterType.CapitalizeEachWord);
-                    break;
-
-                case FilterType.UpperCase:
-                    mainForm.ApplySimpleFilter(FilterType.UpperCase);
-                    break;
-
-                case FilterType.LowerCase:
-                    mainForm.ApplySimpleFilter(FilterType.LowerCase);
-                    break;
-
-                case FilterType.SentenceCase:
-                    mainForm.ApplySimpleFilter(FilterType.SentenceCase);
-                    break;
-
-                case FilterType.Regex:
-                    mainForm.EvalDialog_Str("Regular Expression", "Expression:", FilterType.Regex);
-                    break;
-
-                case FilterType.RegexReplace:
-                    mainForm.EvalDialog_Str_Str("Regex Replace", "Expression:", "Replace String:", FilterType.RegexReplace);
-                    break;
-
-                case FilterType.ReplaceString:
-                    mainForm.EvalDialog_Str_Str("Replace String", "Search String:", "Replace String:", FilterType.ReplaceString);
-                    break;
-
-                case FilterType.ReplaceCaseInsensitive:
-                    mainForm.EvalDialog_Str_Str("Replace String (Case Insensitive)", "Search String:", "Replace String:", FilterType.ReplaceCaseInsensitive);
-                    break;
-
-                case FilterType.AddExtension:
-                    mainForm.ApplySimpleFilter(FilterType.AddExtension);
-                    break;
-
-                case FilterType.RemoveExtension:
-                    mainForm.ApplySimpleFilter(FilterType.RemoveExtension);
-                    break;
-
-                case FilterType.ParentDirectory:
-                    mainForm.EvalDialog_Num("Parent Directory", "Position:", FilterType.ParentDirectory);
-                    break;
-
-                case FilterType.OriginalFileName:
-                    mainForm.EvalDialog_Num("Original Filename", "Position:", FilterType.OriginalFileName);
-                    break;
-
-            }
-
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }                
 
@@ -271,7 +162,8 @@ namespace Renamer.Windows
             {
                 olvSelector_Click(null, null);
             }
-        }       
+        }
+               
     }
 
     public class FilterMenuItem
