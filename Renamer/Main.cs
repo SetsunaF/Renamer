@@ -283,6 +283,7 @@ namespace Renamer
 
                 foreach (var filter in list)
                 {
+                    filter.Reset();
                     fileNames[i].Modified = filter.ApplyTo(fileNames[i], i, fileNames.Count);
                 }
             }

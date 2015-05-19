@@ -149,6 +149,14 @@ namespace Renamer.Models
 
         private FileName previousFileName = null;   //previously used file name
         private int fileCount = 0;                  //file count in the current directory
+
+        public void Reset()
+        {
+            if (filterType == FilterType.AddMultipleNumbering)
+            {
+                fileCount = 0;
+            }
+        }
         
         //public string ApplyTo(string input, int index=0, int max=0, FileName fn=null)
         public string ApplyTo(FileName fn, int index = 0, int max = 0)
