@@ -277,13 +277,15 @@ namespace Renamer
 
         void ApplyFilterList(List<Filter> list)
         {
+            foreach (var filter in filterList) filter.Reset();
+
             for (int i = 0; i < fileNames.Count; i++)
             {
                 fileNames[i].Reset();
 
                 foreach (var filter in list)
                 {
-                    filter.Reset();
+                    //filter.Reset();
                     fileNames[i].Modified = filter.ApplyTo(fileNames[i], i, fileNames.Count);
                 }
             }
