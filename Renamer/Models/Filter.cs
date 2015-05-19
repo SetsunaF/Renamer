@@ -10,12 +10,15 @@ using Renamer.Common;
 
 namespace Renamer.Models
 {
+    //Each filter has 3 parts (in this file)
+    //1 enum, 1 condition inside the constructor and 1 condition inside the switch
     public enum FilterType
     {
         Clear,
 
         AddNumbering,
         NumberByDirectories,
+        AddMultipleNumbering,
         SwapOrder,
 
         AppendBefore,
@@ -52,7 +55,8 @@ namespace Renamer.Models
     {
         public FilterType filterType;
 
-        private int position;
+        private int position1;
+        private int position2;
         private string text1;
         private string text2;
 
@@ -86,7 +90,7 @@ namespace Renamer.Models
             else if (filterType == FilterType.AppendAtPosition || filterType == FilterType.AppendFromTextFile)
             {
                 text1 = FirstArgument;
-                position = Convert.ToInt32(y);
+                position1 = Convert.ToInt32(y);
             }
 
             else if (filterType == FilterType.AddNumbering || filterType==FilterType.NumberByDirectories || filterType == FilterType.SwapOrder ||
@@ -94,7 +98,7 @@ namespace Renamer.Models
                      filterType == FilterType.TrimFromLeft || filterType == FilterType.TrimFromRight ||
                      filterType == FilterType.ParentDirectory || filterType==FilterType.OriginalFileName)
             {
-                position = Convert.ToInt32(x);
+                position1 = Convert.ToInt32(x);
             }
 
             else if (filterType == FilterType.RegexReplace || 
@@ -104,10 +108,11 @@ namespace Renamer.Models
                 text2 = SecondArgument;
             }
 
-            //if (filterType == FilterType.AddNumbering || filterType == FilterType.SwapOrder)
-            //{
-                //Nothing to do
-            //}
+            else if (filterType == FilterType.AddMultipleNumbering)
+            {
+                position1 = Convert.ToInt32(x);
+                position2 = Convert.ToInt32(y);
+            }
 
             if (filterType == FilterType.AppendFromTextFile)
             {
@@ -158,7 +163,7 @@ namespace Renamer.Models
 
                 case FilterType.AddNumbering:
                     var number = (index + 1).CompleteZeros(max);
-                    return input.AppendAtPosition(number, position);
+                    return input.AppendAtPosition(number, position1);
 
                 case FilterType.NumberByDirectories:
                     if (previousFileName != null && previousFileName.ParentDirectory() != fn.ParentDirectory()) fileCount = 0;
@@ -166,12 +171,26 @@ namespace Renamer.Models
                     previousFileName = fn;  
                     fileCount++;                                     
 
-                    return input.AppendAtPosition((fileCount).CompleteZeros(max), position);
+                    return input.AppendAtPosition((fileCount).CompleteZeros(max), position1);
+
+                case FilterType.AddMultipleNumbering:
+                    string numbers = "";
+                    max *= position2;
+
+                    for (int i = 0; i < position2; i++)
+                    {
+                        //fileCount += 1 + i;
+                        numbers += (index + 1 + i + fileCount).CompleteZeros(max) + " "; 
+                    }
+
+                    fileCount += position2 - 1;
+                    
+                    return input.AppendAtPosition(numbers, position1);
 
                 case FilterType.SwapOrder:
                     var order = index;
                     if (index%2 == 0) order += 2;
-                    return input.AppendAtPosition(order.CompleteZeros(max), position);
+                    return input.AppendAtPosition(order.CompleteZeros(max), position1);
 
                 case FilterType.AppendBefore:
                     return input.AppendBefore(text1);
@@ -181,10 +200,10 @@ namespace Renamer.Models
 
                 case FilterType.AppendFromTextFile:
                     if (index + 1 > lines.Count) return input;
-                    return input.AppendAtPosition(lines[index], position);
+                    return input.AppendAtPosition(lines[index], position1);
 
                 case FilterType.AppendAtPosition:
-                    return input.AppendAtPosition(text1, position);
+                    return input.AppendAtPosition(text1, position1);
 
                 case FilterType.KeepNumeric:
                     return input.ExtractNumeric();
@@ -196,16 +215,16 @@ namespace Renamer.Models
                     return input.Clean();
 
                 case FilterType.PreserveFromLeft:
-                    return input.KeepLeft(position);
+                    return input.KeepLeft(position1);
 
                 case FilterType.PreserveFromRight:
-                    return input.KeepRight(position);
+                    return input.KeepRight(position1);
 
                 case FilterType.TrimFromLeft:
-                    return input.TrimLeft(position);
+                    return input.TrimLeft(position1);
 
                 case FilterType.TrimFromRight:
-                    return input.TrimRight(position);
+                    return input.TrimRight(position1);
 
                 case FilterType.CapitalizeEachWord:
                     return input.CapitalizeEachWord();
@@ -256,10 +275,10 @@ namespace Renamer.Models
                     return fn.GetModifiedNameWithoutExtension();
 
                 case FilterType.ParentDirectory:
-                    return input.AppendAtPosition(fn.ParentDirectory(), position);
+                    return input.AppendAtPosition(fn.ParentDirectory(), position1);
 
                 case FilterType.OriginalFileName:
-                    return input.AppendAtPosition(fn.Original, position);
+                    return input.AppendAtPosition(fn.Original, position1);
 
                 default:
                     return string.Empty;

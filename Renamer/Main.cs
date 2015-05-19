@@ -321,6 +321,8 @@ namespace Renamer
             }
         }
 
+        #region Filter Dialogs
+
         //Only for filters without arguments
         public void ApplySimpleFilter(FilterType filterType)
         {
@@ -353,6 +355,24 @@ namespace Renamer
 
                 if (dlg.ShowDialog() == DialogResult.OK)
                     AddFilter(new Filter(filterType, dlg.inputNumber.Value));
+
+                ApplyFiltersAndUpdate();
+            }
+        }
+
+        //Evaluate dialog for Filters with 2 numeric arguments
+        public void EvalDialog_Num_Num(string title, string prompt1, string prompt2, FilterType filterType)
+        {
+            using (var dlg = new Dialogs.NumberNumber(title, prompt1, prompt2, this))
+            {
+                dlg.inputNumber1.ValueChanged += (o, args) => PreviewFilter(filterType, dlg.inputNumber1.Value, dlg.inputNumber2.Value);
+                dlg.inputNumber2.ValueChanged += (o, args) => PreviewFilter(filterType, dlg.inputNumber1.Value, dlg.inputNumber2.Value);
+
+                ResetNumericUpDown(dlg.inputNumber1);
+                ResetNumericUpDown(dlg.inputNumber2);
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(filterType, dlg.inputNumber1.Value, dlg.inputNumber2.Value));
 
                 ApplyFiltersAndUpdate();
             }
@@ -393,8 +413,10 @@ namespace Renamer
             }
         }
 
+        #endregion
+
         #region Menu Items
-        
+
         public void appendAtPositionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new Dialogs.NumberString("Append at Position", "Position:", "Text:", this))

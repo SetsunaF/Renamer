@@ -55,7 +55,7 @@ namespace Renamer.Common
                 catch
                 {
                     MessageBox.Show("Error loading profile: \"" + Path.GetFileNameWithoutExtension(file) +
-                        "\". The profile might have been ceated by an older version of the application or the profile file may be damaged.", 
+                        "\". The profile might have been ceated by a different version of the application or the profile file might be damaged.", 
                         "Renamer", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     System.Diagnostics.Process.Start(profileDirectory);

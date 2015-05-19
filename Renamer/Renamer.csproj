@@ -90,6 +90,12 @@
     <Compile Include="Dialogs\NumberFile.Designer.cs">
       <DependentUpon>NumberFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\NumberNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NumberNumber.Designer.cs">
+      <DependentUpon>NumberNumber.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\NumberString.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\NumberFile.resx">
       <DependentUpon>NumberFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NumberNumber.resx">
+      <DependentUpon>NumberNumber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\NumberString.resx">
       <DependentUpon>NumberString.cs</DependentUpon>

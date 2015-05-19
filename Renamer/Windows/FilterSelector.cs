@@ -30,6 +30,7 @@ namespace Renamer.Windows
         public FilterMenuItem[] numberingFilters = {
                                                         new FilterMenuItem("Add Numbering", FilterType.AddNumbering),
                                                         new FilterMenuItem("Add Numbering (By Directory)", FilterType.NumberByDirectories),
+                                                        new FilterMenuItem("Add Numbering (Multiple)", FilterType.AddMultipleNumbering),
                                                         new FilterMenuItem("Add Numbering (Swap Order)", FilterType.SwapOrder)
                                                     };
 
@@ -91,16 +92,23 @@ namespace Renamer.Windows
             {
                 button.Click += OnMouseEnter;
                 button.MouseEnter += OnMouseEnter;
-            }
-
-            OnMouseEnter(flatButton1, null);
+            }            
         }
+
+        private void FilterSelector_Shown(object sender, EventArgs e)
+        {
+            //Enable first "tab" when form is shown
+            OnMouseEnter(flatButton1, null);
+        } 
 
         private void OnMouseEnter(object sender, EventArgs e)
         {
             var button = sender as FlatButton;
 
-            if (button.Style == Styles.Primary) return;
+            if (e != null)
+            {
+                if (button.Style == Styles.Primary) return;
+            }
 
             ShowFilters(button.Tag);
             button.Style = Styles.Primary;
@@ -152,6 +160,10 @@ namespace Renamer.Windows
                     mainForm.EvalDialog_Num("Number By Directories", "Position:", FilterType.NumberByDirectories);
                     break;
 
+                case FilterType.AddMultipleNumbering:
+                    mainForm.EvalDialog_Num_Num("Add Numbering (Multiple)", "Position:", "Numbers:", FilterType.AddMultipleNumbering);
+                    break;
+
                 case FilterType.SwapOrder:
                     mainForm.EvalDialog_Num("Swap Order", "Position:", FilterType.SwapOrder);
                     break;
@@ -167,7 +179,7 @@ namespace Renamer.Windows
                 case FilterType.AppendAtPosition:
                     mainForm.appendAtPositionToolStripMenuItem_Click(null, null);
                     break;
-                    
+
                 case FilterType.AppendFromTextFile:
                     mainForm.appendFromTextFileToolStripMenuItem_Click(null, null);
                     break;
@@ -259,7 +271,7 @@ namespace Renamer.Windows
             {
                 olvSelector_Click(null, null);
             }
-        }
+        }       
     }
 
     public class FilterMenuItem

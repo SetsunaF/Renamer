@@ -171,6 +171,7 @@
             this.olvSelector.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.olvSelector.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.olvSelectorMainColumn});
+            this.olvSelector.CopySelectionOnControlC = false;
             this.olvSelector.Cursor = System.Windows.Forms.Cursors.Default;
             this.olvSelector.FullRowSelect = true;
             this.olvSelector.GridLines = true;
@@ -210,6 +211,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Filter";
             this.Load += new System.EventHandler(this.FilterSelector_Load);
+            this.Shown += new System.EventHandler(this.FilterSelector_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterSelector_KeyDown);
             this.panelTabs.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
