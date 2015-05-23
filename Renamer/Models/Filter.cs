@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Renamer.Common;
 
 //A filter is a function applied to a string
@@ -53,6 +55,7 @@ namespace Renamer.Models
 
     public class Filter
     {
+        [JsonConverter(typeof(StringEnumConverter))]
         public FilterType filterType;
 
         private int position1;
