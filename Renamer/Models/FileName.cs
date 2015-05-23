@@ -89,12 +89,12 @@ namespace Renamer.Models
 
         public System.Drawing.Bitmap GetIcon()
         {
-            return Common.ShellIcon.GetIcon(this.FullPath()).ToBitmap();
+            return Common.ShellIcon.GetBitmapIcon(this.FullPath());
         }
 
         public System.Drawing.Bitmap GetIconModified()
         {
-            return Common.ShellIcon.GetIcon(this.FullPathModified()).ToBitmap();
+            return Common.ShellIcon.GetBitmapIcon(this.FullPathModified());
         }
 
         private void LoadFileInfo()

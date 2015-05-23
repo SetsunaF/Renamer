@@ -206,10 +206,11 @@
             this.Controls.Add(this.panelTabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
+            this.MinimizeBox = false;
             this.Name = "FilterSelector";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Add Filter";            
+            this.Text = "Add Filter";
             this.Load += new System.EventHandler(this.FilterSelector_Load);
             this.Shown += new System.EventHandler(this.FilterSelector_Shown);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FilterSelector_KeyDown);
