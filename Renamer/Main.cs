@@ -281,13 +281,17 @@ namespace Renamer
 
             for (int i = 0; i < fileNames.Count; i++)
             {
+                bool error = false;
                 fileNames[i].Reset();
 
                 foreach (var filter in list)
                 {
-                    //filter.Reset();
-                    fileNames[i].Modified = filter.ApplyTo(fileNames[i], i, fileNames.Count);
+                    //filter.Reset();                    
+                    fileNames[i].Modified = filter.ApplyTo(out error, fileNames[i], i, fileNames.Count);
+                    if (error) break;
                 }
+
+                if (error) break;
             }
         }
 

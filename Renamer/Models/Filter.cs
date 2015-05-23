@@ -159,8 +159,10 @@ namespace Renamer.Models
         }
         
         //public string ApplyTo(string input, int index=0, int max=0, FileName fn=null)
-        public string ApplyTo(FileName fn, int index = 0, int max = 0)
+        public string ApplyTo(out bool error, FileName fn, int index = 0, int max = 0)
         {
+            //at this point there are no errors (yet)
+            error = false;
             //the input will be the latest output in this case, the modified name of the current file
             string input = fn.Modified;
 
@@ -255,6 +257,7 @@ namespace Renamer.Models
                     catch (ArgumentException exception)
                     {
                         Console.WriteLine(exception.Message);
+                        error = true;
                     }
                     return string.Empty;
 
@@ -266,6 +269,7 @@ namespace Renamer.Models
                     catch (ArgumentException exception)
                     {
                         Console.WriteLine(exception.Message);
+                        error = true;
                     }
                     return string.Empty;
 
