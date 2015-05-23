@@ -84,6 +84,14 @@ namespace Renamer.Common
                     mainForm.EvalDialog_Num("Trim from Right", "Count:", FilterType.TrimFromRight);
                     break;
 
+                case FilterType.Substring:
+                    mainForm.EvalDialog_Num_Num("Substring", "Start:", "Length:", FilterType.Substring);
+                    break;
+
+                case FilterType.RemoveSubstring:
+                    mainForm.EvalDialog_Num_Num("Remove Substring", "Start:", "Length:", FilterType.RemoveSubstring);
+                    break;
+
                 case FilterType.CapitalizeEachWord:
                     mainForm.ApplySimpleFilter(FilterType.CapitalizeEachWord);
                     break;

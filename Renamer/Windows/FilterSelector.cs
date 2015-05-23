@@ -41,7 +41,9 @@ namespace Renamer.Windows
                                                     new FilterMenuItem("Preserve from Left", FilterType.PreserveFromLeft),
                                                     new FilterMenuItem("Preserve from Right", FilterType.PreserveFromRight),
                                                     new FilterMenuItem("Trim from Left", FilterType.TrimFromLeft),
-                                                    new FilterMenuItem("Trim from Right", FilterType.TrimFromRight)
+                                                    new FilterMenuItem("Trim from Right", FilterType.TrimFromRight),
+                                                    new FilterMenuItem("Extract Substring", FilterType.Substring),
+                                                    new FilterMenuItem("Remove Substring", FilterType.RemoveSubstring)
                                               };
 
         public FilterMenuItem[] matchFilters = {

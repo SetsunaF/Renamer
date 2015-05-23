@@ -37,6 +37,9 @@ namespace Renamer.Models
         TrimFromLeft,
         TrimFromRight,
 
+        Substring,
+        RemoveSubstring,
+
         CapitalizeEachWord,
         UpperCase,
         LowerCase,
@@ -111,7 +114,8 @@ namespace Renamer.Models
                 text2 = SecondArgument;
             }
 
-            else if (filterType == FilterType.AddMultipleNumbering)
+            else if (filterType == FilterType.AddMultipleNumbering || 
+                     filterType==FilterType.Substring || filterType == FilterType.RemoveSubstring)
             {
                 position1 = Convert.ToInt32(x);
                 position2 = Convert.ToInt32(y);
@@ -238,6 +242,14 @@ namespace Renamer.Models
 
                 case FilterType.TrimFromRight:
                     return input.TrimRight(position1);
+
+                case FilterType.Substring:                    
+                    return input.TrimLeft(position1).KeepLeft(position2);
+
+                case FilterType.RemoveSubstring:
+                    var partA = input.KeepLeft(position1);
+                    var partB = input.TrimLeft(position1+position2);
+                    return partA + partB;
 
                 case FilterType.CapitalizeEachWord:
                     return input.CapitalizeEachWord();
