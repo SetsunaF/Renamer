@@ -79,7 +79,16 @@ namespace Renamer.Models
             }
         }
 
-        private static string shellKey = @"Folder\shell";
+        private static string shellKey
+        {
+            get
+            {
+                //Windows Vista or later
+                if (Environment.OSVersion.Version.Major >= 6) return @"Folder\shell";
+                //Windows XP and lower
+                return @"Directory\shell";
+            }
+        }
         private static string keyName = shellKey + @"\renamer";
         private static string subKeyName = keyName + @"\command";
 
@@ -153,6 +162,8 @@ namespace Renamer.Models
                 return count == 0;
             }
         }
+
+    
 
 
 
