@@ -41,6 +41,11 @@ namespace Renamer
             InitializeComponent();
             this.folderBrowser = new ModernFolderBrowserDialog.FolderBrowser(Models.Settings.IsUnderWine);
 
+            //For some reason %1 returns C:" when using right-click on hard drives
+            //So we need to remove the extra double quotes and append a backslash
+            defaultPath = defaultPath.Replace("\"", "");
+            if (defaultPath.Length == 2) defaultPath += "\\";
+
             if(Directory.Exists(defaultPath))
                 textBoxInputDir.Text = defaultPath;
         }
