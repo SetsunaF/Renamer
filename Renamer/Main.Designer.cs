@@ -72,6 +72,7 @@
             this.naturalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphanumericalSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alphanumericalDescendingSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
             this.customSortToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolTipProvider = new System.Windows.Forms.ToolTip(this.components);
             this.buttonRevert = new DropdownButton.FlatButton();
@@ -106,7 +107,9 @@
             this.fileSize = new MetroFramework.Controls.MetroLabel();
             this.dateCreated = new MetroFramework.Controls.MetroLabel();
             this.dateModified = new MetroFramework.Controls.MetroLabel();
-            this.toolStripMenuItem13 = new System.Windows.Forms.ToolStripSeparator();
+            this.contextMenuModifiedFileNames = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.copyFileNamesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsTextFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonRefresh)).BeginInit();
@@ -120,6 +123,7 @@
             this.contextMenuOptions.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDetails.SuspendLayout();
+            this.contextMenuModifiedFileNames.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -652,6 +656,11 @@
             this.alphanumericalDescendingSortToolStripMenuItem.Text = "Alphanumerical Descending Sort";
             this.alphanumericalDescendingSortToolStripMenuItem.Click += new System.EventHandler(this.alphanumericalDescendingSortToolStripMenuItem_Click);
             // 
+            // toolStripMenuItem13
+            // 
+            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(244, 6);
+            // 
             // customSortToolStripMenuItem
             // 
             this.customSortToolStripMenuItem.Name = "customSortToolStripMenuItem";
@@ -1008,10 +1017,27 @@
             this.dateModified.Text = "05/26/2015 10:18:02";
             this.dateModified.UseCustomBackColor = true;
             // 
-            // toolStripMenuItem13
+            // contextMenuModifiedFileNames
             // 
-            this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(244, 6);
+            this.contextMenuModifiedFileNames.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.copyFileNamesToolStripMenuItem,
+            this.saveAsTextFileToolStripMenuItem});
+            this.contextMenuModifiedFileNames.Name = "contextMenuModifiedFileNames";
+            this.contextMenuModifiedFileNames.Size = new System.Drawing.Size(153, 70);
+            // 
+            // copyFileNamesToolStripMenuItem
+            // 
+            this.copyFileNamesToolStripMenuItem.Name = "copyFileNamesToolStripMenuItem";
+            this.copyFileNamesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyFileNamesToolStripMenuItem.Text = "Copy";
+            this.copyFileNamesToolStripMenuItem.Click += new System.EventHandler(this.copyFileNamesToolStripMenuItem_Click);
+            // 
+            // saveAsTextFileToolStripMenuItem
+            // 
+            this.saveAsTextFileToolStripMenuItem.Name = "saveAsTextFileToolStripMenuItem";
+            this.saveAsTextFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsTextFileToolStripMenuItem.Text = "Save as";
+            this.saveAsTextFileToolStripMenuItem.Click += new System.EventHandler(this.saveAsTextFileToolStripMenuItem_Click);
             // 
             // Main
             // 
@@ -1047,6 +1073,7 @@
             this.panel1.ResumeLayout(false);
             this.panelDetails.ResumeLayout(false);
             this.panelDetails.PerformLayout();
+            this.contextMenuModifiedFileNames.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1131,5 +1158,8 @@
         private System.Windows.Forms.ToolStripMenuItem moveToBottomToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem8;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem13;
+        private System.Windows.Forms.ContextMenuStrip contextMenuModifiedFileNames;
+        private System.Windows.Forms.ToolStripMenuItem saveAsTextFileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem copyFileNamesToolStripMenuItem;
     }
 }

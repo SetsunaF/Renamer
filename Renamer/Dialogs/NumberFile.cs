@@ -58,6 +58,8 @@ namespace Renamer.Dialogs
             this.Activate();
         }
 
+        
+
             
     }
 }

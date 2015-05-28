@@ -453,6 +453,7 @@ namespace Renamer
             using (var dlg = new Dialogs.NumberFile("Append from Text File", "Position:", "Text File:", this))
             {
                 dlg.fileDialog.Filter = @"Text Files (*.txt)|*.txt|All Files|*.*";
+
                 dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
                 dlg.inputFile.TextChanged += (o, args) => PreviewFilter(FilterType.AppendFromTextFile, dlg.inputFile.Text, dlg.inputNumber.Value);
 
@@ -894,16 +895,6 @@ namespace Renamer
             new Windows.About().ShowDialog();
         }
 
-        //private void copyAllToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
-        //    string data = "";
-
-        //    foreach (var row in olvPreview.Objects)
-        //        data += (row as FileName).Original + "\r\n";            
-
-        //    Clipboard.SetText(data);
-        //}
-
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             olvPreview_DoubleClick(null, null);
@@ -958,7 +949,8 @@ namespace Renamer
         private void olvPreview_ColumnRightClick(object sender, ColumnClickEventArgs e)
         {
             showPropertiesMenu = false;
-            if (e.Column == 0) contextMenuSort.Show(Cursor.Position);            
+            if (e.Column == 0) contextMenuSort.Show(Cursor.Position);
+            else if (e.Column == 1) contextMenuModifiedFileNames.Show(Cursor.Position);
         }
 
         private void checkBoxCopy_CheckedChanged(object sender, EventArgs e)
@@ -1140,6 +1132,46 @@ namespace Renamer
             int index = fileList.Length - 1;
             MoveSelected(index, BrightIdeasSoftware.DropTargetLocation.BelowItem);
             olvPreview.Items[index].EnsureVisible();
+        }
+
+        private string GetModifiedFileNames()
+        {
+            string data = "";
+
+            foreach (var row in olvPreview.Objects)
+                data += (row as FileName).Modified + "\r\n";
+
+            return data;
+        }
+
+        private void copyFileNamesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string data = GetModifiedFileNames();
+            if (data != "") Clipboard.SetText(data);
+        }
+
+        private void saveAsTextFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var data = GetModifiedFileNames();
+            if(data=="") return;
+
+            using (var dialog = new SaveFileDialog() {
+                DefaultExt = ".txt",
+                Filter = "Text Files (*.txt)|*.txt"
+            })
+            {
+                if (dialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        File.WriteAllText(dialog.FileName, data);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }                
+            }
         }
 
         
