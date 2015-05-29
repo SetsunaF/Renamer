@@ -20,7 +20,6 @@ namespace Renamer.Windows
                                                     new FilterMenuItem("Append Before", FilterType.AppendBefore),
                                                     new FilterMenuItem("Append After", FilterType.AppendAfter),
                                                     new FilterMenuItem("Append at Position", FilterType.AppendAtPosition),
-                                                    new FilterMenuItem("Append from Text File", FilterType.AppendFromTextFile),
                                                     new FilterMenuItem("Capitalize each Word", FilterType.CapitalizeEachWord),
                                                     new FilterMenuItem("Upper Case", FilterType.UpperCase),
                                                     new FilterMenuItem("Lower Case", FilterType.LowerCase),
@@ -54,6 +53,7 @@ namespace Renamer.Windows
                                         };
 
         public FilterMenuItem[] fileFilters = {
+                                                  new FilterMenuItem("Append from Text File", FilterType.AppendFromTextFile),
                                                   new FilterMenuItem("Parent Directory", FilterType.ParentDirectory),
                                                   new FilterMenuItem("Original File Name", FilterType.OriginalFileName),
                                                   new FilterMenuItem("Add Extension", FilterType.AddExtension),

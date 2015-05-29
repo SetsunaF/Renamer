@@ -1023,19 +1023,19 @@
             this.copyFileNamesToolStripMenuItem,
             this.saveAsTextFileToolStripMenuItem});
             this.contextMenuModifiedFileNames.Name = "contextMenuModifiedFileNames";
-            this.contextMenuModifiedFileNames.Size = new System.Drawing.Size(153, 70);
+            this.contextMenuModifiedFileNames.Size = new System.Drawing.Size(113, 48);
             // 
             // copyFileNamesToolStripMenuItem
             // 
             this.copyFileNamesToolStripMenuItem.Name = "copyFileNamesToolStripMenuItem";
-            this.copyFileNamesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyFileNamesToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.copyFileNamesToolStripMenuItem.Text = "Copy";
             this.copyFileNamesToolStripMenuItem.Click += new System.EventHandler(this.copyFileNamesToolStripMenuItem_Click);
             // 
             // saveAsTextFileToolStripMenuItem
             // 
             this.saveAsTextFileToolStripMenuItem.Name = "saveAsTextFileToolStripMenuItem";
-            this.saveAsTextFileToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsTextFileToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
             this.saveAsTextFileToolStripMenuItem.Text = "Save as";
             this.saveAsTextFileToolStripMenuItem.Click += new System.EventHandler(this.saveAsTextFileToolStripMenuItem_Click);
             // 

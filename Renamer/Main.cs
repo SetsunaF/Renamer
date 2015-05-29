@@ -86,7 +86,7 @@ namespace Renamer
                 CanDropOnItem = false,
                 CanDropBetween = true,
                 FeedbackColor = Color.LightGray
-            };
+            };            
 
             //var dropSink = new BrightIdeasSoftware.RearrangingDropSink(false) 
             //{
@@ -949,8 +949,15 @@ namespace Renamer
         private void olvPreview_ColumnRightClick(object sender, ColumnClickEventArgs e)
         {
             showPropertiesMenu = false;
+            //Sort Menu
             if (e.Column == 0) contextMenuSort.Show(Cursor.Position);
-            else if (e.Column == 1) contextMenuModifiedFileNames.Show(Cursor.Position);
+            //Menu for modified file names
+            //Only show it if there are more than 0 items 
+            else if (e.Column == 1)
+            {
+                if(olvPreview.Items.Count > 0)
+                    contextMenuModifiedFileNames.Show(Cursor.Position);
+            }
         }
 
         private void checkBoxCopy_CheckedChanged(object sender, EventArgs e)
@@ -1173,6 +1180,8 @@ namespace Renamer
                 }                
             }
         }
+
+        
 
         
 

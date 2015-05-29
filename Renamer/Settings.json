@@ -1,4 +1,7 @@
 {
 	"SaveLastProfile":true,
-	"WarnBeforeRecursiveRename":true
+	"WarnBeforeRecursiveRename":true,
+
+	"CheckForUpdatesAutomatically":false,
+	"UpdateURL":""
 }
