@@ -53,7 +53,8 @@ namespace Renamer.Windows
                                         };
 
         public FilterMenuItem[] fileFilters = {
-                                                  new FilterMenuItem("Append from Text File", FilterType.AppendFromTextFile),
+                                                  new FilterMenuItem("Append from Directory", FilterType.AppendFromDirectory),
+                                                  new FilterMenuItem("Append from Text File", FilterType.AppendFromTextFile),                                                  
                                                   new FilterMenuItem("Parent Directory", FilterType.ParentDirectory),
                                                   new FilterMenuItem("Original File Name", FilterType.OriginalFileName),
                                                   new FilterMenuItem("Add Extension", FilterType.AddExtension),

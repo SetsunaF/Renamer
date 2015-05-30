@@ -32,7 +32,6 @@
             this.labelNumber = new MetroFramework.Controls.MetroLabel();
             this.labelFile = new MetroFramework.Controls.MetroLabel();
             this.inputFile = new System.Windows.Forms.TextBox();
-            this.fileDialog = new System.Windows.Forms.OpenFileDialog();
             this.buttonFile = new DropdownButton.FlatButton();
             ((System.ComponentModel.ISupportInitialize)(this.inputNumber)).BeginInit();
             this.SuspendLayout();
@@ -148,7 +147,6 @@
         public System.Windows.Forms.NumericUpDown inputNumber;
         private MetroFramework.Controls.MetroLabel labelNumber;
         private MetroFramework.Controls.MetroLabel labelFile;
-        public System.Windows.Forms.OpenFileDialog fileDialog;
         public System.Windows.Forms.TextBox inputFile;
         private DropdownButton.FlatButton buttonFile;
     }

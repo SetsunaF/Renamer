@@ -56,6 +56,10 @@ namespace Renamer.Common
                     mainForm.appendFromTextFileToolStripMenuItem_Click(null, null);
                     break;
 
+                case FilterType.AppendFromDirectory:
+                    mainForm.appendFromDirectory();
+                    break;
+
                 case FilterType.KeepNumeric:
                     mainForm.ApplySimpleFilter(FilterType.KeepNumeric);
                     break;

@@ -462,7 +462,21 @@ namespace Renamer
 
                 ApplyFiltersAndUpdate();
             }
-        }        
+        }
+                
+        public void appendFromDirectory()
+        {
+            using (var dlg = new Dialogs.NumberFile("Append from Directory", "Position:", "Directory:", this, true))
+            {
+                dlg.inputNumber.ValueChanged += (o, args) => PreviewFilter(FilterType.AppendFromDirectory, dlg.inputFile.Text, dlg.inputNumber.Value);
+                dlg.inputFile.TextChanged += (o, args) => PreviewFilter(FilterType.AppendFromDirectory, dlg.inputFile.Text, dlg.inputNumber.Value);
+
+                if (dlg.ShowDialog() == DialogResult.OK)
+                    AddFilter(new Filter(FilterType.AppendFromDirectory, dlg.inputFile.Text, dlg.inputNumber.Value));
+
+                ApplyFiltersAndUpdate();
+            }
+        } 
 
         #endregion
 

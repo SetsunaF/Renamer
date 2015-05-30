@@ -14,6 +14,7 @@ namespace Renamer.Models
 {
     //Each filter has 3 parts (in this file)
     //1 enum, 1 condition inside the constructor and 1 condition inside the switch
+    //If some operation like file listing is needed, another condition must be created at the end of the constructor (like AppendFromTextFile)
     public enum FilterType
     {
         Clear,
@@ -25,8 +26,7 @@ namespace Renamer.Models
 
         AppendBefore,
         AppendAfter,
-        AppendAtPosition,
-        AppendFromTextFile,
+        AppendAtPosition,        
 
         KeepNumeric,
         KeepAlphanumeric,
@@ -49,6 +49,9 @@ namespace Renamer.Models
         RegexReplace,
         ReplaceString,
         ReplaceCaseInsensitive,
+
+        AppendFromDirectory,
+        AppendFromTextFile,
 
         ParentDirectory,
         OriginalFileName,
@@ -93,7 +96,8 @@ namespace Renamer.Models
                 text1 = FirstArgument;
             }
 
-            else if (filterType == FilterType.AppendAtPosition || filterType == FilterType.AppendFromTextFile)
+            else if (filterType == FilterType.AppendAtPosition ||
+                     filterType == FilterType.AppendFromDirectory || filterType == FilterType.AppendFromTextFile)
             {
                 text1 = FirstArgument;
                 position1 = Convert.ToInt32(y);
@@ -135,6 +139,22 @@ namespace Renamer.Models
                         {
                             lines.Add(line);
                         }
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception.Message);
+                }
+            }
+            else if (filterType == FilterType.AppendFromDirectory)
+            {
+                lines = new List<string>();
+
+                try
+                {
+                    foreach (var fullFilePath in Directory.GetFiles(text1))
+                    {
+                        lines.Add(Path.GetFileName(fullFilePath));
                     }
                 }
                 catch (Exception exception)
@@ -215,9 +235,10 @@ namespace Renamer.Models
                 case FilterType.AppendAfter:
                     return input.AppendAfter(text1);
 
+                case FilterType.AppendFromDirectory:
                 case FilterType.AppendFromTextFile:
                     if (index + 1 > lines.Count) return input;
-                    return input.AppendAtPosition(lines[index], position1);
+                    return input.AppendAtPosition(lines[index], position1);                
 
                 case FilterType.AppendAtPosition:
                     return input.AppendAtPosition(text1, position1);
