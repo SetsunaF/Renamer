@@ -53,7 +53,7 @@ namespace Renamer.Windows
                                         };
 
         public FilterMenuItem[] fileFilters = {
-                                                  new FilterMenuItem("Append from Directory", FilterType.AppendFromDirectory),
+                                                  new FilterMenuItem("Append from Directory Files", FilterType.AppendFromDirectory),
                                                   new FilterMenuItem("Append from Text File", FilterType.AppendFromTextFile),                                                  
                                                   new FilterMenuItem("Parent Directory", FilterType.ParentDirectory),
                                                   new FilterMenuItem("Original File Name", FilterType.OriginalFileName),
@@ -68,8 +68,8 @@ namespace Renamer.Windows
             this.Owner = parent;
             //this.Width = this.Owner.Width - 32;
             //this.Height = this.Owner.Height - 94;
-            this.Width = 600;
-            this.Height = 340;
+            this.Width = 560;
+            this.Height = 320;
         }
 
         //Size? initialSize = null;

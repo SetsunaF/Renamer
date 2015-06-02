@@ -149,17 +149,22 @@ namespace Renamer.Models
             else if (filterType == FilterType.AppendFromDirectory)
             {
                 lines = new List<string>();
+                var filePaths = new string[] { };
 
                 try
                 {
-                    foreach (var fullFilePath in Directory.GetFiles(text1))
-                    {
-                        lines.Add(Path.GetFileName(fullFilePath));
-                    }
+                    filePaths = Directory.GetFiles(text1);                    
                 }
                 catch (Exception exception)
                 {
                     Console.WriteLine(exception.Message);
+                }
+
+                Array.Sort(filePaths, new Common.Comparers.Natural());
+
+                foreach (var fileName in filePaths)
+                {
+                    lines.Add(Path.GetFileName(fileName));
                 }
             }
         }
