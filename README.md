@@ -37,6 +37,7 @@ FAQ
 * *After excluding some files, how can I show all files again?* Press the refresh button.
 * *Is there a way to solve window resizing issues under Linux?* Yes, on [Wine Configuration](http://i.imgur.com/MDPOlEX.jpg) uncheck "Allow the window manager to control the windows"
 * *I'm receiving the following error: "Error parsing C:\Windows\Microsoft.NET\Framework\v4.0.30319\config\machine.config", how can I fix it?* Install .NET Framework 4 using *winetricks dotnet40*
+* *Why the left click button is not working when I choose a filter on Linux?* For some reason you have to use the right click button on Linux.
 
 License
 -------
